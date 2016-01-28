@@ -1,8 +1,7 @@
-
 /**
-* This directive is necessary to enable prepossessing of JSX tags:
-* @jsx React.DOM
-*/
+ * This directive is necessary to enable prepossessing of JSX tags:
+ * @jsx React.DOM
+ */
 
 
 var Topnav = ReactMeteor.createClass({
@@ -13,7 +12,7 @@ var Topnav = ReactMeteor.createClass({
   // <Widget x={1} y={2} />.
   templateName: "Topnav",
 
-  getInitialState: function(){
+  getInitialState: function() {
     //better to start with something... and wait for the subscription
     return {
       navItems: []
@@ -49,7 +48,7 @@ var Navitems = React.createClass({
   },
 
   renderItem: function(someItem) {
-    return(
+    return (
       <a
         key={someItem._id}
         className="item"
@@ -61,7 +60,9 @@ var Navitems = React.createClass({
 
   render: function() {
     //load up the props for use
-    var { items, ...rest } = this.props;
+    var {
+      items, ...rest
+    } = this.props;
     return <div>{items.map(this.renderItem)}</div>;
-    }
-  });
+  }
+});
