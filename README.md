@@ -9,7 +9,7 @@ curl https://install.meteor.com/ | sh
 - git clone
 ```sh
 git clone https://github.com/naver-d2-suji/suji-mr.git
-git checkout feature/meteour-react
+git checkout feature/meteor-react
 ```
 
 ### How to use
