@@ -1,0 +1,43 @@
+.route-transition-default-enter {
+  opacity: 0.01;
+}
+.route-transition-default-enter.route-transition-default-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+.route-transition-default-leave {
+  opacity: 1;
+}
+.route-transition-default-leave.route-transition-default-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+
+.route-transition-forward-enter {
+  transform: translate3d(100%, 0, 0);
+}
+.route-transition-forward-enter.route-transition-forward-enter-active {
+  transform: translate3d(0, 0, 0);
+  transition: transform 300ms linear;
+}
+.route-transition-forward-leave {
+  transform: translate3d(0, 0, 0);
+}
+.route-transition-forward-leave.route-transition-forward-leave-active {
+  transform: translate3d(-100%, 0, 0);
+  transition: transform 300ms linear;
+}
+.route-transition-backward-enter {
+  transform: translate3d(-100%, 0, 0);
+}
+.route-transition-backward-enter.route-transition-backward-enter-active {
+  transform: translate3d(0, 0, 0);
+  transition: transform 300ms linear;
+}
+.route-transition-backward-leave {
+  transform: translate3d(0, 0, 0);
+}
+.route-transition-backward-leave.route-transition-backward-leave-active {
+  transform: translate3d(100%, 0, 0);
+  transition: transform 300ms linear;
+}

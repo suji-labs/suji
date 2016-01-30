@@ -1,0 +1,147 @@
+//
+// Layout
+//------------------------------------------------------------------------------
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.layout {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.layout > header {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: @header-height;
+  z-index: @zindex-navbar-fixed;
+}
+
+.layout > main {
+  position: absolute;
+  overflow: hidden;
+  top: @header-height;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+
+#layout-main > aside {
+  position: absolute;
+  overflow-x: hidden;
+  overflow-y: auto;
+  top: @header-height;
+  bottom: 0;
+  z-index: 1;
+  //  z-index: @zindex-navbar-fixed + 1;
+}
+
+.layout#layout-main > aside.left {
+  left: 0; //-@aside-left-width;
+  width: @aside-left-width;
+}
+
+.layout#layout-main > aside.right {
+  right: -@aside-right-width;
+  width: @aside-right-width;
+}
+
+
+//
+// Layout Animations
+//------------------------------------------------------------------------------
+
+.layout#layout-main > main, .layout#layout-main > aside {
+  transform: translate3d(0, 0, 0);
+  transition: all 250ms ease-in-out;
+}
+
+.layout#layout-main.aside-left-on {
+  > main {
+    transform: translate3d(@aside-left-width, 0, 0);
+  }
+
+  > aside.left {
+    transform: translate3d(@aside-left-width, 0, 0);
+  }
+}
+
+
+.layout#layout-main.aside-left-fixed {
+  > main {
+    left: @aside-left-width;
+    right: 0;
+  }
+
+  > aside.left {
+    left: 0;
+  }
+}
+
+.layout#layout-main.aside-right-on {
+  > main {
+    left: -@aside-right-width;
+    right: @aside-right-width;
+  }
+
+  > aside.right {
+    right: 0;
+  }
+}
+
+.layout#layout-main.aside-right-fixed {
+  > main {
+    left: 0;
+    right: @aside-right-width;
+  }
+
+  > aside.right {
+    right: 0;
+  }
+}
+
+
+main#content {
+
+  > article.page {
+    position: absolute;
+    overflow: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  > footer {
+    position: absolute;
+    overflow: hidden;
+    bottom: 0;
+    height: @footer-height;
+    width: 100%;
+    z-index: @zindex-navbar-fixed;
+
+    display: none;
+  }
+
+  &.footer-on {
+    > article.page {
+      bottom: @footer-height;
+    }
+
+    > footer {
+      display: block;
+    }
+  }
+}

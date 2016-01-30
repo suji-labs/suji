@@ -1,0 +1,53 @@
+
+article.page {
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+
+  &.hide {
+    display: none;
+  }
+}
+
+article.page > header {
+  margin: 10px;
+  overflow: auto;
+
+  h1, h2, h3, h4, h5, h6 {
+    margin: 5px 0;
+
+    small {
+      margin-left: 10px;
+    }
+  }
+}
+
+article.page .board {
+  padding: 10px;
+}
+
+
+/*
+article.page > .body {
+  margin: 15px;
+}
+*/
+// extended panel style
+.panel-heading {
+  position: relative;
+}
+
+.panel-actions {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+
+  .btn + .btn {
+    margin-left: 5px;
+  }
+}
+
+.panel-footer {
+  .clearfix();
+}
+

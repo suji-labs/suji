@@ -1,0 +1,100 @@
+@nav-main-width:              240px;
+@nav-main-bg-color:           #ccc;
+
+.nav-main-backdrop {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: -@nav-main-width;
+  background: none;
+  z-index: 1;
+}
+
+.nav-main-backdrop .nav-main {
+  position: absolute;
+  overflow-x: hidden;
+  overflow-y: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: @nav-main-width;
+  z-index: inherit;
+  background: @nav-main-bg-color;
+
+  transition: transform 250ms linear;
+
+  .box-shadow(1px 0 1px rgba(0, 0, 0, .25));
+}
+
+#layout-main {
+  > main {
+    transform: translate3d(0, 0, 0);
+    transition: transform 250ms linear;
+  }
+
+  &.nav-main-on > main {
+    transform: translate3d(@nav-main-width, 0, 0);
+  }
+
+  > .nav-main-backdrop {
+    transform: translate3d(0, 0, 0);
+    transition: transform 250ms linear;
+  }
+
+  &.nav-main-on > .nav-main-backdrop {
+    transform: translate3d(@nav-main-width, 0, 0);
+    background: rgba(0, 0, 0, .75);
+    z-index: @zindex-navbar-fixed + 1;
+  }
+}
+
+//
+//  Navigation module
+//--------------------------------------------------------------
+.nav-main {
+  height: 100%;
+  background: @nav-main-bg;
+
+  .links {
+    margin-bottom: 5px;
+    border-top: solid 1px #999;
+    border-bottom: solid 1px #999;
+
+    a {
+      display: block;
+      padding: 10px;
+      background: @nav-link-bg;
+      color: @nav-link-color;
+
+      text-decoration: none;
+
+      i {
+        padding: 0 15px;
+        color: @nav-link-color;
+      }
+
+      &.active {
+        background: lighten(@nav-link-bg, 5%);
+        color: lighten(@nav-link-color, 20%);
+        i {
+          color: lighten(@nav-link-color, 20%);
+        }
+      }
+
+      &:hover {
+        background: lighten(@nav-link-bg, 10%);
+      }
+    }
+
+    a + a {
+      border-top: solid 1px #999;
+    }
+
+    .nav-list {
+      border-top: solid 1px #999;
+      border-bottom: solid 1px #999;
+    }
+  }
+}
+

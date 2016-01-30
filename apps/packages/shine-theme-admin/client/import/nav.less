@@ -1,0 +1,183 @@
+#layout-main > .nav-main {
+  position: absolute;
+  overflow-x: hidden;
+  overflow-y: auto;
+  top: @header-height;
+  bottom: 0;
+  z-index: 1;
+  //  z-index: @zindex-navbar-fixed + 1;
+}
+
+
+// aside style
+#layout-main > .nav-main {
+  border-right: solid 1px @aside-left-border-color;
+  background: @aside-left-bg-color;
+}
+
+
+//
+//  Navigation module
+//--------------------------------------------------------------
+.nav-main {
+  background: @nav-main-bg;
+
+  header {
+    position: relative;
+    padding-right: 30px;
+
+    .clearfix();
+  }
+
+  .links {
+    margin-bottom: 5px;
+    border-top: solid 1px #999;
+    border-bottom: solid 1px #999;
+
+    a {
+      display: block;
+      padding: 10px;
+      background: @nav-link-bg;
+      color: @nav-link-color;
+      text-decoration: none;
+      overflow: hidden;
+      white-space: nowrap;
+
+      i {
+        padding: 0 15px 0 5px;
+        color: @nav-link-color;
+      }
+
+      &.active {
+        background: lighten(@nav-link-bg, 5%);
+        color: lighten(@nav-link-color, 20%);
+        i {
+          color: lighten(@nav-link-color, 20%);
+        }
+      }
+
+      &:hover {
+        background: lighten(@nav-link-bg, 10%);
+      }
+    }
+
+    a + a {
+      border-top: solid 1px #999;
+    }
+  }
+}
+
+.layout > main, .layout > aside {
+  transform: translate3d(0, 0, 0);
+  transition: all 250ms ease-in-out;
+}
+
+// Media Query for <= 768px
+@media screen and (max-width: 768px) {
+
+  #layout-main {
+    > main {
+      left: 0;
+    }
+
+    > .nav-main {
+      left: -@aside-left-width;
+      width: @aside-left-width;
+    }
+
+    &.aside-icon-view {
+      > main {
+        left: 0;
+      }
+
+      > .nav-main {
+        left: -@aside-icon-view-width;
+        width: @aside-icon-view-width;
+      }
+    }
+
+    &.aside-left-on {
+      > main {
+        transform: translate3d(@aside-left-width, 0, 0);
+      }
+      > .nav-main {
+        transform: translate3d(@aside-left-width, 0, 0);
+      }
+    }
+
+    &.aside-left-on.aside-icon-view {
+      > main {
+        transform: translate3d(@aside-icon-view-width, 0, 0);
+      }
+
+      > .nav-main {
+        transform: translate3d(@aside-icon-view-width, 0, 0);
+      }
+    }
+  }
+}
+// end of Meteor Query for <= 768px
+
+// Media Query for > 768px
+@media screen and (min-width: 769px) {
+  .header-left {
+    display: none;
+  }
+
+  #layout-main {
+    > main {
+      left: @aside-left-width;
+    }
+
+    > .nav-main {
+      left: 0;
+      width: @aside-left-width;
+    }
+
+    &.aside-icon-view {
+      > main {
+        left: @aside-icon-view-width;
+      }
+
+      > .nav-main {
+        left: 0;
+        width: @aside-icon-view-width;
+      }
+    }
+  }
+}
+// end of Media Query for > 768px
+
+.icon-view-handle {
+
+  .clearfix();
+
+  i {
+    float: right;
+    padding: 5px 10px 5px 5px;
+    .border-left-radius(@border-radius-large);
+
+    background: rgba(128, 128, 128, .25);
+    color: #666;
+    cursor: pointer;
+
+    &:hover {
+      color: lighten(#666, 20%);
+    }
+  }
+}
+
+// Media Query for <= 768px
+@media screen and (max-width: 768px) {
+  .account-info {
+    display: inline-block;
+  }
+}
+
+// Media Query for > 768px
+@media screen and (min-width: 769px) {
+  .account-info {
+    display: none;
+  }
+}
+

@@ -1,0 +1,133 @@
+//
+// Balloon
+// --------------------------------------------------
+
+@zindex-balloon:                        @zindex-modal;
+@balloon-bg:                            #fff;
+@balloon-border-color:                  #999;
+
+@balloon-arrow-width:                   10px;
+@balloon-arrow-outer-width:             10px;
+
+@balloon-arrow-color:                   @balloon-bg;
+@balloon-arrow-outer-fallback-color:    @balloon-border-color;
+@balloon-arrow-outer-color:             @balloon-border-color;
+
+.balloon {
+  position: absolute;
+  top: @notification-btn-pos-top;
+  right: @notification-btn-pos-right;
+  max-width: 300px;
+  padding: 1px;
+  border: 1px solid @balloon-border-color;
+  border-radius: @border-radius-large;
+
+  z-index: @zindex-balloon;
+  display: none;
+
+  background-color: @balloon-bg;
+  background-clip: padding-box;
+  .box-shadow(1px 1px 5px rgba(0, 0, 0, .8));
+
+  // Offset the balloon to account for the balloon arrow
+  &.top     { margin-top: -@balloon-arrow-width; }
+  &.right   { margin-left: @balloon-arrow-width; }
+  &.bottom  { margin-top: @balloon-arrow-width; }
+  &.left    { margin-left: -@balloon-arrow-width; }
+}
+
+.mobile({
+.balloon {
+  top: @notification-btn-pos-top-mobile;
+  right: @notification-btn-pos-right-mobile;
+}
+});
+
+
+// Arrows
+//
+// .arrow is outer, .arrow:after is inner
+
+.balloon > .arrow {
+  &,
+  &:after {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+  }
+}
+.balloon > .arrow {
+  border-width: @balloon-arrow-outer-width;
+}
+.balloon > .arrow:after {
+  border-width: @balloon-arrow-width;
+  content: "";
+}
+
+.balloon {
+  &.top > .arrow {
+    left: 50%;
+    margin-left: -@balloon-arrow-outer-width;
+    border-bottom-width: 0;
+    border-top-color: @balloon-arrow-outer-fallback-color; // IE8 fallback
+    border-top-color: @balloon-arrow-outer-color;
+    bottom: -@balloon-arrow-outer-width;
+    &:after {
+      content: " ";
+      bottom: 1px;
+      margin-left: -@balloon-arrow-width;
+      border-bottom-width: 0;
+      border-top-color: @balloon-arrow-color;
+    }
+  }
+  &.right > .arrow {
+    top: 50%;
+    left: -@balloon-arrow-outer-width;
+    margin-top: -@balloon-arrow-outer-width;
+    border-left-width: 0;
+    border-right-color: @balloon-arrow-outer-fallback-color; // IE8 fallback
+    border-right-color: @balloon-arrow-outer-color;
+    &:after {
+      content: " ";
+      left: 1px;
+      bottom: -@balloon-arrow-width;
+      border-left-width: 0;
+      border-right-color: @balloon-arrow-color;
+    }
+  }
+  &.bottom > .arrow {
+    //left: 50%;
+    right: 10px;
+    margin-left: -@balloon-arrow-outer-width;
+    border-top-width: 0;
+    border-bottom-color: @balloon-arrow-outer-fallback-color; // IE8 fallback
+    border-bottom-color: @balloon-arrow-outer-color;
+    top: -@balloon-arrow-outer-width;
+    &:after {
+      content: " ";
+      top: 1px;
+      margin-left: -@balloon-arrow-width;
+      border-top-width: 0;
+      border-bottom-color: @balloon-arrow-color;
+    }
+  }
+
+  &.left > .arrow {
+    top: 50%;
+    right: -@balloon-arrow-outer-width;
+    margin-top: -@balloon-arrow-outer-width;
+    border-right-width: 0;
+    border-left-color: @balloon-arrow-outer-fallback-color; // IE8 fallback
+    border-left-color: @balloon-arrow-outer-color;
+    &:after {
+      content: " ";
+      right: 1px;
+      border-right-width: 0;
+      border-left-color: @balloon-arrow-color;
+      bottom: -@balloon-arrow-width;
+    }
+  }
+}

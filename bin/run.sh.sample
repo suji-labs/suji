@@ -1,0 +1,38 @@
+#!/bin/bash
+
+APPS=(admin batch front mobile)
+APP="none"
+
+for item in "${APPS[@]}"; do
+  if [ "$1" == "$item" ]; then
+    APP="$item"
+    break
+  fi
+done
+
+if [ "$APP" == "none" ]; then
+  echo "input argument as the app directory."
+  exit 1
+fi
+
+PROJECT_HOME="Your Project Home Directory Path"
+SERVER_URL="http://localhost:3000"
+OPTION_SETTINGS=""
+#OPTION_SETTINGS="--settings $PROJECT_HOME/conf/$MODE/settings-$APP-minified.json"
+#OPTION_MOBILE_SERVER="--mobile-server $SERVER_URL"
+OPTION_MOBILE_SERVER="--mobile-server $SERVER_URL"
+APP_PATH="$PROJECT_HOME/apps/$APP"
+
+
+# the argument $APP is passed into the env.sh
+echo "Loading Environment Variables"
+source $PROJECT_HOME/bin/env.sh
+
+
+echo "Starting Meteor"
+cd $APP_PATH
+meteor $OPTION_SETTINGS
+#meteor run android $OPTION_SETTINGS
+#meteor run android-device --verbose $OPTION_MOBILE_SERVER $OPTION_SETTINGS
+#meteor run ios $OPTION_SETTINGS
+#meteor run ios-device $OPTION_MOBILE_SERVER $OPTION_SETTINGS
