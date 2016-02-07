@@ -3,7 +3,7 @@
 Don't Download it. Coming soon
 
 ## Prerequisites
-
+* Node.js
 * Meteor
     - *Windows* -  Download and Install [Meteor](https://www.meteor.com/)
     - *Linux/Mac* - `curl https://install.meteor.com/ | sh`
@@ -19,4 +19,4 @@ TODO
 
 ## License
 
-2016 [MIT](http://opensource.org/licenses/mit-license.php) © [Dongkyu Lee](http://ledgku.tistory.com), [HyungTak Jin](njir.github.io), KimBoWoon
+2016 [MIT](http://opensource.org/licenses/mit-license.php) © [Dongkyu Lee](http://ledgku.tistory.com), [HyungTak Jin](http://njir.github.io), BoWoon Kim
