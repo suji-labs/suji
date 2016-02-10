@@ -1,0 +1,18 @@
+<div class="product-detail" layout="row">
+  <span flex=""></span>
+  <div layout="column">
+    <h1>Here are the details of the product</h1>
+    <form name="form" ng-submit="save()" class="md-whiteframe-z1" layout-padding>
+      <md-input-container>
+        <label>Name</label>
+        <input ng-model="product.name" placeholder="Name">
+      </md-input-container>  
+      <div layout="row">
+        <input class="md-button" type="submit" value="Save">
+        <md-button ng-click="reset()">Reset</md-button>
+        <md-button ng-click="/products">Cancel</md-button>
+      </div>
+    </form>
+  </div>
+  <span flex=""></span>
+</div>
