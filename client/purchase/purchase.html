@@ -1,0 +1,50 @@
+<ul>
+    <li><a ui-sref="home">Home</a></li>
+    <li><a ui-sref="startpos">Start POS</a></li>
+    <li><a ui-sref="purchase">Menu</a></li>
+    <li><a ui-sref="addCategory">Add Category</a></li>
+    <li><a ui-sref="article">Article</a></li>
+    <li><a ui-sref="about">About</a></li>
+</ul>
+
+<!-- manage view -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="jumbotron">
+                <h2><span class="text-warning">Purchase Log</span> </h2>
+                <span class="pull-right text-muted">Today is {{now | date : 'MMM dd, yyyy'}}</span>
+                <div class="text-success">{{store.STORE_NAME}}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="jumbotron">
+        <div class="container">
+            <div class="col-xs-offset-2 col-xs-8">
+
+                <div id = "manage" ng-controller = "PurchaseController">
+                    <table class = "table">
+                        <thead>
+                        <th><div class="text-info">Name</div></th>
+                        <th><div class="text-info">Quantity</div></th>
+                        <th><div class="text-info">Total Price</div></th>
+                        <th><div class="text-info">Purchase Time</div></th>
+                        <th>&nbsp;</th>
+                        </thead>
+                        <tbody>
+
+                        <tr ng-repeat = "item in itemlist">
+                            <td>{{item.NAME}}</td>
+                            <td>{{item.QUANTITY}}</td>
+                            <td>{{item.TOTAL_PRICE}}</td>
+                            <td>{{item.PURCHASE_TIME}}</td>
+                            <td><button class = "btn btn-danger" ng-click = "removeItem(item)">Remove</button></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

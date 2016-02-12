@@ -8,15 +8,15 @@ angular.module('suji-mr').config(function ($urlRouterProvider, $stateProvider, $
     $stateProvider
         .state('home', {
             url: '/home',
-            template: '<index></index>'
+            template: '<home></home>'
         })
         .state('startpos', {
             url: '/startpos',
             template: '<startpos></startpos>'
         })
-        .state('menu', {
-            url: '/menu',
-            template: '<menu></menu>'
+        .state('purchase', {
+            url: '/purchase',
+            template: '<purchase></purchase>'
         })
         .state('addCategory', {
             url: '/addCategory',
