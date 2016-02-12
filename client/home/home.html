@@ -1,11 +1,4 @@
-<ul>
-    <li><a ui-sref="home">Home</a></li>
-    <li><a ui-sref="startpos">Start POS</a></li>
-    <li><a ui-sref="purchase">Menu</a></li>
-    <li><a ui-sref="addCategory">Add Category</a></li>
-    <li><a ui-sref="article">Article</a></li>
-    <li><a ui-sref="about">About</a></li>
-</ul>
+<div ng-include="'client/header.html'"></div>
 
 <div class="jumbotron">
     <div class="container">
@@ -14,13 +7,13 @@
             <h1>Welcome</h1>
             <p>Choose Menu</p>
             <br>
-            <p><a href="#/pos">Start POS</a></p>
-            <p><a href="#/category">Add Category</a></p>
-            <p><a href="#/manage">Add Menu</a></p>
-            <p><a href="#/purchase">Purchase Log</a></p>
-            <p><a href="#/statistics">Statistics</a></p>
-            <p><a href="#/employee">Manage Employee</a></p>
-            <p><a href="#/login">Logout</a></p>
+            <p><a ui-sref="home">Home</a></p>
+            <p><a ui-sref="startpos">Start POS</a></p>
+            <p><a ui-sref="manage">Add Menu</a></p>
+            <p><a ui-sref="addCategory">Add Category</a></p>
+            <p><a ui-sref="purchase">Purchase Log</a></p>
+            <p><a ui-sref="article">Article</a></p>
+            <p><a ui-sref="about">About</a></p>
         </div>
     </div>
 </div>

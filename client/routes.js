@@ -14,13 +14,17 @@ angular.module('suji-mr').config(function ($urlRouterProvider, $stateProvider, $
             url: '/startpos',
             template: '<startpos></startpos>'
         })
-        .state('purchase', {
-            url: '/purchase',
-            template: '<purchase></purchase>'
+        .state('manage', {
+            url: '/manage',
+            template: '<manage></manage>'
         })
         .state('addCategory', {
             url: '/addCategory',
             template: '<addCategory></addCategory>'
+        })
+        .state('purchase', {
+            url: '/purchase',
+            template: '<purchase></purchase>'
         })
         .state('article', {
             url: '/article',
