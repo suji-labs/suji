@@ -27,6 +27,8 @@ Meteor.startup(function () {
     }
 
     Meteor.publish("menu", function () {
+        console.log("MongoDB Collection");
+        console.log(Menu._id);
         return Menu.find();
     });
 });
