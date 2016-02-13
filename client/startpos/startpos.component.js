@@ -6,6 +6,6 @@ angular.module('suji-mr').directive('startpos', function () {
     return {
         restrict: 'E',
         templateUrl: 'client/startpos/startpos.html',
-        controllerAs: 'startpos'
+        controllerAs: 'POSController'
     }
 });

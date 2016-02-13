@@ -1,7 +1,7 @@
 <div ng-include="'client/header.html'"></div>
 
 <!-- manage view -->
-<div class="container">
+<div class="container" ng-controller="CategoryController">
     <div class="row">
         <div class="col-md-12">
             <div class="jumbotron">
@@ -16,7 +16,7 @@
     <div class="jumbotron">
         <div class="container">
             <div class="col-xs-offset-2 col-xs-8">
-                <div id="category" ng-controller="CategoryController">
+                <div id="category">
                     <table class="table">
                         <thead>
                         <th>
