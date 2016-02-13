@@ -4,15 +4,23 @@
 
 angular.module('suji-mr').controller('manageController', function ($scope, $reactive) {
     $reactive(this).attach($scope);
-    $scope.now = new Date();
+    $scope.nowTime = new Date();
+
+    $scope.practice = [{name: 'b', price: 10, primepcost: 10, taxmode: false, category: 'FOOD'},
+        {name: 'c', price: 10, primepcost: 10, taxmode: false, category: 'FOOD'}];
 
     this.subscribe('menu');
 
     this.newMenu = {};
 
-    this.helpers({
+
+    $scope.helpers({
         menuList: () => {
+            console.log(Menu.find().fetch());
             return Menu.find({});
+        },
+        menuFindOne: () => {
+            return Menu.findOne();
         }
     });
 
