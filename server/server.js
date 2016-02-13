@@ -4,29 +4,46 @@
 
 Meteor.startup(function () {
     if (Menu.find().count() === 0) {
-        var parties = [
+        var menu = [
             {
                 'name': 'BREAD',
                 'price': 100,
-                'primepcost': 50,
-                'taxmode': false,
+                'primeCost': 50,
+                'taxMode': 'YES',
                 'category': 'FOOD'
             },
             {
                 'name': 'WATER',
                 'price': 80,
-                'primepcost': 60,
-                'taxmode': false,
+                'primeCost': 60,
+                'taxMode': 'NO',
                 'category': 'FOOD'
             }
         ];
 
-        for (var i = 0; i < parties.length; i++) {
-            Menu.insert(parties[i]);
+        for (var i = 0; i < menu.length; i++) {
+            Menu.insert(menu[i]);
+        }
+    }
+    if (Category.find().count() === 0) {
+        var category = [
+            {
+                'categoryName': 'FOOD'
+            },
+            {
+                'categoryName': 'DRINK'
+            }
+        ];
+
+        for (var j = 0; j < category.length; j++) {
+            Category.insert(category[j]);
         }
     }
 
     Meteor.publish("menu", function () {
         return Menu.find();
+    });
+    Meteor.publish("category", function () {
+        return Category.find();
     });
 });

@@ -28,19 +28,14 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <td><input type="text" class="form-control" ng-model="item.NAME"></td>
+                            <td><input type="text" class="form-control" ng-model="newCategory"></td>
                             <td>
-                                <button class="btn btn-primary" ng-click="addItem()">Add Item</button>
+                                <button class="btn btn-primary" ng-click="addCategory()">Add Item</button>
                             </td>
-                            <!--
-                                    <td><button class = "btn btn-info" ng-click = "update()">Update</button></td>
-                                    -->
                         </tr>
-                        <tr ng-repeat="item in itemlist">
-                            <td>{{item.NAME}}</td>
-                            <!--
-                                    <td><button class = "btn btn-warning" ng-click = "editItem(item)">Edit</button></td>
-                                    -->
+                        <tr ng-repeat="item in categoryList">
+                            <td>{{item.categoryName}}</td>
+                            <td><button class="btn btn-danger" ng-click="removeCategory(item)">Remove</button></td>
                         </tr>
                         </tbody>
                     </table>

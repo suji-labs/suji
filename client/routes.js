@@ -18,9 +18,9 @@ angular.module('suji-mr').config(function ($urlRouterProvider, $stateProvider, $
             url: '/manage',
             template: '<manage></manage>'
         })
-        .state('addCategory', {
-            url: '/addCategory',
-            template: '<addCategory></addCategory>'
+        .state('category', {
+            url: '/category',
+            template: '<category></category>'
         })
         .state('purchase', {
             url: '/purchase',

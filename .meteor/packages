@@ -17,3 +17,4 @@ es5-shim                # ECMAScript 5 compatibility for older browsers.
 insecure                # Allow all DB writes from clients (for prototyping)
 angular
 angularui:angular-ui-router
+mizzao:bootstrap-3

@@ -6,7 +6,7 @@
         <div class="col-md-12">
             <div class="jumbotron">
                 <h2><span class="text-warning">Manage Items</span> </h2>
-                <span class="pull-right text-muted">Today is {{nowTime}}</span>
+                <span class="pull-right text-muted">Today is {{now}}</span>
                 <div class="text-success">{{store.STORE_NAME}}</div>
             </div>
         </div>
@@ -35,18 +35,18 @@
 
                             <td>
                                 <select ng-model="newMenu.CATEGORY_NAME">
-                                    <option ng-repeat="category in categories" value="{{category.NAME}}" >{{category.NAME}}</option>
+                                    <option ng-repeat="category in categoryList">{{category.categoryName}}</option>
                                 </select>
                             </td>
-                            <td><button class = "btn btn-primary" ng-click = "addItem()">Add Item</button></td>
+                            <td><button class="btn btn-primary" ng-click="addItem()">Add Item</button></td>
                         </tr>
                         <tr ng-repeat="item in menuList">
                             <td>{{item.name}}</td>
                             <td>{{item.price}}</td>
-                            <td>{{item.primepcost}}</td>
-                            <td>{{item.taxmode}}</td>
+                            <td>{{item.primeCost}}</td>
+                            <td>{{item.taxMode}}</td>
                             <td>{{item.category}}</td>
-                            <td><button class = "btn btn-danger" ng-click = "removeItem(item)">Remove</button></td>
+                            <td><button class = "btn btn-danger" ng-click="removeItem(item)">Remove</button></td>
                         </tr>
                         </tbody>
                     </table>
