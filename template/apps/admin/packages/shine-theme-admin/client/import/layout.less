@@ -1,0 +1,154 @@
+//
+// Layout
+//------------------------------------------------------------------------------
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.layout {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.layout > header {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: @header-height;
+  z-index: @zindex-navbar-fixed;
+}
+
+.layout > main {
+  position: absolute;
+  overflow: hidden;
+  top: @header-height;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.layout > main, .layout > aside {
+  transform: translate3d(0, 0, 0);
+  transition: all 250ms ease-in-out;
+}
+
+// Media Query for <= 768px
+@media screen and (max-width: 768px) {
+
+  #layout-main {
+    > main {
+      left: 0;
+    }
+
+    > aside.left {
+      left: -@aside-left-width;
+      width: @aside-left-width;
+    }
+
+    &.aside-icon-view {
+      > main {
+        left: 0;
+      }
+
+      > aside.left {
+        left: -@aside-icon-view-width;
+        width: @aside-icon-view-width;
+      }
+    }
+
+    &.aside-left-on {
+      > main {
+        transform: translate3d(@aside-left-width, 0, 0);
+      }
+      > aside.left {
+        transform: translate3d(@aside-left-width, 0, 0);
+      }
+    }
+
+    &.aside-left-on.aside-icon-view {
+      > main {
+        transform: translate3d(@aside-icon-view-width, 0, 0);
+      }
+
+      > aside.left {
+        transform: translate3d(@aside-icon-view-width, 0, 0);
+      }
+    }
+  }
+}
+// end of Meteor Query for <= 768px
+
+// Media Query for > 768px
+@media screen and (min-width: 769px) {
+  .header-left {
+    display: none;
+  }
+
+  #layout-main {
+    > main {
+      left: @aside-left-width;
+    }
+
+    > aside.left {
+      left: 0;
+      width: @aside-left-width;
+    }
+
+    &.aside-icon-view {
+      > main {
+        left: @aside-icon-view-width;
+      }
+
+      > aside.left {
+        left: 0;
+        width: @aside-icon-view-width;
+      }
+    }
+  }
+}
+// end of Media Query for > 768px
+
+
+main#content {
+
+  > article.page {
+    position: absolute;
+    overflow: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  > footer {
+    position: absolute;
+    overflow: hidden;
+    bottom: 0;
+    height: @footer-height;
+    width: 100%;
+    z-index: @zindex-navbar-fixed;
+
+    display: none;
+  }
+
+  &.footer-on {
+    > article.page {
+      bottom: @footer-height;
+    }
+
+    > footer {
+      display: block;
+    }
+  }
+}
+

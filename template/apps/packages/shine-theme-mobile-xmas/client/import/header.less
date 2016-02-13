@@ -1,0 +1,80 @@
+// header style
+main#content > header {
+  border-bottom: 1px solid @header-border-color;
+  background: @header-bg-color;
+  color: #fff;
+
+  .box-shadow(0 1px 1px rgba(0, 0, 0, .25));
+
+  .logo {
+    text-align: center;
+    line-height: @header-height;
+    color: @header-color;
+    font-size: 1.4em;
+
+    img {
+      height: 36px;
+    }
+  }
+
+  .header-left {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 8px;
+
+    .clearfix();
+  }
+
+  .header-right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 8px;
+
+    .clearfix();
+  }
+
+  .header-item {
+    float: left;
+  }
+
+  .header-item + .header-item {
+    margin-left: 5px;
+  }
+
+  .brand a {
+    color: @logo-color;
+    font-size: @logo-font-size;
+    //font-weight: bold;
+    line-height: 34px;
+    letter-spacing: 1px;
+    //text-shadow: 1px 1px @gray;
+    text-decoration: none;
+  }
+
+  .btn-header {
+    padding: 2px 2px 1px;
+    border: solid 1px @header-bg-color;
+
+    background: @header-bg-color;
+    color: @header-color;
+    i {
+      color: @header-color;
+      font-size: 2em;
+    }
+
+    span {
+      margin: 0 5px;
+    }
+
+    &:hover {
+      background: darken(@header-bg-color, 10%);
+      color: @header-hover-color;
+
+      i {
+        color: @header-hover-color;
+      }
+    }
+  }
+}

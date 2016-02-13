@@ -1,0 +1,67 @@
+
+.cloudinary-uploader:before,
+.cloudinary-uploader:after {
+  content: " ";
+  display: table;
+}
+
+.cloudinary-uploader:after {
+  clear: both;
+}
+
+.cloudinary-uploader:before,
+.cloudinary-uploader:after {
+  content: " ";
+  display: table;
+}
+
+.cloudinary-uploader:after {
+  clear: both;
+}
+
+.cloudinary-uploader .fileinput-button {
+  float: left;
+  position: relative;
+  overflow: hidden;
+  padding: 5px 20px;
+}
+
+.cloudinary-uploader .fileinput-button input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  opacity: 0;
+  -ms-filter: 'alpha(opacity=0)';
+  font-size: 200px;
+  direction: ltr;
+  cursor: pointer;
+}
+
+.cloudinary-progress {
+  width: 100%;
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  background: #464545;
+  border:none;
+  z-index: 9999;
+}
+
+.cloudinary-progress .progress {
+  height: 4px;
+  background: #464545;
+  border:none;
+  margin: 0;
+}
+
+.progress-bar.progress-bar-success {
+  height: 4px;
+  background: #5bc0de;
+  border:none;
+}
