@@ -4,3 +4,4 @@
 
 Menu = new Mongo.Collection("menu");
 Category = new Mongo.Collection("category");
+Purchase = new Mongo.Collection("purchase");

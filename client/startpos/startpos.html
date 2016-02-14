@@ -14,14 +14,14 @@
     <div class="row">
         <div class="col-sm-6">
             <div class="well">
-                <div ng-repeat="category in categoryList">
+                <div ng-repeat="item in categoryList">
                     <div class="box">
-                        <div class="text-info">{{category.categoryName}}</div>
+                        <div class="text-info">{{item.categoryName}}</div>
                         <hr>
-                        <button ng-if="$parent.$index % 2 == 0" ng-repeat="one in menuList"
-                        class="buttons btn btn-primary" ng-click="add(one)">{{one.name}}</button>
-                        <button ng-if="$parent.$index % 2 != 0" ng-repeat="one in menuList"
-                        class="buttons btn btn-success" ng-click="add(one)">{{one.name}}</button>
+                        <button ng-if="$parent.$index % 2 == 0" ng-repeat="one in findCategory(item.categoryName)"
+                                class="buttons btn btn-primary" ng-click="add(one)">{{one.name}}</button>
+                        <button ng-if="$parent.$index % 2 != 0" ng-repeat="one in findCategory(item.categoryName)"
+                                class="buttons btn btn-success" ng-click="add(one)">{{one.name}}</button>
                     </div>
                     <br>
                 </div>
@@ -40,8 +40,7 @@
                         </div>
                         <ul class="list-group">
                             <li float="clear" class="list-group-item" ng-repeat="item in order">
-                                <span> {{item.item.NAME}}</span>
-
+                                <span> {{item.item.name}}</span>
                                 <div class="btn-group pull-right" role="group" aria-label="...">
                                     <button type="button" class="btn btn-xs " ng-disabled=""
                                             ng-click="subtractItem(item, $index)">
@@ -56,10 +55,8 @@
                                 </div>
                                 <div class="label label-success pull-right">${{item.totalPrice}}</div>
                                 <div class="label label-default pull-right">{{item.orderedItemCnt}}</div>
-
                             </li>
                         </ul>
-
                     </div>
                     <div class="panel-footer" ng-show="order.length">
                         <div class="label label-danger ">Total: {{1 + 2}}</div>

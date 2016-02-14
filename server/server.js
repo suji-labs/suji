@@ -17,7 +17,7 @@ Meteor.startup(function () {
                 'price': 80,
                 'primeCost': 60,
                 'taxMode': 'NO',
-                'category': 'FOOD'
+                'category': 'DRINK'
             }
         ];
 
@@ -43,7 +43,12 @@ Meteor.startup(function () {
     Meteor.publish("menu", function () {
         return Menu.find();
     });
+
     Meteor.publish("category", function () {
         return Category.find();
+    });
+
+    Meteor.publish("purchase", function () {
+        return Purchase.find();
     });
 });

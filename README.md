@@ -28,11 +28,12 @@ Don't Download it. Coming soon
     - *Linux/Mac* - `curl https://install.meteor.com/ | sh`
 
 ## Execution
-* Clone
-    - git clone https://github.com/naver-d2-suji/suji-mr.git
-    - cd suji-mr
-    - git checkout feature/BoWoon
-    - meteor
+```
+git clone https://github.com/naver-d2-suji/suji-mr.git
+cd suji-mr
+git checkout feature/BoWoon
+meteor
+```
 
 ## Reference
 - Meteor
