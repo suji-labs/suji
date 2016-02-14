@@ -13,8 +13,8 @@ Don't Download it. Coming soon
 | 메뉴 추가 |	POST	| localhost:3000/manage | complete |
 | 메뉴 삭제 |	POST	| localhost:3000/manage | complete |
 | 구매 목록 |	GET	| NULL | TODO |
-| 구매 리스트 추가 |	POST	| NULL | TODO |
-| 구매 리스트 삭제 |	POST	| NULL | TODO |
+| 구매 리스트 추가 |	POST	| http://localhost:3000/startpos | complete |
+| 구매 리스트 삭제 |	POST	| http://localhost:3000/startpos | complete |
 | 일별 매출 현황 |	GET	| NULL | TODO |
 | 직원 목록 보기 |	GET	| NULL | TODO |
 | 직원 추가 |	POST	| NULL | TODO |
