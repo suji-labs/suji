@@ -11,6 +11,7 @@ angular.module('suji-mr').controller('PurchaseController', function ($scope, $re
     this.sort = {
         time: -1
     };
+
     this.subscribe('purchase', () => {
         return [
             {

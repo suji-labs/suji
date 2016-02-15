@@ -8,16 +8,35 @@ angular.module('suji-mr').controller('POSController', function ($scope, $reactiv
     $scope.order = [];
     $scope.isDisabled = true;
 
-    this.subscribe('menu');
-    this.subscribe('category');
+    this.menuSort = {
+        name: 1
+    };
+    this.categorySort = {
+        categoryName: 1
+    };
+    this.subscribe('category', () => {
+        return [
+            {
+                sort: this.getReactively('categorySort')
+            }
+        ]
+    });
+
+    this.subscribe('menu', () => {
+        return [
+            {
+                sort: this.getReactively('menuSort')
+            }
+        ]
+    });
     this.subscribe('purchase');
 
     $scope.helpers({
         menuList: () => {
-            return Menu.find({});
+            return Menu.find({}, {sort: this.getReactively('menuSort')});
         },
         categoryList: () => {
-            return Category.find({});
+            return Category.find({}, {sort: this.getReactively('categorySort')});
         }
     });
 
