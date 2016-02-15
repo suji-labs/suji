@@ -15,7 +15,7 @@ Don't Download it. Coming soon
 | 구매 목록 |	GET	| NULL | TODO |
 | 구매 리스트 추가 |	POST	| http://localhost:3000/startpos | complete |
 | 구매 리스트 삭제 |	POST	| http://localhost:3000/startpos | complete |
-| 일별 매출 현황 |	GET	| NULL | TODO |
+| 일별 매출 현황 |	GET	| http://localhost:3000/purchase | complete |
 | 직원 목록 보기 |	GET	| NULL | TODO |
 | 직원 추가 |	POST	| NULL | TODO |
 | 직원 삭제 |	DELETE	| NULL | TODO |
