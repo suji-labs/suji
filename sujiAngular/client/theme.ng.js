@@ -3,6 +3,6 @@
 angular.module('sujiAngularApp')
 .config(function($mdThemingProvider) {
   $mdThemingProvider.theme('default')
-  .primaryPalette('deep-orange')
-  .accentPalette('lime');
+  .primaryPalette('light-blue')
+  .accentPalette('blue');
 });

@@ -1,7 +1,7 @@
 'use strict'
 
 angular.module('sujiAngularApp')
-.controller('AuthenticationCtrl', function($scope) {
+.controller('AuthenticateCtrl', function($scope) {
   // For using jquery function in Angular
   // created by njir on 2016.02.12
   $(function() {
@@ -45,5 +45,5 @@ angular.module('sujiAngularApp')
   }); //Links to jsfiddle must be accompanied by code
   
   
-  $scope.viewName = 'Authentication';
+  $scope.viewName = 'Authenticate';
 });
