@@ -27,11 +27,11 @@
                         </thead>
                         <tbody>
 
-                        <tr ng-repeat = "item in itemlist">
-                            <td>{{item.NAME}}</td>
-                            <td>{{item.QUANTITY}}</td>
-                            <td>{{item.TOTAL_PRICE}}</td>
-                            <td>{{item.PURCHASE_TIME}}</td>
+                        <tr ng-repeat = "item in purchaseList">
+                            <td>{{item.name}}</td>
+                            <td>{{item.quantity}}</td>
+                            <td>{{item.totalPrice}}</td>
+                            <td>{{item.time}}</td>
                             <td><button class = "btn btn-danger" ng-click = "removeItem(item)">Remove</button></td>
                         </tr>
                         </tbody>
