@@ -4,5 +4,10 @@
 
 angular.module('suji-mr', [
     'angular-meteor',
-    'ui.router'
+    'ui.router',
+    'accounts.ui'
 ]);
+
+Accounts.ui.config({
+    passwordSignupFields: 'USERNAME_ONLY'
+});

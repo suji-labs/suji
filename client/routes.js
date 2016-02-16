@@ -12,23 +12,73 @@ angular.module('suji-mr').config(function ($urlRouterProvider, $stateProvider, $
         })
         .state('startpos', {
             url: '/startpos',
-            template: '<startpos></startpos>'
+            template: '<startpos></startpos>',
+            resolve: {
+                currentUser: ($q) => {
+                    if (Meteor.userId() == null) {
+                        return $q.reject();
+                    }
+                    else {
+                        return $q.resolve();
+                    }
+                }
+            }
         })
         .state('manage', {
             url: '/manage',
-            template: '<manage></manage>'
+            template: '<manage></manage>',
+            resolve: {
+                currentUser: ($q) => {
+                    if (Meteor.userId() == null) {
+                        return $q.reject();
+                    }
+                    else {
+                        return $q.resolve();
+                    }
+                }
+            }
         })
         .state('category', {
             url: '/category',
-            template: '<category></category>'
+            template: '<category></category>',
+            resolve: {
+                currentUser: ($q) => {
+                    if (Meteor.userId() == null) {
+                        return $q.reject();
+                    }
+                    else {
+                        return $q.resolve();
+                    }
+                }
+            }
         })
         .state('purchase', {
             url: '/purchase',
-            template: '<purchase></purchase>'
+            template: '<purchase></purchase>',
+            resolve: {
+                currentUser: ($q) => {
+                    if (Meteor.userId() == null) {
+                        return $q.reject();
+                    }
+                    else {
+                        return $q.resolve();
+                    }
+                }
+            }
         })
         .state('article', {
             url: '/article',
-            template: '<article></article>'
+            template: '<article></article>',
+            resolve: {
+                currentUser: ($q) => {
+                    if (Meteor.userId() == null) {
+                        return $q.reject();
+                    }
+                    else {
+                        return $q.resolve();
+                    }
+                }
+            }
         })
         .state('about', {
             url: '/about',

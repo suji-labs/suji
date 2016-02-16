@@ -3,8 +3,8 @@ Don't Download it. Coming soon
 
 | Feature |	Method	| Request URL | Todo Status |
 | :------------ |	:-------:	| :-----------------| :--------: |
-| 회원가입 |	POST	| NULL | TODO |
-| 로그인 |	GET	| NULL | TODO |
+| 회원가입 |	POST	| Meteor Library | complete |
+| 로그인 |	GET	| Meteor Library | complete |
 | 카테고리 목록 |	GET	| localhost:3000/category | complete |
 | 카테고리 추가 |	POST	| localhost:3000/category | complete |
 | 카테고리 제거 |	POST	| localhost:3000/category | complete |

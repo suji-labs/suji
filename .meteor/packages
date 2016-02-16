@@ -18,3 +18,5 @@ insecure                # Allow all DB writes from clients (for prototyping)
 angular
 angularui:angular-ui-router
 mizzao:bootstrap-3
+accounts-password
+dotansimha:accounts-ui-angular

@@ -54,6 +54,7 @@ angular.module('suji-mr').controller('POSController', function ($scope, $reactiv
     };
 
     $scope.add = (item) => {
+        this.order.owner = Meteor.user()._id;
         $scope.orderedItemCnt = 1;
         var foodItem = {
             orderedItemCnt: 1,
