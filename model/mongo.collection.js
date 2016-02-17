@@ -8,27 +8,27 @@ Purchase = new Mongo.Collection("purchase");
 
 Menu.allow({
     insert: function (userId, item) {
-        return userId && item.owner === userId;
-    },
-    update: function (userId, item, fields, modifier) {
-        return userId && item.owner === userId;
+        return true;
     },
     remove: function (userId, item) {
-        return userId && item.owner === userId;
+        return true;
     }
 });
 
 Category.allow({
     insert: function (userId, item) {
-        return userId && item.owner === userId;
+        return true;
     },
     remove: function (userId, item) {
-        return userId && item.owner === userId;
+        return true;
     }
 });
 
 Purchase.allow({
+    insert: function (userId, item) {
+        return true;
+    },
     remove: function (userId, item) {
-        return userId && item.owner === userId;
+        return true;
     }
 });
