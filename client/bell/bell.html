@@ -1,0 +1,41 @@
+<div ng-include="'client/header.html'"></div>
+
+<!-- manage view -->
+<div class="container" ng-controller="bellController">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="jumbotron">
+                <h2><span class="text-warning">Bell</span> </h2>
+                <span class="pull-right text-muted">Today is {{now | date : 'MMM dd, yyyy'}}</span>
+                <div class="text-success">{{store.STORE_NAME}}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="jumbotron">
+        <div class="container">
+            <div class="col-xs-offset-2 col-xs-8">
+                <div id = "manage">
+                    <table class = "table">
+                        <thead>
+                        <th><div class="text-info">Name</div></th>
+                        <th>&nbsp;</th>
+                        </thead>
+                        <tbody>
+
+                        <tr>
+                            <td><input type="text" class="form-control" ng-model="newBell.id"></td>
+                            <td><button class="btn btn-danger" ng-click="addBell()">add Bell</button></td>
+                        </tr>
+                        <tr ng-repeat="bell in bellList">
+                            <td>{{bell.id}}</td>
+                            <td><button class="btn btn-danger" ng-click="callBell(item)">Call</button></td>
+                            <td><button class="btn btn-danger" ng-click="removeBell(item)">Remove</button></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

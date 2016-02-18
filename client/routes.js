@@ -66,9 +66,9 @@ angular.module('suji-mr').config(function ($urlRouterProvider, $stateProvider, $
                 }
             }
         })
-        .state('article', {
-            url: '/article',
-            template: '<article></article>',
+        .state('bell', {
+            url: '/bell',
+            template: '<bell></bell>',
             resolve: {
                 currentUser: ($q) => {
                     if (Meteor.userId() == null) {

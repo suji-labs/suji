@@ -5,8 +5,6 @@
 angular.module('suji-mr').controller('PurchaseController', function ($scope, $reactive) {
     $reactive(this).attach($scope);
     $scope.now = new Date();
-    $scope.order = [];
-    $scope.isDisabled = true;
 
     this.sort = {
         time: -1

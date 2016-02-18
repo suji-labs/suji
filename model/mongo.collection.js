@@ -5,6 +5,7 @@
 Menu = new Mongo.Collection("menu");
 Category = new Mongo.Collection("category");
 Purchase = new Mongo.Collection("purchase");
+Bell = new Mongo.Collection("bell");
 
 Menu.allow({
     insert: function (userId, item) {
@@ -16,6 +17,15 @@ Menu.allow({
 });
 
 Category.allow({
+    insert: function (userId, item) {
+        return true;
+    },
+    remove: function (userId, item) {
+        return true;
+    }
+});
+
+Purchase.allow({
     insert: function (userId, item) {
         return true;
     },

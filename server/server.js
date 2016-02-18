@@ -51,4 +51,8 @@ Meteor.startup(function () {
     Meteor.publish("purchase", function () {
         return Purchase.find();
     });
+
+    Meteor.publish("bell", function () {
+        return Bell.find();
+    });
 });
