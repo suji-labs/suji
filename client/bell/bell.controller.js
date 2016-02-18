@@ -25,14 +25,14 @@ angular.module('suji-mr').controller('bellController', function ($scope, $reacti
     });
 
     $scope.addBell = () => {
-        Menu.insert({
+        Bell.insert({
             bellID: $scope.newBell.id
         });
         $scope.newBell = null;
     };
 
-    $scope.callBell = (bell) => {
-        window.alert(bell.id + "Call");
+    $scope.callBell = (item) => {
+        window.alert(item.bellID + "Call");
     };
 
     $scope.removeBell = (item) => {

@@ -25,12 +25,12 @@
 
                         <tr>
                             <td><input type="text" class="form-control" ng-model="newBell.id"></td>
-                            <td><button class="btn btn-danger" ng-click="addBell()">add Bell</button></td>
+                            <td><button class="btn btn-primary" ng-click="addBell()">add Bell</button></td>
                         </tr>
                         <tr ng-repeat="bell in bellList">
-                            <td>{{bell.id}}</td>
-                            <td><button class="btn btn-danger" ng-click="callBell(item)">Call</button></td>
-                            <td><button class="btn btn-danger" ng-click="removeBell(item)">Remove</button></td>
+                            <td>{{bell.bellID}}</td>
+                            <td><button class="btn btn-success" ng-click="callBell(bell)">Call</button></td>
+                            <td><button class="btn btn-danger" ng-click="removeBell(bell)">Remove</button></td>
                         </tr>
                         </tbody>
                     </table>
