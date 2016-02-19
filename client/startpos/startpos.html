@@ -18,9 +18,10 @@
                     <div class="box">
                         <div class="text-info">{{item.categoryName}}</div>
                         <hr>
-                        <button ng-if="$parent.$index % 2 == 0" ng-repeat="one in findCategory(item.categoryName)"
+                        <div ng-init="menuCategory=findCategory(item.categoryName)"></div>
+                        <button ng-if="$parent.$index % 2 == 0" ng-repeat="one in menuCategory"
                                 class="buttons btn btn-primary" ng-click="add(one)">{{one.name}}</button>
-                        <button ng-if="$parent.$index % 2 != 0" ng-repeat="one in findCategory(item.categoryName)"
+                        <button ng-if="$parent.$index % 2 != 0" ng-repeat="one in menuCategory"
                                 class="buttons btn btn-success" ng-click="add(one)">{{one.name}}</button>
                     </div>
                     <br>

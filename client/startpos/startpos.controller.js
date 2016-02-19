@@ -33,14 +33,15 @@ angular.module('suji-mr').controller('POSController', function ($scope, $reactiv
 
     $scope.helpers({
         menuList: () => {
-            return Menu.find({}, {sort: this.getReactively('menuSort')});
+            return Menu.find({}, {sort: this.getReactively('menuSort')}).fetch();
         },
         categoryList: () => {
-            return Category.find({}, {sort: this.getReactively('categorySort')});
+            return Category.find({}, {sort: this.getReactively('categorySort')}).fetch();
         }
     });
 
     $scope.findCategory = (item) => {
+        console.log(Menu.find({category: item}).fetch());
         return Menu.find({category: item}).fetch();
     };
 
