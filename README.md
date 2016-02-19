@@ -8,7 +8,7 @@ Don't Download it. Coming soon
 | 카테고리 목록 |	GET	| localhost:3000/category | complete |
 | 카테고리 추가 |	POST	| localhost:3000/category | complete |
 | 카테고리 제거 |	POST	| localhost:3000/category | complete |
-| 카테고리별 메뉴 목록 |	GET	| NULL | TODO |
+| 카테고리별 메뉴 목록 |	GET	| localhost:3000/manage | complete |
 | 메뉴 목록 |	GET	| localhost:3000/manage | complete |
 | 메뉴 추가 |	POST	| localhost:3000/manage | complete |
 | 메뉴 삭제 |	POST	| localhost:3000/manage | complete |
