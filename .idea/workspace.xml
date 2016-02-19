@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9d3b1551-4992-4b62-84f8-05dd899ff0ae" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/startpos/startpos.controller.js" afterPath="$PROJECT_DIR$/client/startpos/startpos.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/startpos/startpos.html" afterPath="$PROJECT_DIR$/client/startpos/startpos.html" />
     </list>
     <ignored path="suji-mr.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,21 +43,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="startpos.controller.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="startpos.controller.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/startpos/startpos.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5234114">
-              <caret line="43" column="55" selection-start-line="43" selection-start-column="55" selection-end-line="43" selection-end-column="55" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="47" column="32" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="startpos.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="startpos.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/startpos/startpos.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.464286">
-              <caret line="21" column="95" selection-start-line="21" selection-start-column="95" selection-end-line="21" selection-end-column="95" />
+            <state vertical-scroll-proportion="0.8">
+              <caret line="34" column="41" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -863,18 +861,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/startpos/startpos.html">
+    <entry file="file://$PROJECT_DIR$/client/startpos/startpos.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.464286">
-          <caret line="21" column="95" selection-start-line="21" selection-start-column="95" selection-end-line="21" selection-end-column="95" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="47" column="32" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/startpos/startpos.controller.js">
+    <entry file="file://$PROJECT_DIR$/client/startpos/startpos.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5234114">
-          <caret line="43" column="55" selection-start-line="43" selection-start-column="55" selection-end-line="43" selection-end-column="55" />
+        <state vertical-scroll-proportion="0.8">
+          <caret line="34" column="41" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
           <folding />
         </state>
       </provider>
