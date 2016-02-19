@@ -8,37 +8,37 @@ Purchase = new Mongo.Collection("purchase");
 Bell = new Mongo.Collection("bell");
 
 Menu.allow({
-    insert: function (userId, item) {
-        return true;
+    insert: function (userId) {
+        return userId != null;
     },
-    remove: function (userId, item) {
-        return true;
+    remove: function (userId) {
+        return userId != null;
     }
 });
 
 Category.allow({
-    insert: function (userId, item) {
-        return true;
+    insert: function (userId) {
+        return userId != null;
     },
-    remove: function (userId, item) {
-        return true;
+    remove: function (userId) {
+        return userId != null;
     }
 });
 
 Purchase.allow({
-    insert: function (userId, item) {
-        return true;
+    insert: function (userId) {
+        return userId != null;
     },
-    remove: function (userId, item) {
-        return true;
+    remove: function (userId) {
+        return userId != null;
     }
 });
 
-Purchase.allow({
-    insert: function (userId, item) {
-        return true;
+Bell.allow({
+    insert: function (userId) {
+        return userId != null;
     },
-    remove: function (userId, item) {
-        return true;
+    remove: function (userId) {
+        return userId != null;
     }
 });
