@@ -31,6 +31,12 @@
 
         <div class="col-sm-6">
             <div class="well">
+                <form ng-submit="barcodeInput()">
+                    <div>
+                        <label>Input Barcode</label>
+                        <input type="text" class="form-control" ng-model="barcode.productBarcode">
+                    </div>
+                </form>
                 <div class="panel panel-primary">
                     <div class="panel-heading">
                         <h3 class="panel-title">Order Summary</h3>

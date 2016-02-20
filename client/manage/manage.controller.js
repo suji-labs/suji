@@ -25,6 +25,7 @@ angular.module('suji-mr').controller('manageController', function ($scope, $reac
             name: $scope.newMenu.NAME,
             price: $scope.newMenu.PRICE,
             primeCost: $scope.newMenu.PRIME_COST,
+            barcode : $scope.newMenu.BARCODE,
             taxMode: taxMode,
             category: $scope.newMenu.CATEGORY_NAME
         });

@@ -21,6 +21,7 @@
                         <th><div class="text-info">Name</div></th>
                         <th><div class="text-info">Price</div></th>
                         <th><div class="text-info">Prime Cost</div></th>
+                        <th><div class="text-info">Barcode</div></th>
                         <th><div class="text-info">isTaxable</div></th>
                         <th><div class="text-info">Category</div></th>
                         <th><div class="text-info">Action</div></th>
@@ -31,6 +32,7 @@
                             <td><input type="text" class="form-control" ng-model="newMenu.NAME"></td>
                             <td><input type="number" class="form-control" ng-model="newMenu.PRICE"></td>
                             <td><input type="number" class="form-control" ng-model="newMenu.PRIME_COST"></td>
+                            <td><input type="text" class="form-control" ng-model="newMenu.BARCODE"></td>
                             <td><input type='checkbox' ng-model="newMenu.TAX_MODE"></td>
 
                             <td>
@@ -44,6 +46,7 @@
                             <td>{{item.name}}</td>
                             <td>{{item.price}}</td>
                             <td>{{item.primeCost}}</td>
+                            <td>{{item.barcode}}</td>
                             <td>{{item.taxMode}}</td>
                             <td>{{item.category}}</td>
                             <td><button class = "btn btn-danger" ng-click="removeItem(item)">Remove</button></td>
