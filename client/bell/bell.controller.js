@@ -34,7 +34,7 @@ angular.module('suji-mr').controller('bellController', function ($scope, $reacti
     $scope.callBell = (item) => {
         Meteor.call('serialPort', "S11");
 
-        window.alert(item.bellID + "Call");
+        window.alert("Called " + item.bellID);
 
         //setTimeout(function(){
         //   sp.close(function(){
@@ -45,7 +45,7 @@ angular.module('suji-mr').controller('bellController', function ($scope, $reacti
     $scope.stopBell = (item) => {
         Meteor.call('serialPort', "S01");
 
-        window.alert(item.bellID + "Stop");
+        window.alert("Stopped " + item.bellID);
 
         //setTimeout(function(){
         //   sp.close(function(){
