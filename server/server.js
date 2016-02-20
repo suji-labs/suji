@@ -64,7 +64,6 @@ Meteor.startup(function () {
 
 });
 
-
 function serial(code) {
     var serialport = Meteor.npmRequire('serialport');
     var SerialPort = serialport.SerialPort;
