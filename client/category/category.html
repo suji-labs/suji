@@ -1,0 +1,46 @@
+<div ng-include="'client/header.html'"></div>
+
+<!-- manage view -->
+<div class="container" ng-controller="CategoryController">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="jumbotron">
+                <h2><span class="text-warning">Add Category</span></h2>
+                <span class="pull-right text-muted">Today is {{now | date : 'MMM dd, yyyy'}}</span>
+                <div class="text-success">{{store.STORE_NAME}}</div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="jumbotron">
+        <div class="container">
+            <div class="col-xs-offset-2 col-xs-8">
+                <div id="category">
+                    <table class="table">
+                        <thead>
+                        <th>
+                            <div class="text-info">Category Name</div>
+                        </th>
+                        <th>
+                            <div class="text-info">Action</div>
+                        </th>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><input type="text" class="form-control" ng-model="newCategory"></td>
+                            <td>
+                                <button class="btn btn-primary" ng-click="addCategory()">Add Item</button>
+                            </td>
+                        </tr>
+                        <tr ng-repeat="item in categoryList">
+                            <td>{{item.categoryName}}</td>
+                            <td><button class="btn btn-danger" ng-click="removeCategory(item)">Remove</button></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
