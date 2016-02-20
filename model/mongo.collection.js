@@ -7,6 +7,9 @@ Category = new Mongo.Collection("category");
 Purchase = new Mongo.Collection("purchase");
 Bell = new Mongo.Collection("bell");
 
+Serial = new Mongo.Collection("serial");
+
+
 Menu.allow({
     insert: function (userId) {
         return userId != null;

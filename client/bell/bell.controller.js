@@ -32,9 +32,27 @@ angular.module('suji-mr').controller('bellController', function ($scope, $reacti
     };
 
     $scope.callBell = (item) => {
-        window.alert(item.bellID + "Call");
-    };
+        Meteor.call('serialPort', "S11");
 
+        window.alert(item.bellID + "Call");
+
+        //setTimeout(function(){
+        //   sp.close(function(){
+        //      console.log("close");
+        //   });
+        //}, 1500);
+    };
+    $scope.stopBell = (item) => {
+        Meteor.call('serialPort', "S01");
+
+        window.alert(item.bellID + "Stop");
+
+        //setTimeout(function(){
+        //   sp.close(function(){
+        //      console.log("close");
+        //   });
+        //}, 1500);
+    };
     $scope.removeBell = (item) => {
         Bell.remove({_id: item._id});
     };

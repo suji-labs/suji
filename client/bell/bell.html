@@ -30,6 +30,7 @@
                         <tr ng-repeat="bell in bellList">
                             <td>{{bell.bellID}}</td>
                             <td><button class="btn btn-success" ng-click="callBell(bell)">Call</button></td>
+                            <td><button class="btn btn-primary" ng-click="stopBell(bell)">Stop</button></td>
                             <td><button class="btn btn-danger" ng-click="removeBell(bell)">Remove</button></td>
                         </tr>
                         </tbody>
