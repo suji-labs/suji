@@ -54,6 +54,7 @@ angular.module('suji-mr').controller('POSController', function ($scope, $reactiv
     };
 
     $scope.add = (item) => {
+        console.log(item.barcode);
         $scope.orderedItemCnt = 1;
         var foodItem = {
             orderedItemCnt: 1,
@@ -61,7 +62,7 @@ angular.module('suji-mr').controller('POSController', function ($scope, $reactiv
             itemId: item.name,
             id: $scope.itemsCnt,
             item: item,
-            barcode: $scope.barcode.productBarcode
+            barcode: item.barcode
         };
 
         var cartItems = $.grep($scope.order, function (e) {
@@ -76,7 +77,6 @@ angular.module('suji-mr').controller('POSController', function ($scope, $reactiv
             $scope.order.push(foodItem);
             $scope.itemsCnt = $scope.order.length;
         }
-        $scope.barcode.productBarcode = '';
     };
 
     $scope.addItem = (item, index) => {
@@ -117,7 +117,7 @@ angular.module('suji-mr').controller('POSController', function ($scope, $reactiv
     };
 
     $scope.barcodeInput = () => {
-        console.log(Menu.findOne({barcode: ($scope.barcode.productBarcode).trim()}));
         $scope.add(Menu.findOne({barcode: ($scope.barcode.productBarcode).trim()}));
+        $scope.barcode.productBarcode = '';
     }
 });
