@@ -44,7 +44,7 @@ angular.module('suji-mr').controller('POSController', function ($scope, $reactiv
         return Menu.find({category: item}).fetch();
     };
 
-    $scope.getSum = function() {
+    $scope.getSum = function () {
         var sum = 0;
 
         for (var i = 0; i < $scope.order.length; i++) {
@@ -54,14 +54,11 @@ angular.module('suji-mr').controller('POSController', function ($scope, $reactiv
     };
 
     $scope.add = (item) => {
-        console.log(item.barcode);
         $scope.orderedItemCnt = 1;
-        var foodItem = {
+        var product = {
             orderedItemCnt: 1,
             totalPrice: item.price,
             itemId: item.name,
-            id: $scope.itemsCnt,
-            item: item,
             barcode: item.barcode
         };
 
@@ -74,7 +71,7 @@ angular.module('suji-mr').controller('POSController', function ($scope, $reactiv
             cartItems[0].totalPrice = item.price * cartItems[0].orderedItemCnt;
         }
         else {
-            $scope.order.push(foodItem);
+            $scope.order.push(product);
             $scope.itemsCnt = $scope.order.length;
         }
     };
@@ -99,15 +96,17 @@ angular.module('suji-mr').controller('POSController', function ($scope, $reactiv
     };
 
     $scope.checkout = () => {
+        var arr = [];
+
         for (var i = 0; i < $scope.order.length; i++) {
-            Purchase.insert({
-                name: $scope.order[i].itemId,
-                barcode: $scope.order[i].barcode,
-                quantity: $scope.order[i].orderedItemCnt,
+            var item = {
+                orderedItemCnt: $scope.order[i].orderedItemCnt,
                 totalPrice: $scope.order[i].totalPrice,
-                time: new Date().toString()
-            });
+                itemId: $scope.order[i].itemId
+            };
+            arr.push(item);
         }
+        Purchase.insert({time: new Date().toString(), sale: arr});
         window.alert("Total Price : " + $scope.getSum());
         $scope.order = [];
     };

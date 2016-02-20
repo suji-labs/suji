@@ -55,13 +55,12 @@ Meteor.startup(function () {
     Meteor.publish("bell", function () {
         return Bell.find();
     });
+
     Meteor.methods({
         serialPort: function (code) {
             serial(code);
         }
     });
-
-
 });
 
 function serial(code) {

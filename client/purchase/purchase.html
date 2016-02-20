@@ -15,24 +15,17 @@
     <div class="jumbotron">
         <div class="container">
             <div class="col-xs-offset-2 col-xs-8">
-
                 <div id = "manage">
                     <table class = "table">
                         <thead>
-                        <th><div class="text-info">Name</div></th>
-                        <th><div class="text-info">Quantity</div></th>
-                        <th><div class="text-info">Total Price</div></th>
                         <th><div class="text-info">Purchase Time</div></th>
                         <th>&nbsp;</th>
                         </thead>
                         <tbody>
-
                         <tr ng-repeat = "item in purchaseList">
-                            <td>{{item.name}}</td>
-                            <td>{{item.quantity}}</td>
-                            <td>{{item.totalPrice}}</td>
                             <td>{{item.time}}</td>
-                            <td><button class = "btn btn-danger" ng-click = "removeItem(item)">Remove</button></td>
+                            <td><button class="btn btn-primary" ng-click="receiptModal(item)">Receipt</button></td>
+                            <td><button class = "btn btn-danger" ng-click="removeItem(item)">Remove</button></td>
                         </tr>
                         </tbody>
                     </table>

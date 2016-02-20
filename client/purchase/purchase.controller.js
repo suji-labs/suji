@@ -24,6 +24,24 @@ angular.module('suji-mr').controller('PurchaseController', function ($scope, $re
         }
     });
 
+    $scope.receiptModal = (item) => {
+        var str = '<table class="table">';
+        str += '<tr><td>Name</td><td>Quantity</td><td>Total Price</td></tr>';
+        for (var i = 0; i < item.sale.length; i++)
+            str += '<tr><td>' + item.sale[i].itemId + '</td><td>' + item.sale[i].orderedItemCnt + '</td><td>' + item.sale[i].totalPrice + '</td></tr>';
+        str += '</table>';
+        bootbox.dialog({
+            title: "Receipt",
+            message: str,
+            buttons: {
+                success: {
+                    label: "OK",
+                    className: "btn-success"
+                }
+            }
+        });
+    };
+
     $scope.removeItem = (item) => {
         Purchase.remove({_id: item._id});
     };
