@@ -25,16 +25,40 @@ angular.module('suji-mr').controller('bellController', function ($scope, $reacti
     });
 
     $scope.addBell = () => {
-        Bell.insert({
-            bellID: $scope.newBell.id
-        });
+        switch ($scope.newBell.id)
+        {
+            case '1':
+            case '2':
+            case '3':
+            case '4':
+            case '5':
+            case '6':
+            case '7':
+            case '8':
+            case '9':
+                if(Bell.findOne({bellID: $scope.newBell.id})) {
+                    window.alert($scope.newBell.id + '번 진동벨은 이미 등록되어 있습니다.');
+                    break;
+                }
+                else {
+                    Bell.insert({
+                        bellID: $scope.newBell.id
+                    });
+                    break;
+                }
+            default:
+                window.alert('진동벨 번호(1~9)를 입력해 주세요.');
+        }
+
         $scope.newBell = null;
     };
 
     $scope.callBell = (item) => {
-        Meteor.call('serialPort', "S11");
+        var code = 'S1'+item.bellID;
 
-        window.alert("Called " + item.bellID);
+        Meteor.call('serialPort', code);
+
+        window.alert("Called " + code);
 
         //setTimeout(function(){
         //   sp.close(function(){
@@ -43,9 +67,11 @@ angular.module('suji-mr').controller('bellController', function ($scope, $reacti
         //}, 1500);
     };
     $scope.stopBell = (item) => {
-        Meteor.call('serialPort', "S01");
+        var code = 'S0'+item.bellID;
 
-        window.alert("Stopped " + item.bellID);
+        Meteor.call('serialPort', code);
+
+        window.alert("Stopped " + code);
 
         //setTimeout(function(){
         //   sp.close(function(){
