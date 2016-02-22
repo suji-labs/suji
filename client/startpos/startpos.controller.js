@@ -118,5 +118,7 @@ angular.module('suji-mr').controller('POSController', function ($scope, $reactiv
     $scope.barcodeInput = () => {
         $scope.add(Menu.findOne({barcode: ($scope.barcode.productBarcode).trim()}));
         $scope.barcode.productBarcode = '';
-    }
+    };
+
+    $("#barcodeInput").focus();
 });

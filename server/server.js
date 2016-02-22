@@ -9,6 +9,7 @@ Meteor.startup(function () {
                 'name': 'BREAD',
                 'price': 100,
                 'primeCost': 50,
+                'barcode': '123456',
                 'taxMode': 'YES',
                 'category': 'FOOD'
             },
@@ -16,6 +17,7 @@ Meteor.startup(function () {
                 'name': 'WATER',
                 'price': 80,
                 'primeCost': 60,
+                'barcode': '456789',
                 'taxMode': 'NO',
                 'category': 'DRINK'
             }
