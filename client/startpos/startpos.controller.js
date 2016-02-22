@@ -8,6 +8,12 @@ angular.module('suji-mr').controller('POSController', function ($scope, $reactiv
     $scope.order = [];
     $scope.isDisabled = true;
 
+    $("#barcodeInput").focus();
+
+    $("html").click(function () {
+        $("#barcodeInput").focus();
+    });
+
     this.menuSort = {
         name: 1
     };
@@ -119,6 +125,4 @@ angular.module('suji-mr').controller('POSController', function ($scope, $reactiv
         $scope.add(Menu.findOne({barcode: ($scope.barcode.productBarcode).trim()}));
         $scope.barcode.productBarcode = '';
     };
-
-    $("#barcodeInput").focus();
 });
