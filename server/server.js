@@ -90,13 +90,14 @@ function serial(code) {
             var intervalId = setInterval(function(){
                 sp.write(code);
                 iter = iter + 1;
-                if (iter > 10){
+                console.log(iter);
+                if (iter > 30){
                     clearInterval(intervalId);
                     sp.close(function(){
                        console.log("close");
                     });
                 }
-            });
+            }, 100);
         });
     });
 }
