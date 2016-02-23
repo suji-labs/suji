@@ -68,32 +68,35 @@ Meteor.startup(function () {
 function serial(code) {
     var serialport = Meteor.npmRequire('serialport');
     var SerialPort = serialport.SerialPort;
-    //console.log(SerialPort);
 
     serialport.list(function(err, ports){
-        //console.log(ports);
-    });
+        var portName = null;
 
-    var sp = new SerialPort("/dev/ttyACM0", {
-        baudrate: 115200,
-        parser: serialport.parsers.readline("\n")
-    });
+        for (var i in ports){
+            if (ports[i].vendorId == '0x2341')
+                portName = ports[i].comName;
+        }
 
-    sp.on("open", onOpen);
-    sp.on("data", onData);
+        console.log(portName);
 
-    function onOpen(){
-        console.log('open');
-    }
-
-    function onData(data){
-        sp.write(code);
-        console.log(code);
-    }
-
-    setTimeout(function(){
-        sp.close(function(){
-            console.log("close");
+        var sp = new SerialPort(portName, {
+            baudrate: 115200,
+            parser: serialport.parsers.readline("\n")
         });
-    }, 1500);
+
+        sp.on("open", function(){
+            console.log("open");
+            var iter = 0;
+            var intervalId = setInterval(function(){
+                sp.write(code);
+                iter = iter + 1;
+                if (iter > 10){
+                    clearInterval(intervalId);
+                    sp.close(function(){
+                       console.log("close");
+                    });
+                }
+            });
+        });
+    });
 }

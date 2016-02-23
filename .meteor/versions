@@ -51,6 +51,8 @@ localstorage@1.0.5
 logging@1.0.8
 meteor@1.1.10
 meteor-base@1.0.1
+meteorhacks:async@1.0.0
+meteorhacks:npm@1.5.0
 minifiers@1.1.7
 minimongo@1.0.10
 mizzao:bootboxjs@4.4.0
