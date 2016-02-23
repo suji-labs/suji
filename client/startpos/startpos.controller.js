@@ -60,6 +60,11 @@ angular.module('suji-mr').controller('POSController', function ($scope, $reactiv
     };
 
     $scope.add = (item) => {
+        if (item == null) {
+            window.alert("존재하지 않는 상품입니다.");
+            return;
+        }
+
         $scope.orderedItemCnt = 1;
         var product = {
             orderedItemCnt: 1,
