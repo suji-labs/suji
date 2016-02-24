@@ -25,11 +25,15 @@ angular.module('suji-mr').controller('PurchaseController', function ($scope, $re
     });
 
     $scope.receiptModal = (item) => {
-        var str = '<table class="table">';
-        str += '<tr><td>Name</td><td>Quantity</td><td>Total Price</td></tr>';
-        for (var i = 0; i < item.sale.length; i++)
+        var totalCnt = 0, totalPrice = 0;
+        var str = '<style>th{text-align: center}</style><table class="table" style="text-align: center">';
+        str += '<thead><tr><th>Name</th><th>Quantity</th><th>Total Price</th></tr></thead>';
+        for (var i = 0; i < item.sale.length; i++) {
             str += '<tr><td>' + item.sale[i].itemId + '</td><td>' + item.sale[i].orderedItemCnt + '</td><td>' + item.sale[i].totalPrice + '</td></tr>';
-        str += '</table>';
+            totalCnt += item.sale[i].orderedItemCnt;
+            totalPrice += item.sale[i].totalPrice;
+        }
+        str += '<tr><td>TOTAL</td><td>' + totalCnt + '</td><td>' + totalPrice + '</td></tr></table>';
         bootbox.dialog({
             title: "Receipt",
             message: str,
