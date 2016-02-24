@@ -18,7 +18,7 @@
 | 메뉴 목록 |	GET	| localhost:3000/manage | complete |
 | 메뉴 추가 |	POST	| localhost:3000/manage | complete |
 | 메뉴 삭제 |	POST	| localhost:3000/manage | complete |
-| 구매 목록 |	GET	| NULL | TODO |
+| 구매 목록 |	GET	| http://localhost:3000/manage | complete |
 | 구매 리스트 추가 |	POST	| http://localhost:3000/startpos | complete |
 | 구매 리스트 삭제 |	POST	| http://localhost:3000/startpos | complete |
 | 일별 매출 현황 |	GET	| http://localhost:3000/purchase | complete |
@@ -26,6 +26,8 @@
 | 직원 추가 |	POST	| NULL | TODO |
 | 직원 삭제 |	DELETE	| NULL | TODO |
 | 직원 추가 |	UPDATE	| NULL | TODO |
+| 바코드 리더 | NULL | NULL | complete |
+| 진동벨 | NULL | NULL | complete|
 
 
 &nbsp;
@@ -35,16 +37,23 @@
     - *Windows* -  Download and Install [Meteor](https://www.meteor.com/)
     - *Linux/Mac* - `curl https://install.meteor.com/ | sh`
 
+## Development Stack
+> 개발 언어 및 스택 소개
+
+- Language : Javascript
+- Framework : [Angular](https://angularjs.org/), meteor(https://www.meteor.com/)
+- Database : MongoDB
+
 ## Execution
 ```
 git clone https://github.com/naver-d2-suji/suji-mr.git
 cd suji-mr
-git checkout feature/BoWoon
+git checkout develop
 meteor
 ```
 
 ## Reference
-- Meteor
+- Meteor(https://www.meteor.com/)
 - [Yeoman](http://yeoman.io/)
     - [Generator](https://github.com/ndxbxrme/generator-angular-meteor)
 
