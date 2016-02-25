@@ -17,9 +17,11 @@ angular.module('suji-mr').controller('POSController', function ($scope, $reactiv
     this.menuSort = {
         name: 1
     };
+
     this.categorySort = {
         categoryName: 1
     };
+
     this.subscribe('category', () => {
         return [
             {
@@ -35,6 +37,7 @@ angular.module('suji-mr').controller('POSController', function ($scope, $reactiv
             }
         ]
     });
+
     this.subscribe('purchase');
 
     $scope.helpers({
@@ -117,7 +120,7 @@ angular.module('suji-mr').controller('POSController', function ($scope, $reactiv
             };
             arr.push(item);
         }
-        Purchase.insert({time: new Date().toString(), sale: arr});
+        Purchase.insert({time: new Date().format('yyyy/MM/dd a/p hh:mm:ss'), sale: arr});
         window.alert("Total Price : " + $scope.getSum());
         $scope.order = [];
     };
