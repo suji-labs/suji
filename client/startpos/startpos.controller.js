@@ -120,7 +120,7 @@ angular.module('suji-mr').controller('POSController', function ($scope, $reactiv
             };
             arr.push(item);
         }
-        Purchase.insert({time: new Date().format('yyyy/MM/dd a/p hh:mm:ss'), sale: arr});
+        Purchase.insert({time: new Date().format('yyyy/MM/dd a/p HH:mm:ss'), sale: arr});
         window.alert("Total Price : " + $scope.getSum());
         $scope.order = [];
     };
