@@ -100,6 +100,14 @@ Meteor.startup(function () {
                 'barcode': '8856976000023',
                 'taxMode': 'YES',
                 'category': 'OFFICE'
+            },
+            {
+                'name': 'DOWNY',
+                'price': 1500,
+                'primeCost': 1300,
+                'barcode': '4902430311670',
+                'taxMode': 'YES',
+                'category': 'NECESSARIES'
             }
         ];
 
