@@ -108,6 +108,22 @@ Meteor.startup(function () {
                 'barcode': '4902430311670',
                 'taxMode': 'YES',
                 'category': 'NECESSARIES'
+            },
+            {
+                'name': 'PAPER CUP',
+                'price': 500,
+                'primeCost': 450,
+                'barcode': '8809004781126',
+                'taxMode': 'YES',
+                'category': 'NECESSARIES'
+            },
+            {
+                'name': 'FILE',
+                'price': 700,
+                'primeCost': 350,
+                'barcode': '8807367013078',
+                'taxMode': 'YES',
+                'category': 'NECESSARIES'
             }
         ];
 
