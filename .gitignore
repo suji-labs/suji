@@ -2,3 +2,5 @@
 /release
 .npm/
 *.sh
+/.meteor
+/packages

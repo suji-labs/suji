@@ -20,7 +20,7 @@ angular.module('suji-mr').controller('bellController', function ($scope, $reacti
 
     $scope.helpers({
         bellList: () => {
-            return Bell.find({}, {sort: this.getReactively('bellID')});
+            return Bell.find({}, {sort: {bellID: 1}});
         }
     });
 
@@ -59,26 +59,16 @@ angular.module('suji-mr').controller('bellController', function ($scope, $reacti
         Meteor.call('serialPort', code);
 
         window.alert("Called " + code);
-
-        //setTimeout(function(){
-        //   sp.close(function(){
-        //      console.log("close");
-        //   });
-        //}, 1500);
     };
+
     $scope.stopBell = (item) => {
         var code = 'S0'+item.bellID;
 
         Meteor.call('serialPort', code);
 
         window.alert("Stopped " + code);
-
-        //setTimeout(function(){
-        //   sp.close(function(){
-        //      console.log("close");
-        //   });
-        //}, 1500);
     };
+
     $scope.removeBell = (item) => {
         Bell.remove({_id: item._id});
     };
