@@ -1,7 +1,3 @@
-/**
- * Created by BoWoon on 2016-02-12.
- */
-
 angular.module('suji-mr').config(function ($urlRouterProvider, $stateProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
 
@@ -69,6 +65,20 @@ angular.module('suji-mr').config(function ($urlRouterProvider, $stateProvider, $
         .state('bell', {
             url: '/bell',
             template: '<bell></bell>',
+            resolve: {
+                currentUser: ($q) => {
+                    if (Meteor.userId() == null) {
+                        return $q.reject();
+                    }
+                    else {
+                        return $q.resolve();
+                    }
+                }
+            }
+        })
+        .state('employee', {
+            url: '/employee',
+            template: '<employee></employee>',
             resolve: {
                 currentUser: ($q) => {
                     if (Meteor.userId() == null) {

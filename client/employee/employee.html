@@ -1,0 +1,38 @@
+<div ng-include="'client/header.html'"></div>
+
+<div class="container" ng-controller="EmployeeController">
+  <div class="jumbotron">
+        <div class="container">
+            <div style="text-align: center">
+                <div id = "manage">
+                    <table class = "table">
+                        <thead>
+                        <th><div class="text-info">ID</div></th>
+                        <th><div class="text-info">Name</div></th>
+                        <th><div class="text-info">Job Title</div></th>
+                        <th><div class="text-info">Work Hours</div></th>
+                        <th><div class="text-info">Action</div></th>
+                        <th>&nbsp;</th>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><input type="number" class="form-control" ng-model="newEmployee.ID"></td>
+                            <td><input type="text" class="form-control" ng-model="newEmployee.NAME"></td>
+                            <td><input type="text" class="form-control" ng-model="newEmployee.JOB_TITLE"></td>
+                            <td><input type="number" class="form-control" ng-model="newEmployee.WORKHOURS"></td>
+                            <td><button class="btn btn-primary" ng-click="addEmployee()">Add Employee</button></td>
+                        </tr>
+                        <tr ng-repeat="item in employeeList">
+                            <td>{{item.id}}</td>
+                            <td>{{item.name}}</td>
+                            <td>{{item.job_title}}</td>
+                            <td>{{item.workhours}}</td>
+                            <td><button class = "btn btn-danger" ng-click="removeEmployee(item)">Remove</button></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
