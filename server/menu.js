@@ -1,16 +1,3 @@
-Meteor.publish("menu", function(options, searchString) {
-  if (!searchString) {
-    searchString = '';
-  }
-  var searchFor = {
-    '$regex': '.*' + (searchString || '') + '.*',
-    '$options': 'i'
-  };
-
-  return Menu.find({
-        $or: [{
-          name: searchFor
-        }]
-    },
-    options);
+Meteor.publish("menu", function() {
+  return Menu.find({});
 });
