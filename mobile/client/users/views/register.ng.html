@@ -1,0 +1,35 @@
+<md-content class="topSpace" layout="row">
+  <span flex></span>
+    <div layout="column" flex="50">
+      <div ng-show="ac.error">
+        <small>{{ ac.error }}</small>
+      </div>
+      <form class="topSpace" layout="column">
+        <md-input-container>
+          <md-icon md-svg-icon="social:ic_person_24px"></md-icon>
+          <input id="username" type="text" ng-model="ac.credentials.username"
+                 placeholder="username" aria-label="username"/>
+        </md-input-container>
+
+        <md-input-container>
+          <md-icon md-svg-icon="content:ic_mail_24px"></md-icon>
+          <input id="email" type="email" ng-model="ac.credentials.email"
+                 placeholder="email" aria-label="email"/>
+        </md-input-container>
+
+        <md-input-container>
+          <md-icon md-svg-icon="action:ic_lock_open_24px"></md-icon>
+          <input id="password" type="password" ng-model="ac.credentials.password"
+                 placeholder="password" aria-label="password"/>
+        </md-input-container>
+
+        <md-button class="md-raised md-primary" ng-click="ac.register()">
+          create account
+        </md-button>
+      </form>
+      <div layout="row" layout-align="space-around center">
+        <a ui-sref="login">Login</a>
+      </div>
+    </div>
+  <span flex></span>
+</md-content>

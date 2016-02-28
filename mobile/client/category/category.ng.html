@@ -1,0 +1,39 @@
+<md-content class="topSpace" layout="row">
+  <span flex></span>
+  <div layout="column" flex="50">
+    <div layout="column">
+      <md-input-container>
+        <label>Search</label>
+        <input type="text" ng-model="search" />
+      </md-input-container>
+    </div>
+
+    <div class="container" ng-controller="categoryCtrl">
+      <form layout="row" ng-show="$root.currentUser">
+        <md-button class="md-fab md-primary" aria-label="add new tweet" ng-click="addCategory()">
+          <md-icon md-font-set="material-icons"> add </md-icon>
+        </md-button>
+        <md-input-container flex>
+          <label>New Category</label>
+          <input type="text" ng-model="newCategory" />
+        </md-input-container>
+      </form>
+
+      <md-card>
+        <md-content>
+          <md-list>
+            <md-button md-no-ink class="md-primary">Category List</md-button>
+            <md-list-item class="md-3-line" ng-repeat="item in categoryList">
+              <div class="md-list-item-text" flex="3">
+                <h3>{{item.categoryName}}</h3>
+              </div>
+              <md-button class="md-raised md-warn" ng-click="removeCategory(item)">Remove</md-button>
+              <md-divider ng-if="!$last"></md-divider>
+            </md-list-item>
+          </md-list>
+        </md-content>
+      </md-card>
+    </div>
+  </div>
+  <span flex></span>
+</md-content>

@@ -1,0 +1,18 @@
+<md-toolbar>
+  <div class="md-toolbar-tools">
+    <h2>
+      <a ui-sref="home"><span id="toolbarTitle">SUJI</span></a>
+    </h2>
+    <span flex></span>
+    <div>
+      <md-button ui-sref="category" ng-if="$root.currentUser">Category</md-button>
+
+      <md-button ui-sref="login" ng-if="$root.currentUser == null">Login</md-button>
+      <md-button ui-sref="register" ng-if="$root.currentUser == null">Sign up</md-button>
+
+      <md-button ui-sref="logout" ng-if="$root.currentUser">Logout</md-button>
+      <md-button ui-sref="changepw" ng-if="$root.currentUser">Change Password</md-button>
+      <md-button ng-href="/resetpw/{{$root.currentUser._id}}" ng-if="$root.currentUser">User: <span ng-bind="$root.currentUser.username"></span></md-button>
+    </div>
+  </div>
+</md-toolbar>
