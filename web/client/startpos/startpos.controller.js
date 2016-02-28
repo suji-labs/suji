@@ -7,6 +7,7 @@ angular.module('suji-mr').controller('POSController', function ($scope, $reactiv
     $scope.now = new Date();
     $scope.order = [];
     $scope.isDisabled = true;
+    $scope.showPrice = '';
 
     $("#barcodeInput").focus();
 
@@ -110,19 +111,25 @@ angular.module('suji-mr').controller('POSController', function ($scope, $reactiv
     };
 
     $scope.checkout = () => {
-        var arr = [];
+        if (0 <= parseInt($scope.showPrice, 10) - $scope.getSum()) {
+            var arr = [];
 
-        for (var i = 0; i < $scope.order.length; i++) {
-            var item = {
-                orderedItemCnt: $scope.order[i].orderedItemCnt,
-                totalPrice: $scope.order[i].totalPrice,
-                itemId: $scope.order[i].itemId
-            };
-            arr.push(item);
+            for (var i = 0; i < $scope.order.length; i++) {
+                var item = {
+                    orderedItemCnt: $scope.order[i].orderedItemCnt,
+                    totalPrice: $scope.order[i].totalPrice,
+                    itemId: $scope.order[i].itemId
+                };
+                arr.push(item);
+            }
+            Purchase.insert({time: new Date().format('yyyy/MM/dd a/p HH:mm:ss'), sale: arr});
+            window.alert("Change : " + (parseInt($scope.showPrice, 10) - $scope.getSum()));
+            $scope.order = [];
+            $('#payment').css('visibility', 'hidden');
         }
-        Purchase.insert({time: new Date().format('yyyy/MM/dd a/p HH:mm:ss'), sale: arr});
-        window.alert("Total Price : " + $scope.getSum());
-        $scope.order = [];
+        else {
+            window.alert("Sorry. Cash is scarce.");
+        }
     };
 
     $scope.clearOrder = () => {
@@ -133,4 +140,58 @@ angular.module('suji-mr').controller('POSController', function ($scope, $reactiv
         $scope.add(Menu.findOne({barcode: ($scope.barcode.productBarcode).trim()}));
         $scope.barcode.productBarcode = '';
     };
+
+    $scope.payment = () => {
+        $('#payment').css('visibility', 'visible');
+    };
+
+    $scope.creditCard = () => {
+        window.alert("Credit Card");
+    };
+
+    $scope.cash = () => {
+        window.alert("Cash");
+    };
+
+    $scope.numberPad = (n) => {
+        $("#showPrice").focus();
+        switch (n) {
+            case '0':
+                $scope.showPrice += '0';
+                break;
+            case '1':
+                $scope.showPrice += '1';
+                break;
+            case '2':
+                $scope.showPrice += '2';
+                break;
+            case '3':
+                $scope.showPrice += '3';
+                break;
+            case '4':
+                $scope.showPrice += '4';
+                break;
+            case '5':
+                $scope.showPrice += '5';
+                break;
+            case '6':
+                $scope.showPrice += '6';
+                break;
+            case '7':
+                $scope.showPrice += '7';
+                break;
+            case '8':
+                $scope.showPrice += '8';
+                break;
+            case '9':
+                $scope.showPrice += '9';
+                break;
+            case 'c':
+                $scope.showPrice = '';
+                break;
+            case 's':
+                $scope.checkout();
+                break;
+        }
+    }
 });
