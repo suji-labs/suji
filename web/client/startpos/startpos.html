@@ -66,10 +66,12 @@
                     </div>
                     <div class="pull-right">
                         <span class="btn btn-default" ng-click="clearOrder()" ng-disabled="!order.length">Clear</span>
-                        <span class="btn btn-danger" ng-click="checkout()" ng-disabled="!order.length">Checkout</span>
+                        <span class="btn btn-danger" ng-click="payment()" ng-disabled="!order.length">Payment</span>
                     </div>
                 </div>
             </div>
+            <div ng-include="'client/startpos/payment.cash.html'"></div>
+            <div ng-include="'client/startpos/payment.card.html'"></div>
         </div>
     </div>
 </div>
