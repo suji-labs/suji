@@ -1,0 +1,17 @@
+<div id="card" style="display: none;">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="well">
+                <button type="button" class="btn btn-success" ng-click="cash()">Cash</button>
+                <button type="button" class="btn btn-success" ng-click="creditCard()">Card</button>
+                <div class="box" style="margin-top: 20px">
+                    <div id="numberPad">
+                        <div class="label label-danger">Total: ${{getSum()}}</div>
+                        <h3>Card Number</h3>
+                        <input type="text" id="showPrice" class="form-control" ng-model="showPrice">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

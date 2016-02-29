@@ -125,7 +125,8 @@ angular.module('suji-mr').controller('POSController', function ($scope, $reactiv
             Purchase.insert({time: new Date().format('yyyy/MM/dd a/p HH:mm:ss'), sale: arr});
             window.alert("Change : " + (parseInt($scope.showPrice, 10) - $scope.getSum()));
             $scope.order = [];
-            $('#payment').css('visibility', 'hidden');
+            $('#card').css('display', 'none');
+            $('#cash').css('display', 'none');
         }
         else {
             window.alert("Sorry. Cash is scarce.");
@@ -142,19 +143,21 @@ angular.module('suji-mr').controller('POSController', function ($scope, $reactiv
     };
 
     $scope.payment = () => {
-        $('#payment').css('visibility', 'visible');
+        $('#cash').css('display', 'inline-block');
+        $("#barcodeInput").blur();
     };
 
     $scope.creditCard = () => {
-        window.alert("Credit Card");
+        $('#card').css('display', 'inline-block');
+        $('#cash').css('display', 'none');
     };
 
     $scope.cash = () => {
-        window.alert("Cash");
+        $('#cash').css('display', 'inline-block');
+        $('#card').css('display', 'none');
     };
 
     $scope.numberPad = (n) => {
-        $("#showPrice").focus();
         switch (n) {
             case '0':
                 $scope.showPrice += '0';
@@ -191,6 +194,7 @@ angular.module('suji-mr').controller('POSController', function ($scope, $reactiv
                 break;
             case 's':
                 $scope.checkout();
+                $scope.showPrice = '';
                 break;
         }
     }
