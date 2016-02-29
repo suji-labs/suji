@@ -1,0 +1,82 @@
+<md-content class="topSpace" layout="row">
+  <span flex></span>
+
+  <div class="container" ng-controller="posCtrl">
+
+
+
+    <div class="row">
+
+      <div class="col-sm-6">
+        <div class="well">
+          <div ng-repeat="item in categoryList">
+            <div class="box">
+              <div class="text-info">{{item.categoryName}}</div>
+              <hr>
+              <div ng-init="menuCategory=findCategory(item.categoryName)"></div>
+              
+              <md-button class="md-raised md-primary" ng-if="$parent.$index % 2 == 0" ng-repeat="one in menuCategory" ng-click="add(one)">{{one.name}}</md-button>
+              <md-button class="md-raised md-warn" ng-if="$parent.$index % 2 != 0" ng-repeat="one in menuCategory" ng-click="add(one)">{{one.name}}</md-button>
+            </div>
+            <br>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <div class="well">
+          <form ng-submit="barcodeInput()">
+            <div>
+              <label>Input Barcode</label>
+              <input id="barcodeInput" type="text" class="form-control" ng-model="barcode.productBarcode" autofocus>
+            </div>
+          </form>
+          <br>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <md-button md-no-ink class="md-accent">Order Summary</md-button>
+              <!-- <h3 class="panel-title">Order Summary</h3> -->
+            </div>
+            <div class="panel-body" style="max-height:320px; overflow:auto;">
+              <div class="text-warning" ng-hide="order.length">
+                Noting ordered yet !
+              </div>
+              <ul class="list-group">
+                <li float="clear" class="list-group-item" ng-repeat="item in order">
+                  <span> {{item.itemId}}</span>
+                  <div class="btn-group pull-right" role="group" aria-label="...">
+                    <button type="button" class="btn btn-xs " ng-disabled="" ng-click="subtractItem(item, $index)">
+                      <span type="button" class="glyphicon glyphicon-minus"></span>
+                    </button>
+                    <button type="button" class="btn  btn-xs" ng-click="addItem(item, $index)">
+                      <span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                    <button type="button" class="btn btn-danger btn-xs" ng-click="deleteItem($index)">
+                      <span class="glyphicon glyphicon-trash"></span>
+                    </button>
+                  </div>
+                  <div class="label label-default pull-right">￦{{item.totalPrice}}</div>
+                  <div class="label label-default pull-right">{{item.orderedItemCnt}}</div>
+                </li>
+              </ul>
+            </div>
+            <div class="panel-footer" ng-show="order.length">
+              <div class="label label-danger">Total: ￦{{getSum()}}</div>
+            </div>
+            <div class="panel-footer" ng-show="order.length">
+              <div class="text-muted">
+                Do not let go of customer without taking payment !
+              </div>
+            </div>
+            <div class="pull-right">
+              <md-button class="md-raised" ng-click="clearOrder()" ng-disabled="!order.length">Clear</md-button>
+              <md-button class="md-raised md-warn" ng-click="checkout()" ng-disabled="!order.length">Checkout</md-button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <span flex></span>
+</md-content>
