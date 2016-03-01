@@ -122,11 +122,11 @@ angular.module('suji-mr').controller('POSController', function ($scope, $reactiv
                 };
                 arr.push(item);
             }
-            Purchase.insert({time: new Date().format('yyyy/MM/dd a/p HH:mm:ss'), sale: arr});
+            Purchase.insert({time: new Date().format('yyyy/MM/dd a/p HH:mm:ss'), price: $scope.getSum(), sale: arr});
             window.alert("Change : " + (parseInt($scope.showPrice, 10) - $scope.getSum()));
             $scope.order = [];
-            $('#card').css('display', 'none');
-            $('#cash').css('display', 'none');
+            $('#card').modal('hide');
+            $('#cash').modal('hide');
         }
         else {
             window.alert("Sorry. Cash is scarce.");
@@ -143,18 +143,17 @@ angular.module('suji-mr').controller('POSController', function ($scope, $reactiv
     };
 
     $scope.payment = () => {
-        $('#cash').css('display', 'inline-block');
-        $("#barcodeInput").blur();
+        $('#cash').modal('show');
     };
 
     $scope.creditCard = () => {
-        $('#card').css('display', 'inline-block');
-        $('#cash').css('display', 'none');
+        $('#card').modal('show');
+        $('#cash').modal('hide');
     };
 
     $scope.cash = () => {
-        $('#cash').css('display', 'inline-block');
-        $('#card').css('display', 'none');
+        $('#card').modal('hide');
+        $('#cash').modal('show');
     };
 
     $scope.numberPad = (n) => {
