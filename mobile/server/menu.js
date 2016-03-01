@@ -1,4 +1,4 @@
-Meteor.publish("category", function(options, searchString) {
+Meteor.publish("menu", function(options, searchString) {
   if (!searchString) {
     searchString = '';
   }
@@ -7,7 +7,7 @@ Meteor.publish("category", function(options, searchString) {
     '$options': 'i'
   };
 
-  return Category.find({
+  return Menu.find({
       $or: [{
         categoryName: searchFor
       }]
