@@ -5,7 +5,7 @@ angular.module('suji').config(['$stateProvider',
       .state('pos', {
         parent: 'root',
         url: '/pos',
-        templateUrl: 'client/pos/pos.ng.html',
+        templateUrl: 'client/pos/views/pos.ng.html',
         controller: 'posCtrl'
       });
   }

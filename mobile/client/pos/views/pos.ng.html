@@ -3,8 +3,6 @@
 
   <div class="container" ng-controller="posCtrl">
 
-
-
     <div class="row">
 
       <div class="col-sm-6">
@@ -14,7 +12,7 @@
               <div class="text-info">{{item.categoryName}}</div>
               <hr>
               <div ng-init="menuCategory=findCategory(item.categoryName)"></div>
-              
+
               <md-button class="md-raised md-primary" ng-if="$parent.$index % 2 == 0" ng-repeat="one in menuCategory" ng-click="add(one)">{{one.name}}</md-button>
               <md-button class="md-raised md-warn" ng-if="$parent.$index % 2 != 0" ng-repeat="one in menuCategory" ng-click="add(one)">{{one.name}}</md-button>
             </div>
@@ -70,10 +68,12 @@
             </div>
             <div class="pull-right">
               <md-button class="md-raised" ng-click="clearOrder()" ng-disabled="!order.length">Clear</md-button>
-              <md-button class="md-raised md-warn" ng-click="checkout()" ng-disabled="!order.length">Checkout</md-button>
+              <md-button class="md-raised md-warn" ng-click="payment()" ng-disabled="!order.length">Checkout</md-button>
             </div>
           </div>
         </div>
+        <div ng-include="'client/pos/views/payment.cash.html'"></div>
+        <div ng-include="'client/pos/views/payment.card.html'"></div>
       </div>
     </div>
   </div>
