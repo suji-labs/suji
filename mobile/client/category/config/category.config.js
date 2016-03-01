@@ -5,7 +5,7 @@ angular.module('suji').config(['$stateProvider',
       .state('category', {
         parent: 'root',
         url: '/category',
-        templateUrl: 'client/category/category.ng.html',
+        templateUrl: 'client/category/views/category.ng.html',
         controller: 'categoryCtrl'
       });
   }

@@ -20,7 +20,7 @@ angular.module('suji').config(['$stateProvider', '$urlRouterProvider', '$locatio
           },
           'toolbar': {
             controller: 'ToolbarCtrl',
-            templateUrl: 'client/toolbar/toolbar.ng.html'
+            templateUrl: 'client/toolbar/views/toolbar.ng.html'
           }
         }
       })
