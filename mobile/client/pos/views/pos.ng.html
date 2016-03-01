@@ -2,9 +2,7 @@
   <span flex></span>
 
   <div class="container" ng-controller="posCtrl">
-
     <div class="row">
-
       <div class="col-sm-6">
         <div class="well">
           <div ng-repeat="item in categoryList">
@@ -12,7 +10,6 @@
               <div class="text-info">{{item.categoryName}}</div>
               <hr>
               <div ng-init="menuCategory=findCategory(item.categoryName)"></div>
-
               <md-button class="md-raised md-primary" ng-if="$parent.$index % 2 == 0" ng-repeat="one in menuCategory" ng-click="add(one)">{{one.name}}</md-button>
               <md-button class="md-raised md-warn" ng-if="$parent.$index % 2 != 0" ng-repeat="one in menuCategory" ng-click="add(one)">{{one.name}}</md-button>
             </div>

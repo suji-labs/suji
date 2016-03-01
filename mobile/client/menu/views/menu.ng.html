@@ -1,0 +1,44 @@
+<md-content class="topSpace" layout="row">
+    <span flex></span>
+
+    <div class="container" ng-controller="menuCtrl">
+        <div class="jumbotron">
+            <div class="container">
+                <div style="text-align: center">
+                    <div class="table-responsive-vertical shadow-z-1">
+                        <table id="table" class="table table-hover table-mc-light-blue">
+                            <thead>
+                            <tr>
+                                <th><div class="text-info">Name</div></th>
+                                <th><div class="text-info">Price</div></th>
+                                <th><div class="text-info">Prime Cost</div></th>
+                                <th><div class="text-info">Barcode</div></th>
+                                <th><div class="text-info">isTaxable</div></th>
+                                <th><div class="text-info">Category</div></th>
+                                <th><div class="text-info">Action</div></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="item in menuList">
+                                <td data-title="Name">{{item.name}}</td>
+                                <td data-title="Price">{{item.price}}</td>
+                                <td data-title="Prime Cost">{{item.primeCost}}</td>
+                                <td data-title="Barcode">{{item.barcode}}</td>
+                                <td data-title="isTaxable">{{item.taxMode}}</td>
+                                <td data-title="Category">{{item.category}}</td>
+                                <td data-title="Action">
+                                    <!--<button class = "btn btn-danger" ng-click="removeItem(item)">Remove</button></td>-->
+                                    <md-button class="md-raised md-warn" ng-click="removeItem(item)">Remove</md-button>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <span flex></span>
+</md-content>
