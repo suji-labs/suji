@@ -8,6 +8,7 @@ angular.module('suji-mr').controller('POSController', function ($scope, $reactiv
     $scope.order = [];
     $scope.isDisabled = true;
     $scope.showPrice = '';
+    var pay = '';
 
     $("#barcodeInput").focus();
 
@@ -122,7 +123,7 @@ angular.module('suji-mr').controller('POSController', function ($scope, $reactiv
                 };
                 arr.push(item);
             }
-            Purchase.insert({time: new Date().format('yyyy/MM/dd a/p HH:mm:ss'), price: $scope.getSum(), sale: arr});
+            Purchase.insert({time: new Date().format('yyyy/MM/dd a/p HH:mm:ss'), price: $scope.getSum(), payment: pay, sale: arr});
             window.alert("Change : " + (parseInt($scope.showPrice, 10) - $scope.getSum()));
             $scope.order = [];
             $('#card').modal('hide');
@@ -143,15 +144,18 @@ angular.module('suji-mr').controller('POSController', function ($scope, $reactiv
     };
 
     $scope.payment = () => {
+        pay = 'Cash';
         $('#cash').modal('show');
     };
 
     $scope.creditCard = () => {
+        pay = 'Card';
         $('#card').modal('show');
         $('#cash').modal('hide');
     };
 
     $scope.cash = () => {
+        pay = 'Cash';
         $('#card').modal('hide');
         $('#cash').modal('show');
     };
