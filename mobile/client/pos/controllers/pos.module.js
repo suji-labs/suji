@@ -36,18 +36,24 @@ angular.module("suji").controller("posCtrl", ['$scope', '$meteor',
 
     $scope.helpers({
       menuList: () => {
-        return Menu.find({}, {sort: $scope.getReactively('menuSort')}).fetch();
+        return Menu.find({}, {
+          sort: $scope.getReactively('menuSort')
+        }).fetch();
       },
       categoryList: () => {
-        return Category.find({}, {sort: $scope.getReactively('categorySort')}).fetch();
+        return Category.find({}, {
+          sort: $scope.getReactively('categorySort')
+        }).fetch();
       }
     });
 
     $scope.findCategory = (item) => {
-      return Menu.find({category: item}).fetch();
+      return Menu.find({
+        category: item
+      }).fetch();
     };
 
-    $scope.getSum = function () {
+    $scope.getSum = function() {
       var sum = 0;
 
       for (var i = 0; i < $scope.order.length; i++) {
@@ -70,7 +76,7 @@ angular.module("suji").controller("posCtrl", ['$scope', '$meteor',
         barcode: item.barcode
       };
 
-      var cartItems = $.grep($scope.order, function (e) {
+      var cartItems = $.grep($scope.order, function(e) {
         return e.itemId == item.name;
       });
 
@@ -89,7 +95,7 @@ angular.module("suji").controller("posCtrl", ['$scope', '$meteor',
       item.totalPrice = item.item.price * item.orderedItemCnt;
     };
 
-    $scope.subtractItem = function (item, $index) {
+    $scope.subtractItem = function(item, $index) {
       if (item.orderedItemCnt > 1) {
         item.orderedItemCnt = --item.orderedItemCnt;
         item.totalPrice = item.item.price * item.orderedItemCnt;
@@ -106,7 +112,6 @@ angular.module("suji").controller("posCtrl", ['$scope', '$meteor',
     $scope.checkout = () => {
       if (0 <= parseInt($scope.showPrice, 10) - $scope.getSum()) {
         var arr = [];
-
         for (var i = 0; i < $scope.order.length; i++) {
           var item = {
             orderedItemCnt: $scope.order[i].orderedItemCnt,
@@ -115,7 +120,14 @@ angular.module("suji").controller("posCtrl", ['$scope', '$meteor',
           };
           arr.push(item);
         }
-        Purchase.insert({time: new Date().format('yyyy/MM/dd a/p HH:mm:ss'), price: $scope.getSum(), payment: pay, sale: arr});
+
+        Purchase.insert({
+          time: new Date().format('yyyy/MM/dd a/p HH:mm:ss'),
+          price: $scope.getSum(),
+          payment: pay,
+          sale: arr
+        });
+        console.log('test');
         window.alert("Change : " + (parseInt($scope.showPrice, 10) - $scope.getSum()));
         $scope.order = [];
         $('#card').modal('hide');
@@ -131,7 +143,9 @@ angular.module("suji").controller("posCtrl", ['$scope', '$meteor',
     };
 
     $scope.barcodeInput = () => {
-      $scope.add(Menu.findOne({barcode: ($scope.barcode.productBarcode).trim()}));
+      $scope.add(Menu.findOne({
+        barcode: ($scope.barcode.productBarcode).trim()
+      }));
       $scope.barcode.productBarcode = '';
     };
 

@@ -1,0 +1,46 @@
+<md-content class="topSpace" layout="row">
+    <span flex></span>
+
+    <!-- manage view -->
+    <div class="container" ng-controller="purchaseCtrl">
+        <div class="jumbotron">
+            <div class="container">
+                <div class="col-xs-offset-2 col-xs-8">
+                    <div id="manage">
+                        <table class="table" style="text-align: center">
+                            <thead>
+                                <th>
+                                    <div class="text-info">Purchase Time</div>
+                                </th>
+                                <th>
+                                    <div class="text-info">Total Price</div>
+                                </th>
+                                <th>
+                                    <div class="text-info">Payment</div>
+                                </th>
+                                <th>&nbsp;</th>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in purchaseList">
+                                    <td>
+                                        <h4>{{item.time}}</h4></td>
+                                    <td>
+                                        <h4>${{item.price}}</h4></td>
+                                    <td>
+                                        <h4>{{item.payment}}</h4></td>
+                                    <td>
+                                        <button class="btn btn-primary" ng-click="receiptModal(item)">Receipt</button>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-danger" ng-click="removeItem(item)">Remove</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <span flex></span>
+</md-content>

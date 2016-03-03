@@ -1,0 +1,39 @@
+@media only screen 
+  and (max-width: 736px) { 
+  .mobile {
+    display:block;
+  }
+  .desktop {
+    display:none;
+  }
+  .tablet {
+    display:none;
+  }
+}
+
+@media only screen 
+  and (min-width: 736px) 
+  and (max-width: 1200px){ 
+  .tablet {
+    display:block;
+  }
+  .desktop {
+    display:none;
+  }
+  .mobile {
+    display:none;
+  }
+}
+
+@media only screen 
+  and (min-width: 1200px) {
+  .desktop {
+    display:block;
+  }
+  .tablet {
+    display:none;
+  }
+  .mobile {
+    display:none;
+  }
+}
