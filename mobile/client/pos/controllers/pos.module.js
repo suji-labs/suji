@@ -110,8 +110,8 @@ angular.module("suji").controller("posCtrl", ['$scope', '$meteor',
     };
 
     $scope.checkout = () => {
+      var arr = [];
       if (0 <= parseInt($scope.showPrice, 10) - $scope.getSum()) {
-        var arr = [];
         for (var i = 0; i < $scope.order.length; i++) {
           var item = {
             orderedItemCnt: $scope.order[i].orderedItemCnt,
@@ -121,13 +121,18 @@ angular.module("suji").controller("posCtrl", ['$scope', '$meteor',
           arr.push(item);
         }
 
+        console.log('item', item);
+        console.log('getsum', $scope.getSum());
+        console.log('pay', pay);
+        console.log('arr', arr);
+
         Purchase.insert({
-          time: new Date().format('yyyy/MM/dd a/p HH:mm:ss'),
+          time: new Date(),
           price: $scope.getSum(),
           payment: pay,
           sale: arr
         });
-        console.log('test');
+
         window.alert("Change : " + (parseInt($scope.showPrice, 10) - $scope.getSum()));
         $scope.order = [];
         $('#card').modal('hide');
