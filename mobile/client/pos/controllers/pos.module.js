@@ -127,7 +127,7 @@ angular.module("suji").controller("posCtrl", ['$scope', '$meteor',
         console.log('arr', arr);
 
         Purchase.insert({
-          time: new Date(),
+          time: new Date().format('yyyy/MM/dd a/p HH:mm:ss'),
           price: $scope.getSum(),
           payment: pay,
           sale: arr
