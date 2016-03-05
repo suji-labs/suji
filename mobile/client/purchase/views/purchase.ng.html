@@ -20,11 +20,11 @@
         <tbody>
         <tr ng-repeat="item in purchaseList">
           <td data-title="Purchase Time">
-            <h4>{{item.time}}</h4></td>
+            {{item.time}}</td>
           <td data-title="Total Price">
-            <h4>{{item.price}}</h4></td>
+            {{item.price}}</td>
           <td data-title="Payment">
-            <h4>{{item.payment}}</h4></td>
+            {{item.payment}}</td>
           <td data-title="Action">
             <md-button class="md-raised md-primary" ng-click="receiptModal(item)">Receipt</md-button>
           </td>
