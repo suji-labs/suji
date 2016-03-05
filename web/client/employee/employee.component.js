@@ -1,7 +1,7 @@
 angular.module('suji-mr').directive('employee', function () {
     return {
         restrict: 'E',
-        templateUrl: 'client/employee/statistics.html',
+        templateUrl: 'client/employee/employee.html',
         controllerAs: 'EmployeeController'
     }
 });
