@@ -16,7 +16,7 @@
                         <tbody>
                         <tr ng-repeat="item in purchaseList">
                             <td><h4>{{item.time}}</h4></td>
-                            <td><h4>${{item.price}}</h4></td>
+                            <td><h4>￦{{item.price}}</h4></td>
                             <td><h4>{{item.payment}}</h4></td>
                             <td><button class="btn btn-primary" ng-click="receiptModal(item)">Receipt</button></td>
                             <td><button class="btn btn-danger" ng-click="removeItem(item)">Remove</button></td>

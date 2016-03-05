@@ -1,6 +1,5 @@
 /.idea
 /release
 .npm/
-*.sh
 /.meteor
 /packages
