@@ -1,7 +1,7 @@
 angular.module('suji', [
   'angular-meteor',
   'ui.router',
-  'ngMaterial',
+  'ngMaterial'
 ]);
 
 var themeIcons = ['$mdIconProvider', function($mdIconProvider) {

@@ -1,4 +1,4 @@
-angular.module("suji").controller("categoryCtrl",['$scope', '$meteor', '$mdDialog',
+angular.module("suji").controller("categoryCtrl", ['$scope', '$meteor', '$mdDialog',
     function($scope, $meteor, $mdDialog) {
         $scope.showAdd = function(ev) {
             $mdDialog.show({
@@ -7,13 +7,14 @@ angular.module("suji").controller("categoryCtrl",['$scope', '$meteor', '$mdDialo
                     targetEvent: ev,
                 })
                 .then(function(newCategory) {
-                    console.log(newCategory);
-
-                    Category.insert({
-                        categoryName: newCategory.name,
-                        createAt : $scope.now
-                    });
-                    $scope.newCategory = null;
+                    if (newCategory) {
+                        console.log(newCategory);
+                        Category.insert({
+                            categoryName: newCategory.name,
+                            createAt: $scope.now
+                        });
+                        $scope.newCategory = null;
+                    }
                 });
         };
         $scope.sort = {
@@ -73,6 +74,7 @@ angular.module("suji").controller("categoryCtrl",['$scope', '$meteor', '$mdDialo
 
     }
 ]);
+
 function DialogController($scope, $mdDialog) {
     $scope.hide = function() {
         $mdDialog.hide();
@@ -84,4 +86,3 @@ function DialogController($scope, $mdDialog) {
         $mdDialog.hide(answer);
     };
 };
-

@@ -7,43 +7,44 @@ angular.module("suji").controller("menuCtrl", ['$scope', '$meteor', '$mdDialog',
                     targetEvent: ev,
                 })
                 .then(function(newMenu) {
-                    console.log(newMenu);
-                    if(newMenu.tax_mode === 'true'){
-                        taxMode = 'YES';
-                    } else {
-                        taxMode = 'NO';
-                    }
+                    if (newMenu) {
+                        console.log(newMenu);
+                        if (newMenu.tax_mode === 'true') {
+                            taxMode = 'YES';
+                        }
+                        else {
+                            taxMode = 'NO';
+                        }
 
-                    Menu.insert({
-                        name: newMenu.name,
-                        price: newMenu.price,
-                        primeCost: newMenu.prime_cost,
-                        barcode : newMenu.barcode,
-                        taxMode: taxMode,
-                        category: newMenu.category_name
-                    });
-                    $scope.newMenu = null;
-                }, function() {
-                    $scope.status = 'You cancelled the dialog.';
+                        Menu.insert({
+                            name: newMenu.name,
+                            price: newMenu.price,
+                            primeCost: newMenu.prime_cost,
+                            barcode: newMenu.barcode,
+                            taxMode: taxMode,
+                            category: newMenu.category_name
+                        });
+                        $scope.newMenu = null;
+                    }
                 });
         };
         var table = $('#table');
 
         // Table bordered
         $('#table-bordered').change(function() {
-            var value = $( this ).val();
+            var value = $(this).val();
             table.removeClass('table-bordered').addClass(value);
         });
 
         // Table striped
         $('#table-striped').change(function() {
-            var value = $( this ).val();
+            var value = $(this).val();
             table.removeClass('table-striped').addClass(value);
         });
 
         // Table hover
         $('#table-hover').change(function() {
-            var value = $( this ).val();
+            var value = $(this).val();
             table.removeClass('table-hover').addClass(value);
         });
 
@@ -75,7 +76,9 @@ angular.module("suji").controller("menuCtrl", ['$scope', '$meteor', '$mdDialog',
         });
 
         $scope.removeItem = (item) => {
-            Menu.remove({_id: item._id});
+            Menu.remove({
+                _id: item._id
+            });
         };
 
         $scope.reset = function() {
@@ -103,4 +106,3 @@ function DialogController($scope, $mdDialog) {
         $mdDialog.hide(answer);
     };
 };
-

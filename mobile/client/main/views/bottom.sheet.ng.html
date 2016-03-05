@@ -1,0 +1,28 @@
+<md-bottom-sheet class="md-list md-has-header">
+    <md-subheader>Settings</md-subheader>
+
+    <md-list-item ng-href="/resetpw/{{$root.currentUser._id}}" ng-if="$root.currentUser" ng-click="listItemClick($index)">
+        <md-icon md-svg-icon="social:ic_person_24px"></md-icon>
+        <p> User: <span ng-bind="$root.currentUser.username"></span> </p>
+    </md-list-item>
+
+    <md-list-item ui-sref="changepw" ng-if="$root.currentUser" ng-click="listItemClick($index)">
+        <md-icon md-svg-icon="social:ic_person_24px"></md-icon>
+        <p> Change Password</p>
+    </md-list-item>
+
+    <md-list-item ui-sref="logout" ng-if="$root.currentUser" ng-click="listItemClick($index)">
+        <md-icon md-svg-icon="social:ic_person_24px"></md-icon>
+        <p> Logout</p>
+    </md-list-item>
+
+    <md-list-item ui-sref="login" ng-if="$root.currentUser == null" ng-click="listItemClick($index)">
+        <md-icon md-svg-icon="social:ic_person_24px"></md-icon>
+        <p> Login</p>
+    </md-list-item>
+
+    <md-list-item ui-sref="register" ng-if="$root.currentUser == null" ng-click="listItemClick($index)">
+        <md-icon md-svg-icon="social:ic_person_24px"></md-icon>
+        <p> Register</p>
+    </md-list-item>
+</md-bottom-sheet>
