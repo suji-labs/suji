@@ -24,18 +24,18 @@ angular.module('suji-mr').controller('POSController', function ($scope, $reactiv
         categoryName: 1
     };
 
-    this.subscribe('category', () => {
+    var categoryHandler = $scope.subscribe('category', () => {
         return [
             {
-                sort: this.getReactively('categorySort')
+                sort: $scope.getReactively('categorySort')
             }
         ]
     });
 
-    this.subscribe('menu', () => {
+    var menuHandler = $scope.subscribe('menu', () => {
         return [
             {
-                sort: this.getReactively('menuSort')
+                sort: $scope.getReactively('menuSort')
             }
         ]
     });
@@ -51,8 +51,13 @@ angular.module('suji-mr').controller('POSController', function ($scope, $reactiv
         }
     });
 
+
+
     $scope.findCategory = (item) => {
-        return Menu.find({category: item}).fetch();
+        console.log(item);
+        console.log(menuHandler.ready());
+        if (menuHandler.ready())
+            return Menu.find({category: item}).fetch();
     };
 
     $scope.getSum = function () {

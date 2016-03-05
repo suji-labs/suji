@@ -1,4 +1,4 @@
-Meteor.publish("purchase", function(options, searchString) {
+Meteor.publish("purchase", function(query, options) {
   //if (!searchString) {
   //  searchString = '';
   //}
@@ -13,5 +13,5 @@ Meteor.publish("purchase", function(options, searchString) {
   //    }]
   //  },
   //  options);
-  return Purchase.find({});
+  return Purchase.find(query, options);
 });
