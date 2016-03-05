@@ -1,46 +1,39 @@
 <md-content class="topSpace" layout="row">
   <span flex></span>
-
-  <div class="container" ng-controller="purchaseCtrl">
-    <div class="jumbotron">
-      <div class="container">
-        <div class="col-xs-offset-2 col-xs-8">
-          <div class="table-responsive-vertical shadow-z-1">
-            <table id="table" class="table table-hover table-mc-light-blue">
-              <thead>
-                <th>
-                  <div class="text-info">Purchase Time</div>
-                </th>
-                <th>
-                  <div class="text-info">Total Price</div>
-                </th>
-                <th>
-                  <div class="text-info">Payment</div>
-                </th>
-                <th colspan="2">
-                  <div class="text-info">Action</div>
-                </th>
-              </thead>
-              <tbody>
-                <tr ng-repeat="item in purchaseList">
-                  <td data-title="Purchase Time">
-                    <h4>{{item.time}}</h4></td>
-                  <td data-title="Total Price">
-                    <h4>${{item.price}}</h4></td>
-                  <td data-title="Payment">
-                    <h4>{{item.payment}}</h4></td>
-                  <td data-title="Action">
-                    <md-button class="md-raised md-primary" ng-click="receiptModal(item)">Receipt</md-button>
-                  </td>
-                  <td>
-                    <md-button class="md-raised md-warn" ng-click="removeItem(item)">Remove</md-button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
+  <div id="demo" ng-controller="purchaseCtrl">
+    <div class="table-responsive-vertical shadow-z-1">
+      <table id="table" class="table table-hover table-mc-light-blue">
+        <thead>
+        <th>
+          <div class="text-info">Purchase Time</div>
+        </th>
+        <th>
+          <div class="text-info">Total Price</div>
+        </th>
+        <th>
+          <div class="text-info">Payment</div>
+        </th>
+        <th colspan="2">
+          <div class="text-info">Action</div>
+        </th>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in purchaseList">
+          <td data-title="Purchase Time">
+            <h4>{{item.time}}</h4></td>
+          <td data-title="Total Price">
+            <h4>{{item.price}}</h4></td>
+          <td data-title="Payment">
+            <h4>{{item.payment}}</h4></td>
+          <td data-title="Action">
+            <md-button class="md-raised md-primary" ng-click="receiptModal(item)">Receipt</md-button>
+          </td>
+          <td>
+            <md-button class="md-raised md-warn" ng-click="removeItem(item)">Remove</md-button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
     </div>
   </div>
   <span flex></span>

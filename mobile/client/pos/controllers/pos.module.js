@@ -121,11 +121,6 @@ angular.module("suji").controller("posCtrl", ['$scope', '$meteor',
           arr.push(item);
         }
 
-        console.log('item', item);
-        console.log('getsum', $scope.getSum());
-        console.log('pay', pay);
-        console.log('arr', arr);
-
         Purchase.insert({
           time: new Date().format('yyyy/MM/dd a/p HH:mm:ss'),
           price: $scope.getSum(),

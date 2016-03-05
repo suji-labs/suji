@@ -3,13 +3,13 @@ Menu = new Mongo.Collection("menu");
 Menu.allow({
     insert: function(userId, thing) {
         thing.createAt = new Date();
-        return userId != null;
+        return true;
     },
     update: function(userId, thing, fields, modifier) {
         thing.createdAt = new Date();
         return true;
     },
     remove: function(userId) {
-        return userId != null;
+        return true;
     }
 });
