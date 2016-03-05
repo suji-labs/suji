@@ -7,15 +7,17 @@ angular.module("suji").controller("purchaseCtrl", ['$scope', '$meteor',
             time: -1
         };
 
-        $scope.subscribe('purchase', () => {
-            return [{
-                sort: $scope.getReactively('sort')
-            }]
+        var handler = $scope.subscribe('purchase', function () {
+            var query = {};
+            var sort = { sort: $scope.getReactively('sort')};
+            return [query, sort]
         });
 
         $scope.helpers({
             purchaseList: () => {
-                return Purchase.find({}, {sort: $scope.getReactively('sort')}).fetch();
+                if (handler.ready()) {
+                    return Purchase.find({}, {sort: $scope.sort}).fetch();
+                }
             }
         });
 
