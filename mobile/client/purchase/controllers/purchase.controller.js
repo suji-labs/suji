@@ -1,24 +1,21 @@
 angular.module("suji").controller("purchaseCtrl", ['$scope', '$meteor',
     function($scope, $meteor) {
-
         $scope.now = new Date();
 
         $scope.sort = {
             time: -1
         };
 
-        var handler = $scope.subscribe('purchase', function () {
-            var query = {};
-            var sort = { sort: $scope.getReactively('sort')};
-            return [query, sort]
+        $meteor.autorun($scope, function() {
+            $meteor.subscribe('purchase', {}).then(function() {
+                console.log('Got purchase');
+            });
         });
 
-        $scope.helpers({
-            purchaseList: () => {
-                if (handler.ready()) {
-                    return Purchase.find({}, {sort: $scope.sort}).fetch();
-                }
-            }
+        $scope.purchaseList = $meteor.collection(function() {
+            return Purchase.find({}, {
+                sort: $scope.getReactively('sort')
+            });
         });
 
         $scope.receiptModal = (item) => {
