@@ -1,75 +1,73 @@
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <base href="/">
-  <!--
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="/">
 </head>
 
 <body layout="row" ng-controller="appCtrl">
-  <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+<md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
     <md-toolbar class="md-tall md-hue-2">
-      <span flex></span>
-      <div layout="column" class="md-toolbar-tools-bottom inset" layout-align="center center">
-        <user-avatar></user-avatar>
-        <br>
-        <span></span>
-        <div>
-          <span ng-bind="$root.currentUser.username"></span>
+        <span flex></span>
+        <div layout="column" class="md-toolbar-tools-bottom inset" layout-align="center center">
+            <user-avatar></user-avatar>
+            <br>
+            <span></span>
+            <div>
+                <span ng-bind="$root.currentUser.username"></span>
+            </div>
         </div>
-      </div>
     </md-toolbar>
     <md-list>
-      <md-item ng-repeat="item in tabList">
-        <a>
-          <md-item-content md-ink-ripple layout="row" layout-align="start center">
-            <div class="inset">
-              <md-icon md-svg-icon="{{item.icon}}"></md-icon>
-            </div>
-            <div class="inset" ui-sref="{{item.href}}">{{item.title}}
-            </div>
-          </md-item-content>
-        </a>
-      </md-item>
-      <md-divider></md-divider>
-      <md-subheader>Management</md-subheader>
-      <md-item ng-repeat="item in adminTabList" ng-if="$root.currentUser">
-        <a>
-          <md-item-content md-ink-ripple layout="row" layout-align="start center">
-            <div class="inset">
-              <md-icon md-svg-icon="{{item.icon}}"></md-icon>
-            </div>
-            <div class="inset" ui-sref="{{item.href}}">{{item.title}}
-            </div>
-          </md-item-content>
-        </a>
-      </md-item>
+        <md-item ng-repeat="item in tabList">
+            <a>
+                <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                    <div class="inset">
+                        <md-icon md-svg-icon="{{item.icon}}"></md-icon>
+                    </div>
+                    <div class="inset" ui-sref="{{item.href}}">{{item.title}}
+                    </div>
+                </md-item-content>
+            </a>
+        </md-item>
+        <md-divider></md-divider>
+        <md-subheader ng-if="$root.currentUser">Management</md-subheader>
+        <md-item ng-repeat="item in adminTabList" ng-if="$root.currentUser">
+            <a>
+                <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                    <div class="inset">
+                        <md-icon md-svg-icon="{{item.icon}}"></md-icon>
+                    </div>
+                    <div class="inset" ui-sref="{{item.href}}">{{item.title}}
+                    </div>
+                </md-item-content>
+            </a>
+        </md-item>
     </md-list>
-  </md-sidenav>
+</md-sidenav>
 
-  <div layout="column" class="relative" layout-fill role="main">
+<div layout="column" class="relative" layout-fill role="main">
     <md-toolbar>
-      <div class="md-toolbar-tools">
-        <md-button ng-click="toggleSidenav('left')" hide-gt-md aria-label="Menu">
-          <img src="logo.png" style="width:40px;height:40px;"/>
-        </md-button>
-        <h3>
-            SUJI 
-          </h3>
-        <span flex></span>
+        <div class="md-toolbar-tools">
+            <md-button ng-click="toggleSidenav('left')" hide-gt-md aria-label="Menu">
+                <img src="logo.png" style="width:40px;height:40px;"/>
+            </md-button>
+            <h3>
+                SUJI
+            </h3>
+            <span flex></span>
 
-        <md-button ui-sref="login" ng-if="$root.currentUser == null">Login</md-button>
-        <md-button ui-sref="register" ng-if="$root.currentUser == null">Sign up</md-button>
+            <md-button ui-sref="login" ng-if="$root.currentUser == null">Login</md-button>
+            <md-button ui-sref="register" ng-if="$root.currentUser == null">Sign up</md-button>
 
 
-        <md-button aria-label="Open Settings" ng-click="showListBottomSheet($event)">
-          <md-icon md-svg-icon="action:ic_lock_open_24px"></md-icon>
-        </md-button>
-      </div>
+            <md-button aria-label="Open Settings" ng-click="showListBottomSheet($event)">
+                <md-icon md-svg-icon="navigation:ic_menu_24px"></md-icon>
+            </md-button>
+        </div>
     </md-toolbar>
 
-    <ui-view layout="column" layout-fill layout-padding>
-    </ui-view>
-  </div>
-
+    <md-content flex>
+        <ui-view layout="column" layout-fill layout-padding>
+        </ui-view>
+    </md-content >
+</div>
 </body>

@@ -2,7 +2,9 @@
     <span flex></span>
     <div id="demo" ng-controller="categoryCtrl">
         <md-content flex layout layout-align="center">
-            <md-button class="md-fab" ng-click="showAdd($event)">Add</md-button>
+            <md-button class="md-fab" ng-click="showAdd($event)">
+                <md-icon md-svg-icon="content:ic_add_24px"></md-icon>
+            </md-button>
         </md-content>
         <div class="table-responsive-vertical shadow-z-1">
             <table id="table" class="table table-hover table-mc-light-blue">

@@ -1,29 +1,29 @@
 angular.module("suji").controller("appCtrl", ['$scope', '$mdBottomSheet', '$mdSidenav', '$mdDialog',
     function($scope, $mdBottomSheet, $mdSidenav, $mdDialog) {
         $scope.tabList = [{
-            icon: 'social:ic_person_24px',
+            icon: 'av:ic_web_24px',
             title: 'POS',
             href: 'pos'
         }, {
-            icon: 'social:ic_person_24px',
+            icon: 'social:ic_notifications_24px',
             title: 'Bell',
             href: 'bell'
         }, {
-            icon: 'social:ic_person_24px',
+            icon: 'editor:ic_attach_money_24px',
             title: 'Purchase',
             href: 'purchase'
         }];
 
         $scope.adminTabList = [{
-            icon: 'social:ic_person_24px',
+            icon: 'action:ic_assignment_24px',
             title: 'Menu',
             href: 'menu'
         }, {
-            icon: 'social:ic_person_24px',
+            icon: 'av:ic_library_books_24px',
             title: 'Category',
             href: 'category'
         }, {
-            icon: 'social:ic_person_24px',
+            icon: 'social:ic_group_24px',
             title: 'Employee',
             href: 'employee'
         }];
@@ -54,6 +54,6 @@ angular.module("suji").controller('ListBottomSheetCtrl', function($scope, $mdBot
 angular.module("suji").directive('userAvatar', function() {
     return {
         replace: true,
-        templateUrl: 'client/main/views/avatar.ng.html'
+        template : '<img src="logo.png" style="width:64px;height:64px;"/>'
     };
 });

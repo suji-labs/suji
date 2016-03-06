@@ -8,27 +8,29 @@ angular.module("suji").run(["$rootScope", "$state", function($rootScope, $state)
   });
 }]);
 
-angular.module('suji').config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
-  function($stateProvider, $urlRouterProvider, $locationProvider) {
+angular.module('suji').config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$mdThemingProvider',
+  function($stateProvider, $urlRouterProvider, $locationProvider, $mdThemingProvider) {
     $locationProvider.html5Mode(true);
 
     $stateProvider
-      .state('root', {
-        views: {
-          '': {
-            template: '<div ui-view=""></div>'
-          },
-          'toolbar': {
-            controller: 'ToolbarCtrl',
-            templateUrl: 'client/toolbar/views/toolbar.ng.html'
+        .state('root', {
+          views: {
+            '': {
+              template: '<div ui-view=""></div>'
+            },
+            'toolbar': {
+              controller: 'ToolbarCtrl',
+              templateUrl: 'client/toolbar/views/toolbar.ng.html'
+            }
           }
-        }
-      })
-      .state('home', {
-        parent: 'root',
-        url: '/'
-      });
+        })
+        .state('home', {
+          parent: 'root',
+          url: '/'
+        });
 
     $urlRouterProvider.otherwise("/");
   }
 ]);
+
+
