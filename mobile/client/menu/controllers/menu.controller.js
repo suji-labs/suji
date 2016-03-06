@@ -92,6 +92,10 @@ angular.module("suji").controller("menuCtrl", ['$scope', '$meteor', '$mdDialog',
             }
         };
 
+        //Sort
+        $scope.sortType     = 'name'; // set the default sort type
+        $scope.sortReverse  = false;  // set the default sort order
+        $scope.searchFish   = '';     // set the default search/filter term
     }
 ]);
 

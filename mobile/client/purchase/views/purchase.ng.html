@@ -1,40 +1,52 @@
 <md-content class="topSpace" layout="row">
-  <span flex></span>
-  <div id="demo" ng-controller="purchaseCtrl">
-    <div class="table-responsive-vertical shadow-z-1">
-      <table id="table" class="table table-hover table-mc-light-blue">
-        <thead>
-        <th>
-          <div class="text-info">Purchase Time</div>
-        </th>
-        <th>
-          <div class="text-info">Total Price</div>
-        </th>
-        <th>
-          <div class="text-info">Payment</div>
-        </th>
-        <th colspan="2">
-          <div class="text-info">Action</div>
-        </th>
-        </thead>
-        <tbody>
-        <tr ng-repeat="item in purchaseList">
-          <td data-title="Purchase Time">
-            {{item.time}}</td>
-          <td data-title="Total Price">
-            {{item.price}}</td>
-          <td data-title="Payment">
-            {{item.payment}}</td>
-          <td data-title="Action">
-            <md-button class="md-raised md-primary" ng-click="receiptModal(item)">Receipt</md-button>
-          </td>
-          <td>
-            <md-button class="md-raised md-warn" ng-click="removeItem(item)">Remove</md-button>
-          </td>
-        </tr>
-        </tbody>
-      </table>
+    <span flex></span>
+    <div id="demo" ng-controller="purchaseCtrl">
+        <div class="table-responsive-vertical shadow-z-1">
+            <table id="table" class="table table-hover table-mc-light-blue">
+                <thead>
+                <th><div class="text-info">
+                    <a href="#" ng-click="sortType = 'time';sortReverse = !sortReverse">
+                        Purchase Time
+                        <span ng-show="sortType == 'time' && !sortReverse" class="fa fa-caret-down">▲</span>
+                        <span ng-show="sortType == 'time' && sortReverse" class="fa fa-caret-up">▼</span>
+                    </a>
+                </div></th>
+                <th><div class="text-info">
+                    <a href="#" ng-click="sortType = 'price';sortReverse = !sortReverse">
+                        Total Price
+                        <span ng-show="sortType == 'price' && !sortReverse" class="fa fa-caret-down">▲</span>
+                        <span ng-show="sortType == 'price' && sortReverse" class="fa fa-caret-up">▼</span>
+                    </a>
+                </div></th>
+                <th><div class="text-info">
+                    <a href="#" ng-click="sortType = 'payment';sortReverse = !sortReverse">
+                        Payment
+                        <span ng-show="sortType == 'payment' && !sortReverse" class="fa fa-caret-down">▲</span>
+                        <span ng-show="sortType == 'payment' && sortReverse" class="fa fa-caret-up">▼</span>
+                    </a>
+                </div></th>
+                <th colspan="2">
+                    <div class="text-info">Action</div>
+                </th>
+                </thead>
+                <tbody>
+                <tr ng-repeat="item in purchaseList | orderBy:sortType:sortReverse">
+                    <td data-title="Purchase Time">
+                        {{item.time}}</td>
+                    <td data-title="Total Price">
+                        {{item.price}}</td>
+                    <td data-title="Payment">
+                        {{item.payment}}</td>
+                    <td data-title="Action">
+                        <md-button class="md-raised md-primary" ng-click="receiptModal(item)">Receipt</md-button>
+                    </td>
+                    <td>
+                        <md-button class="md-raised md-warn" ng-click="removeItem(item)">Remove</md-button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-  </div>
-  <span flex></span>
+    <span flex></span>
 </md-content>

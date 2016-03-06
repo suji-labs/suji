@@ -9,7 +9,7 @@ angular.module("suji").controller("appCtrl", ['$scope', '$mdBottomSheet', '$mdSi
             title: 'Bell',
             href: 'bell'
         }, {
-            icon: 'editor:ic_attach_money_24px',
+            icon: 'maps:ic_local_atm_24px',
             title: 'Purchase',
             href: 'purchase'
         }];
