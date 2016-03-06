@@ -82,6 +82,11 @@ angular.module("suji").controller("bellCtrl", ['$scope', '$meteor', '$mdDialog',
         id: "",
       }
     };
+
+    //Sort
+    $scope.sortType     = 'name'; // set the default sort type
+    $scope.sortReverse  = false;  // set the default sort order
+    $scope.searchFish   = '';     // set the default search/filter term
   }
 ]);
 

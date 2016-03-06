@@ -4,10 +4,12 @@
         <form name="employeeForm" ng-controller="employeeCtrl" layout="row" layout-wrap>
             <md-input-container flex="100">
                 <label>Employee ID</label>
+                <md-icon md-svg-icon="action:ic_account_circle_24px"></md-icon>
                 <input name="id" id="id" ng-model="newEmployee.id" ng-required="true" type="number">
             </md-input-container>
             <md-input-container flex="100">
                 <label>Name</label>
+                <md-icon md-svg-icon="action:ic_face_24px"></md-icon>
                 <input name="name" id="name" ng-model="newEmployee.name" ng-required="true" type="text">
             </md-input-container>
             <md-input-container flex="100">
@@ -18,14 +20,11 @@
                     </md-option>
                 </md-select>
             </md-input-container>
-
             <div layout="row" layout-align="end end">
                 <span flex></span>
-
                 <md-button class="md-raised" ng-click="answer()"> Cancel </md-button>
                 <md-button class="md-raised md-warn" ng-click="reset()"> RESET </md-button>
                 <md-button class="md-raised md-primary" ng-click="answer(newEmployee)" ng-disabled="employeeForm.$invalid"> SUBMIT </md-button>
-
             </div>
         </form>
     </md-content>

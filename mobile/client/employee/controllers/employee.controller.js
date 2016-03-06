@@ -67,6 +67,11 @@ angular.module("suji").controller("employeeCtrl", ['$scope', '$meteor', '$mdDial
                 join_date: ""
             }
         };
+
+        //Sort
+        $scope.sortType     = 'name'; // set the default sort type
+        $scope.sortReverse  = false;  // set the default sort order
+        $scope.searchFish   = '';     // set the default search/filter term
     }
 ]);
 

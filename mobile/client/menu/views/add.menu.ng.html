@@ -4,27 +4,29 @@
         <form name="menuForm" ng-controller="menuCtrl" layout="row" layout-wrap>
             <md-input-container flex="100">
                 <label>Menu Name</label>
+                <md-icon md-svg-icon="action:ic_assignment_24px"></md-icon>
                 <input name="name" id="name" ng-model="newMenu.name" ng-required="true">
             </md-input-container>
             <md-input-container flex="100">
                 <label>Price</label>
+                <md-icon md-svg-icon="editor:ic_attach_money_24px"></md-icon>
                 <input name="price" id="price" ng-model="newMenu.price" ng-required="true" type="number">
             </md-input-container>
             <md-input-container flex="100">
                 <label>Prime Cost</label>
+                <md-icon md-svg-icon="editor:ic_attach_money_24px"></md-icon>
                 <input name="prime_cost" id="prime_cost" ng-model="newMenu.prime_cost" ng-required="true" type="number">
             </md-input-container>
             <md-input-container flex="100">
                 <label>Barcode</label>
+                <md-icon md-svg-icon="action:ic_view_week_24px"></md-icon>
                 <input name="barcode" id="barcode" ng-model="newMenu.barcode" type="text">
             </md-input-container>
-
             <md-input-container flex="100">
                 <md-checkbox name="tax_mode" id="tax_mode" ng-model="newMenu.tax_mode" aria-label="Checkbox" class="md-primary">
                     Tax Mode : {{newMenu.tax_mode}}
                 </md-checkbox>
             </md-input-container>
-
             <md-input-container flex="100">
                 <label>Category</label>
                 <md-select ng-model="newMenu.category_name" ng-required="true">
@@ -35,11 +37,9 @@
             </md-input-container>
             <div layout="row" layout-align="end end">
                 <span flex></span>
-
                 <md-button class="md-raised" ng-click="answer()"> Cancel </md-button>
                 <md-button class="md-raised md-warn" ng-click="reset()"> RESET </md-button>
                 <md-button class="md-raised md-primary" ng-click="answer(newMenu)" ng-disabled="menuForm.$invalid"> SUBMIT </md-button>
-
             </div>
         </form>
     </md-content>

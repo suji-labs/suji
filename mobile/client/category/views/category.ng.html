@@ -10,12 +10,19 @@
             <table id="table" class="table table-hover table-mc-light-blue">
                 <thead>
                 <tr>
-                    <th><div class="text-info">Category Name</div></th>
+                    <th><div class="text-info">
+                        <a href="#" ng-click="sortType = 'categoryName';sortReverse = !sortReverse">
+                            Category Name
+                            <span ng-show="sortType == 'categoryName' && !sortReverse" class="fa fa-caret-down">▲</span>
+                            <span ng-show="sortType == 'categoryName' && sortReverse" class="fa fa-caret-up">▼</span>
+                        </a>
+                    </div>
+                    </th>
                     <th><div class="text-info">Action</div></th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr ng-repeat="item in categoryList">
+                <tr ng-repeat="item in categoryList | orderBy:sortType:sortReverse">
                     <td data-title="Name">{{item.categoryName}}</td>
                     <td data-title="Action">
                         <md-button class="md-raised md-warn" ng-click="removeCategory(item)">Remove</md-button>
