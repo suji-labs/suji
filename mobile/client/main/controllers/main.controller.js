@@ -42,6 +42,10 @@ angular.module("suji").controller("appCtrl", ['$scope', '$mdBottomSheet', '$mdSi
                 $scope.alert = clickedItem + ' clicked!';
             });
         };
+        
+        $scope.sidenavClose = function(){
+            $mdSidenav('left').close();
+        }
     }
 ]);
 

@@ -69,7 +69,7 @@ angular.module("suji").controller("employeeCtrl", ['$scope', '$meteor', '$mdDial
         };
 
         //Sort
-        $scope.sortType     = 'name'; // set the default sort type
+        $scope.sortType     = 'id'; // set the default sort type
         $scope.sortReverse  = false;  // set the default sort order
         $scope.searchFish   = '';     // set the default search/filter term
     }
