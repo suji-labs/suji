@@ -54,8 +54,6 @@ angular.module('suji-mr').controller('POSController', function ($scope, $reactiv
 
 
     $scope.findCategory = (item) => {
-        console.log(item);
-        console.log(menuHandler.ready());
         if (menuHandler.ready())
             return Menu.find({category: item}).fetch();
     };

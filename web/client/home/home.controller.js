@@ -2,13 +2,32 @@
  * Created by 보운 on 2016-02-12.
  */
 
-angular.module('suji-mr').controller('HomeController', function ($scope, $reactive, $state) {
+angular.module('suji-mr').controller('HomeController', function ($scope, $reactive) {
     $reactive(this).attach($scope);
 
-    this.subscribe('store');
+    var storeHandler = this.subscribe('store');
 
-    if (Store.find().count() === 0) {
-        console.log("store");
-        $state.go('store');
-    }
+    $scope.helpers({
+        storeList: () => {
+            if (storeHandler.ready()) {
+                return Store.find({}).count();
+            }
+        }
+    });
+
+    $scope.addStore = () => {
+        console.log($scope.STORE_NAME);
+        console.log($scope.BRN);
+        console.log($scope.ADDRESS);
+        console.log($scope.REPRESENTATIVE);
+        console.log($scope.TEL);
+
+        Store.insert({
+            name: $scope.STORE_NAME,
+            brn: $scope.BRN,
+            address: $scope.ADDRESS,
+            representative: $scope.REPRESENTATIVE,
+            tel: $scope.TEL
+        });
+    };
 });
