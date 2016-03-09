@@ -2,9 +2,9 @@ angular.module('suji-mr').config(function ($urlRouterProvider, $stateProvider, $
     $locationProvider.html5Mode(true);
 
     $stateProvider
-        .state('home', {
-            url: '/home',
-            template: '<home></home>'
+        .state('homepage', {
+            url: '/homepage',
+            template: '<homepage></homepage>'
         })
         .state('startpos', {
             url: '/startpos',

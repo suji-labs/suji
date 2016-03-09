@@ -16,12 +16,6 @@ angular.module('suji-mr').controller('HomeController', function ($scope, $reacti
     });
 
     $scope.addStore = () => {
-        console.log($scope.STORE_NAME);
-        console.log($scope.BRN);
-        console.log($scope.ADDRESS);
-        console.log($scope.REPRESENTATIVE);
-        console.log($scope.TEL);
-
         Store.insert({
             name: $scope.STORE_NAME,
             brn: $scope.BRN,

@@ -1,38 +1,59 @@
 <div ng-include="'client/header.html'"></div>
 
-<div class="jumbotron" ng-controller="HomeController">
-    <div ng-if="storeList == 0">
-        <div class="container">
-            <div class="col-xs-offset-2 col-xs-8">
-                <h1>Welcome</h1>
-                <p>Choose Menu</p>
-                <br>
-                <p><a ui-sref="home">Home</a></p>
-                <p><a ui-sref="startpos">Start POS</a></p>
-                <p><a ui-sref="manage">Add Menu</a></p>
-                <p><a ui-sref="category">Add Category</a></p>
-                <p><a ui-sref="purchase">Purchase Log</a></p>
-                <p><a ui-sref="statistics">Statistics</a></p>
-                <p><a ui-sref="bell">Bell</a></p>
-                <p><a ui-sref="employee">Employee</a></p>
-                <p><a ui-sref="about">About</a></p>
+<div ng-app>
+    <div class="jumbotron" ng-controller="HomeController">
+        <div ng-if="storeList == 1">
+            <div class="container">
+                <div class="col-xs-offset-2 col-xs-8">
+                    <h1>Welcome</h1>
+                    <p>Choose Menu</p>
+                    <br>
+                    <p><a ui-sref="homepage">Home</a></p>
+                    <p><a ui-sref="startpos">Start POS</a></p>
+                    <p><a ui-sref="manage">Add Menu</a></p>
+                    <p><a ui-sref="category">Add Category</a></p>
+                    <p><a ui-sref="purchase">Purchase Log</a></p>
+                    <p><a ui-sref="statistics">Statistics</a></p>
+                    <p><a ui-sref="bell">Bell</a></p>
+                    <p><a ui-sref="employee">Employee</a></p>
+                    <p><a ui-sref="about">About</a></p>
+                </div>
             </div>
         </div>
-    </div>
-    <div ng-if="storeList > 0">
-        <div class="container">
-            <div class="col-xs-offset-2 col-xs-8">
-                <label>Store Name : </label>
-                <input type="text" class="form-control" ng-model="STORE_NAME">
-                <label>Business Registration Number : </label>
-                <input type="text" class="form-control" ng-model="BRN">
-                <label>Address : </label>
-                <input type="text" class="form-control" ng-model="ADDRESS">
-                <label>Representative : </label>
-                <input type="text" class="form-control" ng-model="REPRESENTATIVE">
-                <label>TEL : </label>
-                <input type="text" class="form-control" ng-model="TEL">
-                <button class="btn btn-primary" ng-click="addStore()">Add</button>
+        <div ng-if="storeList == 0">
+            <div class="container">
+                <div class="col-xs-offset-2 col-xs-8">
+                    <table class="table" style="text-align: center">
+                        <thead><h1>Add Store</h1></thead>
+                        <tbody>
+                        <tr>
+                            <td><label>Store Name</label></td>
+                            <td><input type="text" class="form-control" ng-model="$parent.STORE_NAME"></td>
+                        </tr>
+                        <tr>
+                            <td><label>Business Registration Number</label></td>
+                            <td><input type="text" class="form-control" ng-model="$parent.BRN"></td>
+                        </tr>
+                        <tr>
+                            <td><label>Address</label></td>
+                            <td><input type="text" class="form-control" ng-model="$parent.ADDRESS"></td>
+                        </tr>
+                        <tr>
+                            <td><label>Representative</label></td>
+                            <td><input type="text" class="form-control" ng-model="$parent.REPRESENTATIVE"></td>
+                        </tr>
+                        <tr>
+                            <td><label>TEL</label></td>
+                            <td><input type="text" class="form-control" ng-model="$parent.TEL"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button class="btn btn-primary" ng-click="addStore()">Add</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
