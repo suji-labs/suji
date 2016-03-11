@@ -2,6 +2,8 @@
 > 소상공인들이 수지 맞기를 기원하는 웹 기반 오픈소스 POS 시스템
 ![SUJI](https://cloud.githubusercontent.com/assets/7614353/12139794/1329ce44-b4a6-11e5-90a2-dd51d039e01d.png)
 - [**소개 영상**](https://youtu.be/fMRXjG3Plu8)
+- GIF TEST
+![](https://cloud.githubusercontent.com/assets/7614353/13712462/1cc694fc-e807-11e5-90b4-de1691cf7fef.gif)
 
 &nbsp;
 ## REST API
