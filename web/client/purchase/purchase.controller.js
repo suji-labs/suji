@@ -10,6 +10,7 @@ angular.module('suji-mr').controller('PurchaseController', function ($scope, $re
         time: -1
     };
 
+    this.subscribe('store');
     this.subscribe('purchase', () => {
         return [
             {
@@ -26,6 +27,13 @@ angular.module('suji-mr').controller('PurchaseController', function ($scope, $re
 
     $scope.receiptModal = (item) => {
         var totalCnt = 0, totalPrice = 0;
+        var receiptTitle = '<table>' +
+            '<tr><td><label>[Store] : ' + Store.findOne().name + '</label></td></tr>' +
+            '<tr><td><label>[B/N] : ' + Store.findOne().brn + '</label></td></tr>' +
+            '<tr><td><label>[Address] : ' + Store.findOne().address + '</label></td></tr>' +
+            '<tr><td><label>[Representative] : ' + Store.findOne().representative + '</label></td></tr>' +
+            '<tr><td><label>[Tel] : ' + Store.findOne().tel + '</label></td></tr>' +
+            '</table><br>';
         var str = '<style>th{text-align: center}</style><table class="table" style="text-align: center">';
         str += '<thead><tr><th>Name</th><th>Quantity</th><th>Total Price</th></tr></thead>';
         for (var i = 0; i < item.sale.length; i++) {
@@ -36,7 +44,7 @@ angular.module('suji-mr').controller('PurchaseController', function ($scope, $re
         str += '<tr><td>TOTAL</td><td>' + totalCnt + '</td><td>' + totalPrice + '</td></tr></table>';
         bootbox.dialog({
             title: "Receipt",
-            message: str,
+            message: receiptTitle + str,
             buttons: {
                 success: {
                     label: "OK",

@@ -37,8 +37,7 @@ angular.module('suji-mr').controller('HomeController', function ($scope, $reacti
             brn: $scope.BRN,
             address: $scope.ADDRESS,
             representative: $scope.REPRESENTATIVE,
-            tel: $scope.TEL,
-            password: $scope.PASSWORD
+            tel: $scope.TEL
         });
 
         userID = $scope.STORE_NAME;
