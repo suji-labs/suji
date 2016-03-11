@@ -1,14 +1,22 @@
-<ul>
-    <li><a ui-sref="homepage">Home</a></li>
-    <li><a ui-sref="startpos">Start POS</a></li>
-    <li><a ui-sref="manage">Add Menu</a></li>
-    <li><a ui-sref="category">Add Category</a></li>
-    <li><a ui-sref="purchase">Purchase Log</a></li>
-    <li><a ui-sref="statistics">Statistics</a></li>
-    <li><a ui-sref="bell">Bell</a></li>
-    <li><a ui-sref="employee">Employee</a></li>
-    <li><a ui-sref="about">About</a></li>
-</ul>
-<div class="collapse navbar-collapse" id="navigation">
-    <login-buttons></login-buttons>
+<div ng-controller="HomeController">
+    <ul>
+        <li><a ui-sref="homepage">Home</a></li>
+        <li><a ui-sref="startpos">Start POS</a></li>
+        <li><a ui-sref="manage">Add Menu</a></li>
+        <li><a ui-sref="category">Add Category</a></li>
+        <li><a ui-sref="purchase">Purchase Log</a></li>
+        <li><a ui-sref="statistics">Statistics</a></li>
+        <li><a ui-sref="bell">Bell</a></li>
+        <li><a ui-sref="employee">Employee</a></li>
+        <li><a ui-sref="about">About</a></li>
+        <li>
+            <a id="login">Admin</a>
+        </li>
+        <li>
+            <a id="logout">Logout</a>
+        </li>
+    </ul>
+    <div class="collapse navbar-collapse" id="navigation">
+        <!--<login-buttons></login-buttons>-->
+    </div>
 </div>

@@ -2,10 +2,21 @@
  * Created by 보운 on 2016-02-12.
  */
 
-angular.module('suji-mr').controller('HomeController', function ($scope, $reactive) {
+angular.module('suji-mr').controller('HomeController', function ($scope, $reactive, $state) {
     $reactive(this).attach($scope);
 
     var storeHandler = this.subscribe('store');
+    $scope.userID = '';
+
+    $("#login").click(function () {
+        $('#loginModal').modal('show');
+    });
+
+    $("#logout").click(function () {
+        Meteor.logout();
+        $state.go('homepage');
+        console.log("Logout");
+    });
 
     $scope.helpers({
         storeList: () => {
@@ -16,12 +27,33 @@ angular.module('suji-mr').controller('HomeController', function ($scope, $reacti
     });
 
     $scope.addStore = () => {
+        Accounts.createUser({
+            username: $scope.STORE_NAME,
+            password: $scope.PASSWORD
+        });
+
         Store.insert({
             name: $scope.STORE_NAME,
             brn: $scope.BRN,
             address: $scope.ADDRESS,
             representative: $scope.REPRESENTATIVE,
-            tel: $scope.TEL
+            tel: $scope.TEL,
+            password: $scope.PASSWORD
         });
+
+        userID = $scope.STORE_NAME;
+        $scope.STORE_NAME = '';
+        $scope.BRN = '';
+        $scope.ADDRESS = '';
+        $scope.REPRESENTATIVE = '';
+        $scope.TEL = '';
+        $scope.PASSWORD = '';
+    };
+
+    $scope.signIn = (password) => {
+        $scope.passwordInput = '';
+        $('#loginModal').modal('hide');
+        Meteor.loginWithPassword(userID, password);
+        console.log("Login");
     };
 });
