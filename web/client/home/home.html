@@ -24,30 +24,36 @@
             <div class="container">
                 <div class="col-xs-offset-2 col-xs-8">
                     <table class="table" style="text-align: center">
-                        <thead><h1>Add Store</h1></thead>
+                        <thead>
+                        <th colspan="2"><h1>Add Store</h1></th>
+                        </thead>
                         <tbody>
                         <tr>
-                            <td><label>Store Name</label></td>
+                            <td><h4>Store Name</h4></td>
                             <td><input type="text" class="form-control" ng-model="$parent.STORE_NAME"></td>
                         </tr>
                         <tr>
-                            <td><label>Business Registration Number</label></td>
+                            <td><h4>Business Registration Number</h4></td>
                             <td><input type="text" class="form-control" ng-model="$parent.BRN"></td>
                         </tr>
                         <tr>
-                            <td><label>Address</label></td>
+                            <td><h4>Address</h4></td>
                             <td><input type="text" class="form-control" ng-model="$parent.ADDRESS"></td>
                         </tr>
                         <tr>
-                            <td><label>Representative</label></td>
+                            <td><h4>Representative</h4></td>
                             <td><input type="text" class="form-control" ng-model="$parent.REPRESENTATIVE"></td>
                         </tr>
                         <tr>
-                            <td><label>TEL</label></td>
+                            <td><h4>TEL</h4></td>
                             <td><input type="text" class="form-control" ng-model="$parent.TEL"></td>
                         </tr>
                         <tr>
-                            <td>
+                            <td><h4>Password</h4></td>
+                            <td><input type="password" class="form-control" ng-model="$parent.PASSWORD"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
                                 <button class="btn btn-primary" ng-click="addStore()">Add</button>
                             </td>
                         </tr>
@@ -56,5 +62,6 @@
                 </div>
             </div>
         </div>
+        <div ng-include="'client/home/login.html'"></div>
     </div>
 </div>
