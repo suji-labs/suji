@@ -1,10 +1,50 @@
-# SUJI [![Build Status](https://travis-ci.org/naver-d2-suji/suji.svg)](https://travis-ci.org/naver-d2-suji/suji)
-> 소상공인들이 수지 맞기를 기원하는 웹 기반 오픈소스 POS 시스템
-![SUJI](https://cloud.githubusercontent.com/assets/7614353/12139794/1329ce44-b4a6-11e5-90a2-dd51d039e01d.png)
-- [**소개 영상**](https://youtu.be/fMRXjG3Plu8)
-- GIF TEST
-![](https://cloud.githubusercontent.com/assets/7614353/13712462/1cc694fc-e807-11e5-90b4-de1691cf7fef.gif)
+# [SUJI](http://naver-d2-suji.github.io/suji) [![Build Status](https://travis-ci.org/naver-d2-suji/suji.svg)](https://travis-ci.org/naver-d2-suji/suji)
+SUJI is open source web POS System for the low-income independents.
 
+## Development Stack
+* Language : Javascript
+* Framework
+    - [Angular](https://angularjs.org/), [Angular Material](https://github.com/angular/material)
+    - [Meteor](https://www.meteor.com/)
+* Database : MongoDB
+* Server : [Nginx](http://nginx.org/), [DigitalOcean](https://www.digitalocean.com/)
+
+## Prerequisites
+* [Node.js](https://nodejs.org/en/download/)
+    - * You have `node` installed at v5.0.0+
+* Meteor
+    - *Windows* -  Download and Install [Meteor](https://www.meteor.com/)
+    - *Linux/Mac* - `curl https://install.meteor.com/ | sh`
+
+## Execution
+* [Download the latest versio](https://github.com/naver-d2-suji/suji/archive/develop.zip)
+* Extract develop.zip
+* Move into folder
+```sh
+cd suji-develop/mobile
+```
+* Run program
+```sh
+./start.sh
+```
+
+## Code Example
+
+## Contributors
+* Kim, BoWoon
+* Lee, DongKyu
+* Jin, Hyungtak
+
+## License
+2016 [MIT](http://opensource.org/licenses/mit-license.php) © [Dongkyu Lee](http://ledgku.tistory.com), [HyungTak Jin](http://njir.github.io), BoWoon Kim
+
+
+
+
+
+
+To be deleted
+- [**소개 영상**](https://youtu.be/fMRXjG3Plu8)
 &nbsp;
 ## REST API
 > REST API Definition
