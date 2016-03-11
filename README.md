@@ -1,4 +1,4 @@
-# [SUJI](http://naver-d2-suji.github.io/suji) [![Build Status](https://travis-ci.org/naver-d2-suji/suji.svg)](https://travis-ci.org/naver-d2-suji/suji)
+# [SUJI](http://naver-d2-suji.github.io/suji) [![Build Status](https://travis-ci.org/naver-d2-suji/suji.svg)](https://travis-ci.org/naver-d2-suji/suji) [![js-standard-style][standard-image]][standard-url]
 SUJI is open source web POS System for the low-income independents.
 
 ## Development Stack
@@ -11,13 +11,13 @@ SUJI is open source web POS System for the low-income independents.
 
 ## Prerequisites
 * [Node.js](https://nodejs.org/en/download/)
-    - * You have `node` installed at v5.0.0+
+    - * You have `node` installed at v5.0.0+ *
 * Meteor
     - *Windows* -  Download and Install [Meteor](https://www.meteor.com/)
     - *Linux/Mac* - `curl https://install.meteor.com/ | sh`
 
 ## Execution
-* [Download the latest versio](https://github.com/naver-d2-suji/suji/archive/develop.zip)
+* [Download the latest version](https://github.com/naver-d2-suji/suji/archive/develop.zip)
 * Extract develop.zip
 * Move into folder
 ```sh
@@ -40,7 +40,8 @@ cd suji-develop/mobile
 
 
 
-
+[standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat
+[standard-url]: http://standardjs.com/
 
 
 To be deleted
