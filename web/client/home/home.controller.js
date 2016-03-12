@@ -16,6 +16,7 @@ angular.module('suji-mr').controller('HomeController', function ($scope, $reacti
         Meteor.logout();
         $state.go('homepage');
         console.log("Logout");
+        window.alert("Logout Success");
     });
 
     $scope.helpers({
@@ -54,5 +55,6 @@ angular.module('suji-mr').controller('HomeController', function ($scope, $reacti
         $('#loginModal').modal('hide');
         Meteor.loginWithPassword(userID, password);
         console.log("Login");
+        window.alert("Login Success");
     };
 });
