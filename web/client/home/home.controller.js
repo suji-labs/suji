@@ -6,17 +6,9 @@ angular.module('suji-mr').controller('HomeController', function ($scope, $reacti
     $reactive(this).attach($scope);
 
     var storeHandler = this.subscribe('store');
-    $scope.userID = '';
 
     $("#login").click(function () {
         $('#loginModal').modal('show');
-    });
-
-    $("#logout").click(function () {
-        Meteor.logout();
-        $state.go('homepage');
-        console.log("Logout");
-        window.alert("Logout Success");
     });
 
     $scope.helpers({
@@ -27,9 +19,13 @@ angular.module('suji-mr').controller('HomeController', function ($scope, $reacti
         }
     });
 
+    $scope.meteorUserID = () => {
+        return Meteor.userId();
+    };
+
     $scope.addStore = () => {
         Accounts.createUser({
-            username: $scope.STORE_NAME,
+            username: 'admin',
             password: $scope.PASSWORD
         });
 
@@ -41,7 +37,6 @@ angular.module('suji-mr').controller('HomeController', function ($scope, $reacti
             tel: $scope.TEL
         });
 
-        userID = $scope.STORE_NAME;
         $scope.STORE_NAME = '';
         $scope.BRN = '';
         $scope.ADDRESS = '';
@@ -50,10 +45,21 @@ angular.module('suji-mr').controller('HomeController', function ($scope, $reacti
         $scope.PASSWORD = '';
     };
 
+    $scope.login = () => {
+        $('#loginModal').modal('show');
+    };
+
+    $scope.logout = () => {
+        Meteor.logout();
+        $state.go('homepage');
+        console.log("Logout");
+        window.alert("Logout Success");
+    };
+
     $scope.signIn = (password) => {
         $scope.passwordInput = '';
         $('#loginModal').modal('hide');
-        Meteor.loginWithPassword(userID, password);
+        Meteor.loginWithPassword('admin', password);
         console.log("Login");
         window.alert("Login Success");
     };

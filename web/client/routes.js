@@ -107,11 +107,7 @@ angular.module('suji-mr').config(function ($urlRouterProvider, $stateProvider, $
         .state('about', {
             url: '/about',
             template: '<about></about>'
-        })
-        .state('store', {
-            url: '/store',
-            template: '<store></store>'
         });
 
-    $urlRouterProvider.otherwise("/home");
+    $urlRouterProvider.otherwise("/homepage");
 });

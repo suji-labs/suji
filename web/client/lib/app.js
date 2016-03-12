@@ -11,3 +11,7 @@ angular.module('suji-mr', [
 Accounts.ui.config({
     passwordSignupFields: 'USERNAME_ONLY'
 });
+
+window.onbeforeunload = function () {
+    Meteor.logout();
+};
