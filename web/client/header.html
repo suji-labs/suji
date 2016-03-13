@@ -1,0 +1,19 @@
+<div ng-controller="HomeController">
+    <ul>
+        <li><a ui-sref="homepage">Home</a></li>
+        <li><a ui-sref="startpos">Start POS</a></li>
+        <li><a ui-sref="manage">Add Menu</a></li>
+        <li><a ui-sref="category">Add Category</a></li>
+        <li><a ui-sref="purchase">Purchase Log</a></li>
+        <li><a ui-sref="statistics">Statistics</a></li>
+        <li><a ui-sref="bell">Bell</a></li>
+        <li><a ui-sref="employee">Employee</a></li>
+        <li><a ui-sref="about">About</a></li>
+        <div style="float: right;">
+            <li ng-if="meteorUserID() == null"><a id="login" ng-click="login()">Login</a></li>
+            <li ng-if="meteorUserID() != null"><a id="logout" ng-click="logout()">Logout</a></li>
+        </div>
+    </ul>
+    <div class="collapse navbar-collapse" id="navigation">
+    </div>
+</div>

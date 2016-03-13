@@ -1,0 +1,73 @@
+<md-content class="topSpace" layout="row">
+    <span flex></span>
+    <div id="demo" ng-controller="menuCtrl">
+        <md-button class="md-fab" ng-click="showAdd($event)">
+            <md-icon md-svg-icon="content:ic_add_24px"></md-icon>
+        </md-button>
+        <div class="table-responsive-vertical shadow-z-1">
+            <table id="table" class="table table-hover table-mc-light-blue">
+                <thead>
+                <tr>
+                    <th><div class="text-info">
+                        <a href="#" ng-click="sortType = 'name';sortReverse = !sortReverse">
+                            Name
+                            <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-down">▲</span>
+                            <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-up">▼</span>
+                        </a>
+                    </div></th>
+                    <th><div class="text-info">
+                        <a href="#" ng-click="sortType = 'price';sortReverse = !sortReverse">
+                            Price
+                            <span ng-show="sortType == 'price' && !sortReverse" class="fa fa-caret-down">▲</span>
+                            <span ng-show="sortType == 'price' && sortReverse" class="fa fa-caret-up">▼</span>
+                        </a>
+                    </div></th>
+                    <th><div class="text-info">
+                        <a href="#" ng-click="sortType = 'primeCost';sortReverse = !sortReverse">
+                            Prime Cost
+                            <span ng-show="sortType == 'primeCost' && !sortReverse" class="fa fa-caret-down">▲</span>
+                            <span ng-show="sortType == 'primeCost' && sortReverse" class="fa fa-caret-up">▼</span>
+                        </a>
+                    </div></th>
+                    <th><div class="text-info">
+                        <a href="#" ng-click="sortType = 'Barcode';sortReverse = !sortReverse">
+                            Barcode
+                            <span ng-show="sortType == 'Barcode' && !sortReverse" class="fa fa-caret-down">▲</span>
+                            <span ng-show="sortType == 'Barcode' && sortReverse" class="fa fa-caret-up">▼</span>
+                        </a>
+                    </div></th>
+                    <th><div class="text-info">
+                        <a href="#" ng-click="sortType = 'taxMode';sortReverse = !sortReverse">
+                            isTaxable
+                            <span ng-show="sortType == 'taxMode' && !sortReverse" class="fa fa-caret-down">▲</span>
+                            <span ng-show="sortType == 'taxMode' && sortReverse" class="fa fa-caret-up">▼</span>
+                        </a>
+                    </div></th>
+                    <th><div class="text-info">
+                        <a href="#" ng-click="sortType = 'category';sortReverse = !sortReverse">
+                            Category
+                            <span ng-show="sortType == 'category' && !sortReverse" class="fa fa-caret-down">▲</span>
+                            <span ng-show="sortType == 'category' && sortReverse" class="fa fa-caret-up">▼</span>
+                        </a>
+                    </div></th>
+                    <th><div class="text-info">Action</div></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="item in menuList | orderBy:sortType:sortReverse">
+                    <td data-title="Name">{{item.name}}</td>
+                    <td data-title="Price">{{item.price}}</td>
+                    <td data-title="Prime Cost">{{item.primeCost}}</td>
+                    <td data-title="Barcode">{{item.barcode}}</td>
+                    <td data-title="isTaxable">{{item.taxMode}}</td>
+                    <td data-title="Category">{{item.category}}</td>
+                    <td data-title="Action">
+                        <md-button class="md-raised md-warn" ng-click="removeItem(item)">Remove</md-button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <span flex></span>
+</md-content>

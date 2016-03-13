@@ -1,0 +1,33 @@
+<div class="modal fade" id="card">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Payment</h4>
+            </div>
+
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="well">
+
+                            <md-button class="md-raised md-primary" ng-click="cash()">Cash</md-button>
+                            <md-button class="md-raised md-primary" ng-click="creditCard()">Card</md-button>
+                            <div class="box" style="margin-top: 20px">
+                                <div id="numberPad">
+                                    <div class="label label-danger">Total: ￦{{getSum()}}</div>
+                                    <h3>Card Number</h3>
+                                    <input type="text" id="showPrice" class="form-control" ng-model="showPrice">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <md-button class="md-raised " data-dismiss="modal">Cancel</md-button>
+                <md-button class="md-raised md-warn" id="cashSale" ng-click="checkout()">Sale</md-button>
+            </div>
+        </div>
+    </div>
+</div>

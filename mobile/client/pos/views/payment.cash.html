@@ -1,0 +1,115 @@
+<div class="modal fade" id="cash">
+    <div class="modal-dialog modal-sm" style="width: 700px">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h4 class="modal-title">Payment</h4>
+            </div>
+
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="well" style="margin-bottom: 0">
+                            <table class="table table-condensed" style="text-align: center">
+                                <thead>
+                                    <div>
+                                        <th colspan="2" style="text-align: center">
+                                            <md-button class="md-raised md-primary" ng-click="cash()">Cash</md-button>
+                                            <md-button class="md-raised md-primary" ng-click="creditCard()">Card</md-button>
+                                        </th>
+                                    </div>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div>
+                                                <ul class="list-group">
+                                                    <li float="clear" class="list-group-item" ng-repeat="item in order">
+                                                        <span> {{item.itemId}}</span>
+                                                        <div class="label label-success pull-right">
+                                                            ￦{{item.totalPrice}}</div>
+                                                        <div class="label label-default pull-right">{{item.orderedItemCnt}}</div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="label label-danger">Total: ￦{{getSum()}}</div>
+                                        </td>
+                                        <td>
+                                            <div class="box" style="margin-top: 10px">
+                                                <div id="numberPad">
+                                                    <table class="table table-condensed" style="text-align: center; background-color: transparent">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <button type="button" class="buttons btn btn-primary" ng-click="numberPad('7')">7
+                                                                    </button>
+                                                                </td>
+                                                                <td>
+                                                                    <button type="button" class="buttons btn btn-primary" ng-click="numberPad('8')">8
+                                                                    </button>
+                                                                </td>
+                                                                <td>
+                                                                    <button type="button" class="buttons btn btn-primary" ng-click="numberPad('9')">9
+                                                                    </button>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <button type="button" class="buttons btn btn-primary" ng-click="numberPad('4')">4
+                                                                    </button>
+                                                                </td>
+                                                                <td>
+                                                                    <button type="button" class="buttons btn btn-primary" ng-click="numberPad('5')">5
+                                                                    </button>
+                                                                </td>
+                                                                <td>
+                                                                    <button type="button" class="buttons btn btn-primary" ng-click="numberPad('6')">6
+                                                                    </button>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <button type="button" class="buttons btn btn-primary" ng-click="numberPad('1')">1
+                                                                    </button>
+                                                                </td>
+                                                                <td>
+                                                                    <button type="button" class="buttons btn btn-primary" ng-click="numberPad('2')">2
+                                                                    </button>
+                                                                </td>
+                                                                <td>
+                                                                    <button type="button" class="buttons btn btn-primary" ng-click="numberPad('3')">3
+                                                                    </button>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <button type="button" class="buttons btn btn-primary" ng-click="numberPad('c')">C
+                                                                    </button>
+                                                                </td>
+                                                                <td colspan="2">
+                                                                    <button type="button" class="buttons btn btn-primary" ng-click="numberPad('0')">0
+                                                                    </button>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <input type="text" id="showPrice" class="form-control" ng-model="showPrice">
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <md-button class="md-raised " data-dismiss="modal">Cancel</md-button>
+                <md-button class="md-raised md-warn" id="cashSale" ng-click="checkout()">Sale</md-button>
+            </div>
+
+        </div>
+    </div>
+</div>

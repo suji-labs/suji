@@ -1,0 +1,20 @@
+<md-dialog>
+    <md-content class="md-padding">
+        <h2>Add Category</h2>
+        <form name="categotyForm" ng-controller="categoryCtrl" layout="row" layout-wrap>
+            <md-input-container flex="100">
+                <label>Category Name</label>
+                <md-icon md-svg-icon="av:ic_library_books_24px"></md-icon>
+                <input name="name" id="name" ng-model="newCategory.name" ng-required="true">
+            </md-input-container>
+            <div layout="row" layout-align="end end">
+                <span flex></span>
+
+                <md-button class="md-raised" ng-click="answer()"> Cancel </md-button>
+                <md-button class="md-raised md-warn" ng-click="reset()"> RESET </md-button>
+                <md-button class="md-raised md-primary" ng-click="answer(newCategory)" ng-disabled="categoryForm.$invalid"> SUBMIT </md-button>
+
+            </div>
+        </form>
+    </md-content>
+</md-dialog>

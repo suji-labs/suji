@@ -1,0 +1,36 @@
+<md-content class="topSpace" layout="row">
+    <span flex></span>
+    <div id="demo" ng-controller="bellCtrl">
+        <md-button class="md-fab" ng-click="showAdd($event)">
+            <md-icon md-svg-icon="content:ic_add_24px"></md-icon>
+        </md-button>
+        <div class="table-responsive-vertical shadow-z-1">
+            <table id="table" class="table table-hover table-mc-light-blue">
+                <thead>
+                <tr>
+                    <th><div class="text-info">
+                        <a href="#" ng-click="sortType = 'bellID';sortReverse = !sortReverse">
+                            Bell Number(1~9)
+                            <span ng-show="sortType == 'bellID' && !sortReverse" class="fa fa-caret-down">▲</span>
+                            <span ng-show="sortType == 'bellID' && sortReverse" class="fa fa-caret-up">▼</span>
+                        </a>
+                    </div>
+                    </th>
+                    <th><div class="text-info">Action</div></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="bell in bellList | orderBy:sortType:sortReverse">
+                    <td data-title="Bell ID">{{bell.bellID}}</td>
+                    <td data-title="Action">
+                        <md-button class="md-raised md-primary" ng-click="callBell(bell)">Call</md-button>
+                        <md-button class="md-raised md-warn" ng-click="stopBell(bell)">Stop</md-button>
+                        <md-button class="md-raised " ng-click="removeBell(bell)">Remove</md-button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <span flex></span>
+</md-content>

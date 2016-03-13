@@ -1,0 +1,15 @@
+md-content .md-button.md-fab {
+    margin: 0;
+    position: fixed;
+    top: 100px;
+    right: 5%;
+}
+
+@media screen and (max-width: 600px) {
+    md-content .md-button.md-fab {
+        position: fixed;
+        top: auto;
+        right: 30px;
+        bottom: 20px;
+    }
+}

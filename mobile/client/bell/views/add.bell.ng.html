@@ -1,0 +1,18 @@
+<md-dialog>
+    <md-content class="md-padding">
+        <h2>Add Bell</h2>
+        <form name="bellForm" ng-controller="bellCtrl" layout="row" layout-wrap>
+            <md-input-container flex="100">
+                <label>Bell Number</label>
+                <md-icon md-svg-icon="social:ic_notifications_24px"></md-icon>
+                <input name="id" id="id" ng-model="newBell.id" ng-required="true" type="text">
+            </md-input-container>
+            <div layout="row" layout-align="end end">
+                <span flex></span>
+                <md-button class="md-raised" ng-click="answer()"> Cancel </md-button>
+                <md-button class="md-raised md-warn" ng-click="reset()"> RESET </md-button>
+                <md-button class="md-raised md-primary" ng-click="answer(newBell)" ng-disabled="bellForm.$invalid"> SUBMIT </md-button>
+            </div>
+        </form>
+    </md-content>
+</md-dialog>
