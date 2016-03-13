@@ -1,5 +1,52 @@
-# [SUJI](http://naver-d2-suji.github.io/suji) [![Build Status](https://travis-ci.org/naver-d2-suji/suji.svg)](https://travis-ci.org/naver-d2-suji/suji) [![js-standard-style][standard-image]][standard-url]
-SUJI is open source web POS System for the low-income independents.
+[![SUJI Logo](https://avatars3.githubusercontent.com/u/16272187?v=3&s=200)](http://naver-d2-suji.github.io/suji)
+
+SUJI is open source Web & Mobile POS system for the low-income independents.
+
+  [![Build Status](https://travis-ci.org/naver-d2-suji/suji.svg)](https://travis-ci.org/naver-d2-suji/suji) 
+  [![js-standard-style][standard-image]][standard-url]
+  
+ * [**Demo Video**](https://youtu.be/fMRXjG3Plu8)
+ 
+-------
+*Before you start SUJI, please visit [SUJI blog](http://naver-d2-suji.github.io/suji) and get some information about our concept.*
+## Prerequisites
+* [Node.js](https://nodejs.org/en/download/)
+    - You have `node` installed at v5.0.0+
+* Meteor
+    - *Windows* -  Download and Install [Meteor](https://www.meteor.com/)
+    - *Linux/Mac* - `$ curl https://install.meteor.com/ | sh`
+
+## Installation
+* [Download the latest version](https://github.com/naver-d2-suji/suji/archive/develop.zip)
+* Extract develop.zip
+
+* Mobile version
+  - Move into mobile path
+  ```sh
+  $ cd suji-develop/mobile
+  ```
+  - **Connect to a phone or tablet with a USB cable**
+  - Run application
+  ```sh
+  $ ./start.sh
+  ```
+  
+* Web version
+  - Move into web path
+  ```sh
+  $ cd suji-develop/web
+  ```
+  - Start client & server
+  ```sh
+  $ meteor
+  ```
+**Important** The difference between mobile and web is just only user interface. So when you want use mobile-UI on a computer, just move suji-develop/mobile and start it.
+
+## Features
+* Easy to use POS system
+* Executable for generating web & mobile quickly
+* Work with Barcode Scanner based on USB HID
+* Support Pager(Bell) system using [Arduino](https://www.arduino.cc)
 
 ## Development Stack
 * Language : Javascript
@@ -8,98 +55,18 @@ SUJI is open source web POS System for the low-income independents.
     - [Meteor](https://www.meteor.com/)
 * Database : MongoDB
 * Server : [Nginx](http://nginx.org/), [DigitalOcean](https://www.digitalocean.com/)
+* Template : [Yeoman](http://yeoman.io/)
+  - [Generator](https://github.com/ndxbxrme/generator-angular-meteor)
 
-## Prerequisites
-* [Node.js](https://nodejs.org/en/download/)
-    - * You have `node` installed at v5.0.0+ *
-* Meteor
-    - *Windows* -  Download and Install [Meteor](https://www.meteor.com/)
-    - *Linux/Mac* - `curl https://install.meteor.com/ | sh`
 
-## Execution
-* [Download the latest version](https://github.com/naver-d2-suji/suji/archive/develop.zip)
-* Extract develop.zip
-* Move into folder
-```sh
-cd suji-develop/mobile
-```
-* Run program
-```sh
-./start.sh
-```
-
-## Code Example
-
-## Contributors
-* Kim, BoWoon
-* Lee, DongKyu
-* Jin, Hyungtak
+## People
+* Project Director : [Lee, DongKyu](http://ledgku.tistory.com)
+* Developer : Kim, BoWoon, [Jin, Hyungtak](http://njir.github.io)
+* Designer : Jo, Jaebeom
 
 ## License
-2016 [MIT](http://opensource.org/licenses/mit-license.php) © [Dongkyu Lee](http://ledgku.tistory.com), [HyungTak Jin](http://njir.github.io), BoWoon Kim
-
+2016 [MIT](http://opensource.org/licenses/mit-license.php) ©Team SUJI
 
 
 [standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat
 [standard-url]: http://standardjs.com/
-
-
-To be deleted
-- [**소개 영상**](https://youtu.be/fMRXjG3Plu8)
-&nbsp;
-## REST API
-> REST API Definition
-
-| Feature |	Method	| Request URL | Todo Status |
-| :------------ |	:-------:	| :-----------------| :--------: |
-| 회원가입 |	POST	| Meteor Library | complete |
-| 로그인 |	GET	| Meteor Library | complete |
-| 카테고리 목록 |	GET	| localhost:3000/category | complete |
-| 카테고리 추가 |	POST	| localhost:3000/category | complete |
-| 카테고리 제거 |	POST	| localhost:3000/category | complete |
-| 카테고리별 메뉴 목록 |	GET	| localhost:3000/manage | complete |
-| 메뉴 목록 |	GET	| localhost:3000/manage | complete |
-| 메뉴 추가 |	POST	| localhost:3000/manage | complete |
-| 메뉴 삭제 |	POST	| localhost:3000/manage | complete |
-| 구매 목록 |	GET	| http://localhost:3000/manage | complete |
-| 구매 리스트 추가 |	POST	| http://localhost:3000/startpos | complete |
-| 구매 리스트 삭제 |	POST	| http://localhost:3000/startpos | complete |
-| 일별 매출 현황 |	GET	| http://localhost:3000/purchase | complete |
-| 직원 목록 보기 |	GET	| NULL | TODO |
-| 직원 추가 |	POST	| NULL | TODO |
-| 직원 삭제 |	DELETE	| NULL | TODO |
-| 직원 추가 |	UPDATE	| NULL | TODO |
-| 바코드 리더 | NULL | NULL | complete |
-| 진동벨 | NULL | NULL | complete|
-
-
-&nbsp;
-## Prerequisites
-* Node.js
-* Meteor
-    - *Windows* -  Download and Install [Meteor](https://www.meteor.com/)
-    - *Linux/Mac* - `curl https://install.meteor.com/ | sh`
-
-## Development Stack
-> 개발 언어 및 스택 소개
-
-- Language : Javascript
-- Framework : [Angular](https://angularjs.org/), meteor(https://www.meteor.com/)
-- Database : MongoDB
-
-## Execution
-```
-git clone https://github.com/naver-d2-suji/suji-mr.git
-cd suji-mr
-git checkout develop
-meteor
-```
-
-## Reference
-- Meteor(https://www.meteor.com/)
-- [Yeoman](http://yeoman.io/)
-    - [Generator](https://github.com/ndxbxrme/generator-angular-meteor)
-
-## License
-
-2016 [MIT](http://opensource.org/licenses/mit-license.php) © [Dongkyu Lee](http://ledgku.tistory.com), [HyungTak Jin](http://njir.github.io), BoWoon Kim
