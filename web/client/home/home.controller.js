@@ -7,10 +7,6 @@ angular.module('suji-mr').controller('HomeController', function ($scope, $reacti
 
     var storeHandler = this.subscribe('store');
 
-    $("#login").click(function () {
-        $('#loginModal').modal('show');
-    });
-
     $scope.helpers({
         storeList: () => {
             if (storeHandler.ready()) {
@@ -46,6 +42,7 @@ angular.module('suji-mr').controller('HomeController', function ($scope, $reacti
     };
 
     $scope.login = () => {
+        $scope.passwordInput = '';
         $('#loginModal').modal('show');
     };
 
@@ -60,7 +57,15 @@ angular.module('suji-mr').controller('HomeController', function ($scope, $reacti
         $scope.passwordInput = '';
         $('#loginModal').modal('hide');
         Meteor.loginWithPassword('admin', password);
-        console.log("Login");
-        window.alert("Login Success");
+
+        console.log(Accounts.user());
+        if (Meteor.userId() != null) {
+            console.log("Login");
+            window.alert("Login Success");
+        }
+        else {
+            console.log("Login Failed");
+            window.alert("Login Failed");
+        }
     };
 });
