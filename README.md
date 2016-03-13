@@ -5,8 +5,9 @@
   [![Build Status](https://travis-ci.org/naver-d2-suji/suji.svg)](https://travis-ci.org/naver-d2-suji/suji) 
   [![js-standard-style][standard-image]][standard-url]
   
- * [**Demo Video**](https://youtu.be/fMRXjG3Plu8)
- * [**Demo Page**](http://suji.io)
+## Demo
+ * [**Demo Site**](http://suji.io)
+ * Video [**![Demo Video](https://cloud.githubusercontent.com/assets/7614353/13727892/3555f4b2-e948-11e5-9180-b68ea25b00df.PNG)**](https://youtu.be/MwMT5YzClQQ)
  
 -------
 
@@ -46,7 +47,7 @@
 **Important** The difference between mobile and web is just only user interface. So when you want use mobile-UI on a computer, just move suji-develop/mobile and start it.
 
 ## Features
-* Easy to use POS system
+* Ease to use POS system
 * Executable for generating web & mobile quickly
 * Work with Barcode Scanner based on USB HID
 * Support Pager(Bell) system using [Arduino](https://www.arduino.cc)
