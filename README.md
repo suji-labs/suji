@@ -21,14 +21,14 @@
     - *Linux/Mac* - `$ curl https://install.meteor.com/ | sh`
 
 ## Installation
-* [Download the latest version](https://github.com/naver-d2-suji/suji/archive/develop.zip)
-* Extract suji-develop.zip
+* [Download the latest version](https://github.com/naver-d2-suji/suji/archive/master.zip)
+* Extract suji-master.zip
 
 * Mobile version
   - **Connect to a phone or tablet with a USB cable**
   - Move into mobile path
   ```sh
-  $ cd suji-develop/mobile
+  $ cd suji-master/mobile
   ```
   - Run application
   ```sh
@@ -38,7 +38,7 @@
 * Web version
   - Move into web path
   ```sh
-  $ cd suji-develop/web
+  $ cd suji-master/web
   ```
   - Start client & server(default port: 3000)
   ```sh
