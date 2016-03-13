@@ -3,8 +3,8 @@ layout: page
 title: Docs
 ---
 <section>
-	<h3>mobile 폴더를 기준으로 설명한다.</h3>
-	<h4>Folder Structure</h4>
+	<h3>Folder Structure</h3>
+	<h4>mobile 폴더를 기준으로 설명한다.</h4>
 	<div class="table-wrapper">
 		<table>
 			<thead>
@@ -35,8 +35,8 @@ title: Docs
 </section>
 <hr />
 <h4>client 폴더</h4>
-<h5>클라이언트 폴더는 routes.js, index.html 그리고 각각의 모듈들이 정의되어 있는 폴더(bell, category ...)가 있다.<br>
-	각 모듈들의 폴더의 구조는 아래와 같다.</h5>
+<h4>클라이언트 폴더는 routes.js, index.html 그리고 각각의 모듈들이 정의되어 있는 폴더(bell, category ...)가 있다.<br>
+	각 모듈들의 폴더의 구조는 아래와 같다.</h4>
 <ul>
 	<li>config : 각 폴더의 route 설정을 위한 파일이 위치한다.</li>
 	<li>controllers : 콜백 메소드와 scope를 가지고 views 폴더로 퍼블리싱을 담당한다.</li>
@@ -44,7 +44,7 @@ title: Docs
 	<li>views : ng-view에 뿌려줄 html template 파일들이 위치한다.</li>
 </ul>
 
-<h5>예를들어 category.config.js 파일에 다음과 같이 정의되어 있다. 이는 category 모듈에 대한 view, controller를 정의한다. 기타 코드 구조에 대한 설명은 AngularJS를 참고한다.</h5>
+<h4>예를들어 category.config.js 파일에 다음과 같이 정의되어 있다. 이는 category 모듈에 대한 view, controller를 정의한다. 기타 코드 구조에 대한 설명은 AngularJS를 참고한다.</h4>
 <pre><code>
 angular.module('suji').config(['$stateProvider',
   function($stateProvider) {
@@ -61,4 +61,42 @@ angular.module('suji').config(['$stateProvider',
 </code></pre>
 
 <hr />
+<h3>
+	Data Transfer
+</h3>
+<h4>SUJI는 Meteor 플랫폼을 기반으로하여 Publish, Subscribe를 통해 데이터를 주고 받는다. 서버의 publish, 클라이언트의 subscribe를 통해 데이터를 동기화할 수 있다.<br>
+코드는 다음과 같다.</h4>
+
+<pre><code>
+// client/category/controllers/category.controller.js 
+ $meteor.autorun($scope, function() {
+            $meteor.subscribe('category', {}, $scope.getReactively('search')).then(function() {
+                console.log('Got category');
+            });
+        });
+        
+// sever/category.js
+Meteor.publish("category", function(options, searchString) {
+  if (!searchString) {
+    searchString = '';
+  }
+  var searchFor = {
+    '$regex': '.*' + (searchString || '') + '.*',
+    '$options': 'i'
+  };
+
+  return Category.find({
+      $or: [{
+        categoryName: searchFor
+      }]
+    },
+    options);
+});
+<h4>내부 로직에 대한 이해는 Meteor를 이해해야 한다. 다음 사이트를 참고한다. https://www.discovermeteor.com/</h4>
+
+</code></pre>
+
+
+
+
 
