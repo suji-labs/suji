@@ -49,22 +49,22 @@ angular.module('suji-mr').controller('HomeController', function ($scope, $reacti
     $scope.logout = () => {
         Meteor.logout();
         $state.go('homepage');
-        console.log("Logout");
         window.alert("Logout Success");
     };
 
     $scope.signIn = (password) => {
         $scope.passwordInput = '';
         $('#loginModal').modal('hide');
-        Meteor.loginWithPassword('admin', password);
+        Meteor.loginWithPassword('admin', password, function () {
+            $scope.loginCheck();
+        });
+    };
 
-        console.log(Accounts.user());
+    $scope.loginCheck = () => {
         if (Meteor.userId() != null) {
-            console.log("Login");
             window.alert("Login Success");
         }
         else {
-            console.log("Login Failed");
             window.alert("Login Failed");
         }
     };
