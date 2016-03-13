@@ -37,8 +37,8 @@ title: Docs
 <hr />
 
 <h4>client 폴더</h4>
-<h4>클라이언트 폴더는 routes.js, index.html 그리고 각각의 모듈들이 정의되어 있는 폴더(bell, category ...)가 있다.<br>
-	각 모듈들의 폴더의 구조는 아래와 같다.</h4>
+클라이언트 폴더는 routes.js, index.html 그리고 각각의 모듈들이 정의되어 있는 폴더(bell, category ...)가 있다.<br>
+각 모듈들의 폴더의 구조는 아래와 같다.
 	<div class="table-wrapper">
 		<table>
 			<thead>
@@ -69,7 +69,7 @@ title: Docs
 		</div>
 </ul>
 
-<h4>예를들어 category.config.js 파일에 다음과 같이 정의되어 있다. 이는 category 모듈에 대한 view, controller를 정의한다. 기타 코드 구조에 대한 설명은 AngularJS를 참고한다.</h4>
+예를들어 category.config.js 파일에 다음과 같이 정의되어 있다. 이는 category 모듈에 대한 view, controller를 정의한다. 기타 코드 구조에 대한 설명은 AngularJS를 참고한다.
 <pre><code>
 angular.module('suji').config(['$stateProvider',
   function($stateProvider) {
@@ -87,8 +87,8 @@ angular.module('suji').config(['$stateProvider',
 <hr />
 
 <h4>Server 폴더</h4>
-<h4>Server 폴더 내 소스들은 대부분 client와 데이터를 동기화하기 위한 publish 기능을 하는 파일들로 이루어져 있다.</h4>
-<h4>server/startup에 있는 소스는 아래 코드처럼 SUJI가 실행될 때 테스트 데이터를 넣는 작업을 한다.
+Server 폴더 내 소스들은 대부분 client와 데이터를 동기화하기 위한 publish 기능을 하는 파일들로 이루어져 있다.
+server/startup에 있는 소스는 아래 코드처럼 SUJI가 실행될 때 테스트 데이터를 넣는 작업을 한다.
 <pre><code>
 // server/startup/load-category.js
 
@@ -119,7 +119,7 @@ Meteor.startup(function() {
 <h3>
 	Data Transfer
 </h3>
-<h4>SUJI는 Meteor 플랫폼을 기반으로하기 때문에 Publish, Subscribe 방식을 통해 데이터를 주고 받는다. 코드는 다음과 같다.</h4>
+SUJI는 Meteor 플랫폼을 기반으로하기 때문에 Publish, Subscribe 방식을 통해 데이터를 주고 받는다. 코드는 다음과 같다.
 
 <pre><code>
 // client/category/controllers/category.controller.js 
@@ -148,10 +148,11 @@ Meteor.publish("category", function(options, searchString) {
 });
 
 </code></pre>
-<h4>SUJI는 모든 모듈에서 위의 코드처럼 서버의 publish, 클라이언트의 subscribe를 통해 데이터를 동기화 한다. 내부 로직에 대한 이해는 Meteor를 이해해야 한다. <a href="https://www.discovermeteor.com">Meteor 강의 사이트</a>를 참고한다.</h4>
+SUJI는 모든 모듈에서 위의 코드처럼 서버의 publish, 클라이언트의 subscribe를 통해 데이터를 동기화 한다. 내부 로직에 대한 이해는 Meteor를 이해해야 한다. <a href="https://www.discovermeteor.com">Meteor 강의 사이트</a>를 참고한다.
 
 <hr />
 <h4>Collections</h4>
+SUJI에서 쓰이는 MongoDB의 Collection은 다음과 같다.
 	<div class="table-wrapper">
 		<table>
 			<thead>
@@ -184,7 +185,7 @@ Meteor.publish("category", function(options, searchString) {
 			</tbody>
 		</table>
 		</div>
-
+<hr />
 
 
 
