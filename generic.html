@@ -64,8 +64,7 @@ angular.module('suji').config(['$stateProvider',
 <h3>
 	Data Transfer
 </h3>
-<h4>SUJI는 Meteor 플랫폼을 기반으로하여 Publish, Subscribe를 통해 데이터를 주고 받는다. 서버의 publish, 클라이언트의 subscribe를 통해 데이터를 동기화할 수 있다.<br>
-코드는 다음과 같다.</h4>
+<h4>SUJI는 Meteor 플랫폼을 기반으로하기 때문에 Publish, Subscribe 방식을 통해 데이터를 주고 받는다. 코드는 다음과 같다.</h4>
 
 <pre><code>
 // client/category/controllers/category.controller.js 
@@ -92,9 +91,12 @@ Meteor.publish("category", function(options, searchString) {
     },
     options);
 });
-<h4>내부 로직에 대한 이해는 Meteor를 이해해야 한다. 다음 사이트를 참고한다. https://www.discovermeteor.com/</h4>
 
 </code></pre>
+<h4>SUJI는 모든 모듈에서 위의 코드처럼 서버의 publish, 클라이언트의 subscribe를 통해 데이터를 동기화 한다. 내부 로직에 대한 이해는 Meteor를 이해해야 한다. <a href="https://www.discovermeteor.com">Meteor 강의 사이트</a>를 참고한다.</h4>
+
+<hr />
+<h4>Collection</h4>
 
 
 
