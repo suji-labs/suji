@@ -2,39 +2,63 @@
 layout: page
 title: Docs
 ---
-			<section>
-				<h4>Folder Structure</h4>
-				<h3>mobile 폴더를 기준으로 설명한다.</h3>
-				<div class="table-wrapper">
-					<table>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Description</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>client</td>
-								<td>클라이언트에서만 실행되는 코드. Angular, HTML, CSS로 이루어져 있는 프론트엔드 폴더</td>
-							</tr>
-							<tr>
-								<td>server</td>
-								<td>서버에서만 실행되는 코드. SUJI가 구동될 때 자동으로 data를 넣는 코드와 MongoDB의 Collection을 동기화한다</td>
-							</tr>
-							<tr>
-								<td>collections</td>
-								<td>MongoDB의 Collection이 정의된 폴더</td>
-							</tr>
-							<tr>
-								<td>public</td>
-								<td>Logo 이미지 등 staic resource가 있는 폴더</td>
-							</tr>
-						</tbody>
-					</table>	
-	</section>
-	<hr />
-	<h4></h4>
-	<p>
+<section>
+	<h3>mobile 폴더를 기준으로 설명한다.</h3>
+	<h4>Folder Structure</h4>
+	<div class="table-wrapper">
+		<table>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>client</td>
+					<td>클라이언트에서만 실행되는 코드. Angular, HTML, CSS로 이루어져 있는 프론트엔드 폴더</td>
+				</tr>
+				<tr>
+					<td>server</td>
+					<td>서버에서만 실행되는 코드. SUJI가 구동될 때 자동으로 data를 넣는 코드와 MongoDB의 Collection을 동기화한다</td>
+				</tr>
+				<tr>
+					<td>collections</td>
+					<td>MongoDB의 Collection이 정의된 폴더</td>
+				</tr>
+				<tr>
+					<td>public</td>
+					<td>Logo 이미지 등 staic resource가 있는 폴더</td>
+				</tr>
+			</tbody>
+		</table>
+</section>
+<hr />
+<h4>client 폴더</h4>
+<h5>클라이언트 폴더는 routes.js, index.html 그리고 각각의 모듈들이 정의되어 있는 폴더(bell, category ...)가 있다.<br>
+	각 모듈들의 폴더의 구조는 아래와 같다.</h5>
+<ul>
+	<li>config : 각 폴더의 route 설정을 위한 파일이 위치한다.</li>
+	<li>controllers : 콜백 메소드와 scope를 가지고 views 폴더로 퍼블리싱을 담당한다.</li>
+	<li>styles : 스타일시트가 들어있다.</li>
+	<li>views : ng-view에 뿌려줄 html template 파일들이 위치한다.</li>
+</ul>
 
-    </p>
+<h5>예를들어 category.config.js 파일에 다음과 같이 정의되어 있다. 이는 category 모듈에 대한 view, controller를 정의한다. 기타 코드 구조에 대한 설명은 AngularJS를 참고한다.</h5>
+<pre><code>
+angular.module('suji').config(['$stateProvider',
+  function($stateProvider) {
+
+    $stateProvider
+      .state('category', {
+        parent: 'root',
+        url: '/category',
+        templateUrl: 'client/category/views/category.ng.html',
+        controller: 'categoryCtrl'
+      });
+  }
+]);
+</code></pre>
+
+<hr />
+
