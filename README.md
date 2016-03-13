@@ -1,4 +1,4 @@
-[![SUJI Logo](https://avatars3.githubusercontent.com/u/16272187?v=3&s=200)](http://naver-d2-suji.github.io/suji)
+[![SUJI Logo](https://cloud.githubusercontent.com/assets/7614353/13728987/bd47efaa-e96c-11e5-8856-58d38cca1088.jpeg)](http://naver-d2-suji.github.io/suji)
 
 **[SUJI](http://naver-d2-suji.github.io/suji)** is open source Web & Mobile POS system for the low-income independents.
 
