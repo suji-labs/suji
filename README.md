@@ -50,7 +50,7 @@
 * Ease to use POS system
 * Executable for generating web & mobile quickly
 * Work with Barcode Scanner based on USB HID
-* Support Pager(Bell) system using [Arduino](https://www.arduino.cc)
+* Support [Pager(Bell) system using Arduino](https://github.com/naver-d2-suji/cafe_vibration_bell)
 
 ## Development Stack
 * Language : Javascript
