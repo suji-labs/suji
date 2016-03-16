@@ -7,7 +7,7 @@
   
 ## Demo
  * [**Demo Site**](http://suji.io)
- * Video [**![Demo Video](https://cloud.githubusercontent.com/assets/7614353/13727892/3555f4b2-e948-11e5-9180-b68ea25b00df.PNG)**](https://youtu.be/MwMT5YzClQQ)
+ * Video [**![Demo Video](https://cloud.githubusercontent.com/assets/7614353/13811187/7af95042-ebb7-11e5-9f4f-6ad3641df999.jpg)**](https://youtu.be/zyoQs-_bHCQ)
  
 -------
 
