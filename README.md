@@ -1,4 +1,4 @@
-[![SUJI Logo](https://cloud.githubusercontent.com/assets/7614353/13729008/4fe94b6a-e96d-11e5-8fbd-e2b886f5b98d.png)](http://naver-d2-suji.github.io/suji)
+[![SUJI Logo](https://cloud.githubusercontent.com/assets/7614353/13844696/bd2fed46-ec7e-11e5-867b-28d4e4931de2.gif)](http://naver-d2-suji.github.io/suji)
 
 **[SUJI](http://naver-d2-suji.github.io/suji)** is open source Web & Mobile POS system for the low-income independents.
 
@@ -7,7 +7,7 @@
   
 ## Demo
  * [**Demo Site**](http://suji.io)
- * Video [**![Demo Video](https://cloud.githubusercontent.com/assets/7614353/13811187/7af95042-ebb7-11e5-9f4f-6ad3641df999.jpg)**](https://youtu.be/zyoQs-_bHCQ)
+ * Video [**![Demo Video](https://cloud.githubusercontent.com/assets/7614353/13811187/7af95042-ebb7-11e5-9f4f-6ad3641df999.jpg)**](http://m.site.naver.com/qrcode/view.nhn?v=0fMig)
  
 -------
 
