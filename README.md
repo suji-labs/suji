@@ -1,12 +1,13 @@
-[![SUJI Logo](https://avatars3.githubusercontent.com/u/16272187?v=3&s=200)](http://naver-d2-suji.github.io/suji)
+[![SUJI Logo](https://cloud.githubusercontent.com/assets/7614353/13844696/bd2fed46-ec7e-11e5-867b-28d4e4931de2.gif)](http://naver-d2-suji.github.io/suji)
 
 **[SUJI](http://naver-d2-suji.github.io/suji)** is open source Web & Mobile POS system for the low-income independents.
 
   [![Build Status](https://travis-ci.org/naver-d2-suji/suji.svg)](https://travis-ci.org/naver-d2-suji/suji) 
   [![js-standard-style][standard-image]][standard-url]
   
- * [**Demo Video**](https://youtu.be/fMRXjG3Plu8)
- * [**Demo Page**](http://suji.io)
+## Demo
+ * [**Demo Site**](http://suji.io)
+ * Video [**![Demo Video](https://cloud.githubusercontent.com/assets/7614353/13811187/7af95042-ebb7-11e5-9f4f-6ad3641df999.jpg)**](http://m.site.naver.com/qrcode/view.nhn?v=0fMig)
  
 -------
 
@@ -20,14 +21,14 @@
     - *Linux/Mac* - `$ curl https://install.meteor.com/ | sh`
 
 ## Installation
-* [Download the latest version](https://github.com/naver-d2-suji/suji/archive/develop.zip)
-* Extract suji-develop.zip
+* [Download the latest version](https://github.com/naver-d2-suji/suji/archive/master.zip)
+* Extract suji-master.zip
 
 * Mobile version
   - **Connect to a phone or tablet with a USB cable**
   - Move into mobile path
   ```sh
-  $ cd suji-develop/mobile
+  $ cd suji-master/mobile
   ```
   - Run application
   ```sh
@@ -37,7 +38,7 @@
 * Web version
   - Move into web path
   ```sh
-  $ cd suji-develop/web
+  $ cd suji-master/web
   ```
   - Start client & server(default port: 3000)
   ```sh
@@ -46,10 +47,10 @@
 **Important** The difference between mobile and web is just only user interface. So when you want use mobile-UI on a computer, just move suji-develop/mobile and start it.
 
 ## Features
-* Easy to use POS system
+* Ease to use POS system
 * Executable for generating web & mobile quickly
 * Work with Barcode Scanner based on USB HID
-* Support Pager(Bell) system using [Arduino](https://www.arduino.cc)
+* Support [Pager(Bell) system using Arduino](https://github.com/naver-d2-suji/cafe_vibration_bell)
 
 ## Development Stack
 * Language : Javascript
