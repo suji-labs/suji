@@ -1,4 +1,4 @@
-[![SUJI Logo](https://avatars3.githubusercontent.com/u/16272187?v=3&s=200)](http://naver-d2-suji.github.io/suji)
+[![SUJI Logo](https://cloud.githubusercontent.com/assets/7614353/13844696/bd2fed46-ec7e-11e5-867b-28d4e4931de2.gif)](http://naver-d2-suji.github.io/suji)
 
 **[SUJI](http://naver-d2-suji.github.io/suji)** is open source Web & Mobile POS system for the low-income independents.
 
@@ -7,7 +7,7 @@
   
 ## Demo
  * [**Demo Site**](http://suji.io)
- * Video [**![Demo Video](https://cloud.githubusercontent.com/assets/7614353/13727892/3555f4b2-e948-11e5-9180-b68ea25b00df.PNG)**](https://youtu.be/MwMT5YzClQQ)
+ * Video [**![Demo Video](https://cloud.githubusercontent.com/assets/7614353/13811187/7af95042-ebb7-11e5-9f4f-6ad3641df999.jpg)**](http://m.site.naver.com/qrcode/view.nhn?v=0fMig)
  
 -------
 
@@ -50,7 +50,7 @@
 * Ease to use POS system
 * Executable for generating web & mobile quickly
 * Work with Barcode Scanner based on USB HID
-* Support Pager(Bell) system using [Arduino](https://www.arduino.cc)
+* Support [Pager(Bell) system using Arduino](https://github.com/naver-d2-suji/cafe_vibration_bell)
 
 ## Development Stack
 * Language : Javascript
