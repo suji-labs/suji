@@ -16,7 +16,7 @@ angular.module('suji').config(['$stateProvider', '$urlRouterProvider', '$locatio
         .state('root', {
           views: {
             '': {
-              template: '<div ui-view=""><br><br><br> <h1 align="center">SUJI</h1><br><h3 align="center">Open Source Web POS System</h3> <br><a href="/login" align="center"><h4>Login</h4></a><a href="/pos" align="center"><h4>Start Pos</h4></a></div>'
+              template: '<div ui-view=""><br><br><br> <h1 align="center">SUJI</h1><br><h3 align="center">Open Source Web POS System</h3> <br><a href="/login" align="center" ng-if="$root.currentUser == null"><h4>Login</h4></a><a href="/pos" align="center"><h4>Start Pos</h4></a></div>'
               //templateUrl: 'client/main/views/main.html'
             },
             'toolbar': {
