@@ -44,7 +44,7 @@
   ```sh
   $ meteor --port 3000
   ```
-**Important** The difference between mobile and web is just only user interface. So when you want use mobile-UI on a computer, just move suji-develop/mobile and start it.
+**Important** The difference between mobile and web is just only user interface. So when you want use mobile-UI on a computer, just move suji-master/mobile and start it.
 
 ## Features
 * Ease to use POS system
