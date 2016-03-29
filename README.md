@@ -2,7 +2,7 @@
 
 **[SUJI](http://naver-d2-suji.github.io/suji)** is open source Web & Mobile POS system for the low-income independents.
 
-  [![Build Status](https://travis-ci.org/naver-d2-suji/suji.svg)](https://travis-ci.org/naver-d2-suji/suji) 
+  [![Build Status](https://travis-ci.org/suji-korea/suji.svg)](https://travis-ci.org/naver-d2-suji/suji) 
   [![js-standard-style][standard-image]][standard-url]
   
 ## Demo
