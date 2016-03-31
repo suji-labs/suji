@@ -1,8 +1,8 @@
-[![SUJI Logo](https://cloud.githubusercontent.com/assets/7614353/13844696/bd2fed46-ec7e-11e5-867b-28d4e4931de2.gif)](http://naver-d2-suji.github.io/suji)
+[![SUJI Logo](https://cloud.githubusercontent.com/assets/7614353/13844696/bd2fed46-ec7e-11e5-867b-28d4e4931de2.gif)](http://suji-korea.github.io/suji)
 
-**[SUJI](http://naver-d2-suji.github.io/suji)** is open source Web & Mobile POS system for the low-income independents.
+**[SUJI](http://suji-korea.github.io/suji)** is open source Web & Mobile POS system for the low-income independents.
 
-  [![Build Status](https://travis-ci.org/suji-korea/suji.svg)](https://travis-ci.org/naver-d2-suji/suji) 
+  [![Build Status](https://travis-ci.org/suji-korea/suji.svg)](https://travis-ci.org/suji-korea/suji) 
   [![js-standard-style][standard-image]][standard-url]
   
 ## Demo
@@ -11,7 +11,7 @@
  
 -------
 
-*Before you start SUJI, please visit [SUJI blog](http://naver-d2-suji.github.io/suji) and get some information about our concept.*
+*Before you start SUJI, please visit [SUJI blog](http://suji-korea.github.io/suji) and get some information about our concept.*
 
 ## Prerequisites
 * [Node.js](https://nodejs.org/en/download/)
@@ -21,7 +21,7 @@
     - *Linux/Mac* - `$ curl https://install.meteor.com/ | sh`
 
 ## Installation
-* [Download the latest version](https://github.com/naver-d2-suji/suji/archive/master.zip)
+* [Download the latest version](https://github.com/suji-korea/suji/archive/master.zip)
 * Extract suji-master.zip
 
 * Mobile version
@@ -50,7 +50,7 @@
 * Ease to use POS system
 * Executable for generating web & mobile quickly
 * Work with Barcode Scanner based on USB HID
-* Support [Pager(Bell) system using Arduino](https://github.com/naver-d2-suji/cafe_vibration_bell)
+* Support [Pager(Bell) system using Arduino](https://github.com/suji-korea/cafe_vibration_bell)
 
 ## Development Stack
 * Language : Javascript
