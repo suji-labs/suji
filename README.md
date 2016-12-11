@@ -1,8 +1,4 @@
 # SUJI
-- Not support this version
-- We are going to move to https://github.com/suji-korea/suji-react
-
------------------------------------------------------------------
 
 [![SUJI Logo](https://cloud.githubusercontent.com/assets/7614353/13844696/bd2fed46-ec7e-11e5-867b-28d4e4931de2.gif)](http://suji-korea.github.io/suji)
 
